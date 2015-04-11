@@ -8,6 +8,6 @@ namespace SpaceInvaders.GameEngine.Objects.Interfaces
 {
     public interface IUpdateble
     {
-        void Update(int meta_key);
+        void Update(int i);
     }
 }

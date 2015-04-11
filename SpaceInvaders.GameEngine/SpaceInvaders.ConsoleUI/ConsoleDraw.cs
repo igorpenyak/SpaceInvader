@@ -31,36 +31,35 @@ namespace SpaceInvaders.ConsoleUI
                 break;
 
                 case ("Bullet"):
-                    if (y > 2)
-                    {
+                    //if (y > 2)
+                    //{
                    
-                    Console.SetCursorPosition(x, y-1);
+                    Console.SetCursorPosition(x+1, y);
                     Console.Write("^");
                     ////if (y >= 48)
                     ////{ y = 46; };
                    // Console.SetCursorPosition(x, y + 1);
                     //Console.Write("");
-                    }
-                    else
-                    { 
-                        
-                        LazerGun.first_shot = false; 
-                    }                    
+                    //}
+                    //else
+                    //{ 
+                    //    LazerGun.first_shot = false; 
+                    //}                    
                 break;
 
                 case ("Invader"):
                      Console.SetCursorPosition(x, y);
-                    char[,] Invader = { { 'X', 'X', 'X', 'X' }, { ' ', 'X', 'X', ' ' } };
-                    for (int i = 0; i < Invader.GetLength(1); i++)
-                    {
-                        Console.Write(Invader[0, i]);
-                    }
-                    Console.SetCursorPosition(x, y + 1);
-                    for (int i = 0; i < Invader.GetLength(1); i++)
-                    {
-                        Console.Write(Invader[1, i]);
-                    }
-
+                    //char[,] Invader = { { 'X', 'X', 'X', 'X' }, { ' ', 'X', 'X', ' ' } };
+                    //for (int i = 0; i < Invader.GetLength(1); i++)
+                    //{
+                    //    Console.Write(Invader[0, i]);
+                    //}
+                    //Console.SetCursorPosition(x, y + 1);
+                    //for (int i = 0; i < Invader.GetLength(1); i++)
+                    //{
+                    //    Console.Write(Invader[1, i]);
+                    //}
+                     Console.Write("^___^");
                 break;
 
                 case ("Shield"):

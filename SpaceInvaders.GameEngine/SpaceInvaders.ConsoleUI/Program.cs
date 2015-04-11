@@ -26,13 +26,20 @@ namespace SpaceInvaders.ConsoleUI
             LazerGun gun = new LazerGun(30, 49);
             ConsoleDraw draw = new ConsoleDraw();
 
-            // Bullet bull = new Bullet("Bullet",31,48,true);
             List<Bullet> b_list = new List<Bullet>();
+            Invader[,] i_arr=new Invader[6,3];
+            SetEnemy(i_arr);
             List<GameObject> m_GameObjects = new List<GameObject>();
             m_GameObjects.Add(Playground);
             m_GameObjects.Add(gun);
             //m_GameObjects.Add(draw);
             //  m_GameObjects.Add(bull);
+
+
+
+
+
+
             Console.CursorVisible = false;
 
             Console.SetCursorPosition(25, 12);
@@ -43,7 +50,7 @@ namespace SpaceInvaders.ConsoleUI
             while (true)
             {
 
-                //long current = getCurrentTime();
+               
                 //// Console.WriteLine("{0:N0}", current);
                 //long elapsed = current - previous;
 
@@ -55,12 +62,14 @@ namespace SpaceInvaders.ConsoleUI
                 const int TIME_LIMIT_SECONDS = 300;
                 int elapsedMilliseconds = 0;
 	            int totalMilliseconds = TIME_LIMIT_SECONDS * 1000;
-                const int INTERVAL = 50;
-
+                const int INTERVAL =100;
+                
                 while (elapsedMilliseconds < totalMilliseconds && !quit)
                 {
                     Thread.Sleep(INTERVAL);
 	                elapsedMilliseconds += INTERVAL;
+                    long current = getCurrentTime();
+
                     foreach (var gameObject in m_GameObjects)
                     {
                         if (gameObject is IUpdateble)
@@ -68,59 +77,64 @@ namespace SpaceInvaders.ConsoleUI
                             int k = Press_Key(gameObject, b_list);
 
                             gameObject.Update(k);
+                            Bullet.bulletBehavior(b_list,0);                                 
+                                
+                            }
                         }
-                        foreach (var b in b_list)
-                        if (LazerGun.first_shot)
+
+                    for (var i = 0; i < i_arr.GetLength(0); i++)
+                    {
+
+                        for (var j = 0; j < i_arr.GetLength(1); j++)
                         {
-                            b.Move();
+                            i_arr[i, j].Update((int)current);
+
                         }
-                    }
+
+                    }  
                     
                     Console.Clear();
+                    
                     foreach (var gameObject in m_GameObjects)
                         if (gameObject is IRenderable)
                         {
-
                             draw.Render(gameObject.Name, gameObject.PosX, gameObject.PosY);
                             if (gameObject == gun)
-                            {
-                                Check_Bullet(b_list);
-                                
+                            {                                                                                 
                                 for (var i = 0; i < b_list.Count; i++)
-                                    if (LazerGun.first_shot)
-                                    {
-
-                                        draw.Render(b_list[i].Name, b_list[i].PosX, b_list[i].PosY);
-                                        Thread.Sleep(INTERVAL);
-
-                                    }                               
+                                        {                                            
+                                            draw.Render(b_list[i].Name, b_list[i].PosX, b_list[i].PosY);
+                                           
+                                        }                                                                  
                             }
                         }
+                    for (var i = 0; i < i_arr.GetLength(0); i++)
+                    {
+
+                        for (var j = 0; j < i_arr.GetLength(1); j++)
+                        {
+                            draw.Render(i_arr[i, j].Name, i_arr[i, j].PosX, i_arr[i, j].PosY);                                                       
+                                string name;
+                                int x;
+                                int y;
+                                if (i_arr[i, j].firstShot())
+                                {
+                                    i_arr[i, j].GetBullet(out name, out x, out y);
+                                    draw.Render(name, x, y);
+                                }
+                            
+                        }
+                        
+                    }  
                 };
             }
         }
 
 
-        private static void Check_Bullet(List<Bullet> bl)   // проверяем не пора ли удалить пулю
-        {
-            for (var i = 0; i < bl.Count; i++)
-            {
-                if (bl[i].PosY < 2)
-                {
-                    bl[i].RemoveBull(bl);
-                }
-            }
-        }
                         
-        private static int Press_Key(GameObject obj, List<Bullet> blist) //
-        {
-                     
-           if (Console.KeyAvailable)               
-           {
-               Thread.Sleep(20);
-               ConsoleKeyInfo key_info = new ConsoleKeyInfo();
-               key_info = Console.ReadKey(true);
-               ConsoleKey key = key_info.Key;
+        private static int Press_Key(GameObject obj, List<Bullet> blist) // transformate user`s command 
+        {                      
+               ConsoleKey key = readKey();
 
                if (key == ConsoleKey.RightArrow)
                {
@@ -132,19 +146,14 @@ namespace SpaceInvaders.ConsoleUI
                }
                else if (key == ConsoleKey.Spacebar)
                {
-                   if (obj.Name == LazerGun.GetName())
-                  {
                        Bullet bull = new Bullet(obj.PosX, obj.PosY, true);
-                       //bull.h = 0;
                        bull.InsertBull(blist);
-                  }
-                   return 5;
+                       return 5;
                }
                else
-               { return 0; }
-           }
-           else
-           { return 0; }
+               {
+                   return 0; 
+               }       
         }                       
       
         private static long getCurrentTime()
@@ -152,5 +161,35 @@ namespace SpaceInvaders.ConsoleUI
             DateTime currentDate = DateTime.Now;
             return currentDate.Ticks;
         }
-    }}
+
+        protected static ConsoleKey readKey()   // 
+        {
+            if (Console.KeyAvailable)               
+            {               
+                return Console.ReadKey(true).Key;     
+            }
+            return ConsoleKey.Backspace;
+        }
+
+        protected static void SetEnemy(Invader[,] arr)  // set an army of invaders
+        { 
+            int posx=7;            
+
+            for(int i=0;i<arr.GetLength(0);i++)
+            {
+                int posy = 2;
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    Invader inv = new Invader(posx, posy,49,posx+posy);
+                        arr[i,j]= inv;
+                    posy+=6;
+                }
+                posx+=8;
+            }        
+        }
+
+        
+
+    }
+}
 

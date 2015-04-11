@@ -38,7 +38,7 @@ namespace SpaceInvaders.GameEngine.Objects
         //    //pre_y = b.PosY;
         //}
 
-       // List<Bullet> b_list = new List<Bullet>();
+     
         public void Shot()
         {
             //Bullet bullet = new Bullet(PosX + 1, PosY, true);
@@ -56,16 +56,7 @@ namespace SpaceInvaders.GameEngine.Objects
 
         public virtual void Render(string name, int x, int y)
         {
-            //Console.SetCursorPosition(PosX, PosY);
-            //char[] Gun = { 'X', 'X', 'X' };
-            //foreach (var g in Gun)
-            //{
-            //    Console.Write(g);
-            //}
-            //foreach (var b in b_list)
-            //{
-            //    b.Move();
-            //}
+     
            // Console.Write("Called a virtual method");
         }
 

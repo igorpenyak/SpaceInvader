@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace SpaceInvaders.GameEngine.Objects
 {
-    public abstract class GameObject : IUpdateble, IRenderable
+    public abstract class GameObject 
     {
         protected bool _live = true;
         public int meta_key {get; set;}

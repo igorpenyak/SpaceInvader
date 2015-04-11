@@ -9,41 +9,95 @@ namespace SpaceInvaders.GameEngine.Objects
 {
     public class Invader : GameObject, IUpdateble, IRenderable
     {
-        private int numberOfLive;
+      
+        public int Katalizator; // use for time of shot
+        private int _recall=1; // count how much we update obj
 
-        //public  void Move();
-        public Invader(int x, int y)
+        public int K;
+        public bool Live;
+        public int Speed { get; set; }
+        public void Move()
+        {
+            this.PosY++;
+        
+        }
+        public Invader(int x, int y, int katalizator,int k)
             : base("Invader", x, y)
         {
+            Katalizator = katalizator;
+            K = k;
         }
 
-       // List<Bullet> b_list = new List<Bullet>();
+       
+         public bool Shot(int time)
+         {
+             if (time*0.5%52 == 0)
+             {
+                 return true;
+             }
 
-        //public void Shot()
-        //{
-        //    Bullet bullet = new Bullet(PosX + 1, PosY, false);
-        //    b_list.Add(bullet);
-        //    bullet.Move();
-        //}
+             return false;
+         }
+     
+        private bool canShot()
+         {
+             if (K % 7==0 && _recall%7==0 )
+             {
+                 return true;
+             }
+             else if (K % 2 == 0 && _recall % 10 == 0)
+             {
+                 return true;
+             }
+             else if (K % 4 == 0 && _recall % 5 == 0)
+             {
+                 return true;
+             }
+             else if (K % 9 == 0 && _recall % 2 == 0)
+             {
+                 return true;
+             }  
 
-        // public override void Update(double time)
-        //{
+             return false;
+        }
 
-        //}
-        public virtual void Render()
+        List<Bullet> enem_bullet = new List<Bullet>();
+        public override void Update(int time)
         {
-            //Console.SetCursorPosition(PosX, PosY);
-            //char[,] Invader = { { 'X', 'X', 'X', 'X' }, { ' ', 'X', 'X', ' ' } };
-            //for (int i = 0; i < Invader.GetLength(1); i++)
-            //{
-            //    Console.Write(Invader[0, i]);
-            //}
-            //Console.SetCursorPosition(PosX, PosY + 1);
-            //for (int i = 0; i < Invader.GetLength(1); i++)
-            //{
-            //    Console.Write(Invader[1, i]);
-            //}
+            _recall++;
+            Bullet b = new Bullet(this.PosX,this.PosY,false);
+            if (this.Shot(time) && this.canShot() && enem_bullet.Count == 0)
+            {
+                b.InsertBull(enem_bullet);
+                Bullet.bulletBehavior(enem_bullet,Katalizator);                            
+            }
+            
+            if (enem_bullet.Count != 0)
+            {
+                Bullet.bulletBehavior(enem_bullet, Katalizator);
+            }
 
+            if (_recall%50==0)
+            {
+            this.Move();
+            }
         }
+
+        public bool firstShot()
+        {
+            if (enem_bullet.Count != 0)
+            {
+                return true;
+            }
+            return false;
+        }
+        public void GetBullet(out string name,out int x,out int y)
+        {            
+                name = enem_bullet[0].Name;
+                x = enem_bullet[0].PosX;
+                y = enem_bullet[0].PosY;                   
+        }
+
+
     }
 }
