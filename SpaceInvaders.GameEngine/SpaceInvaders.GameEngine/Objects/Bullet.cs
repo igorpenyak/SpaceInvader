@@ -21,20 +21,8 @@ namespace SpaceInvaders.GameEngine.Objects
         }
 
         public virtual void Update()
-        {
-
-            //if (LazerGun.first_shot || meta_key==0)
-            //{
-
-            //    this.Move();
-            //   // this.Render(this.Name, this.PosX, this.PosY);
-            //  //  
-
-            //}
-            //this.Move();
-            
-
-        }
+        {}
+                
         public void InsertBull(List<Bullet> blist)
         {
             blist.Add(this);
@@ -55,9 +43,7 @@ namespace SpaceInvaders.GameEngine.Objects
                 {
                     blist.RemoveAt(blist.IndexOf(this));
                 }
-            }
-   
- 
+            } 
         }
 
         public static void bulletBehavior(List <Bullet> blist, int end)  // insert and remove bull from list
@@ -75,37 +61,17 @@ namespace SpaceInvaders.GameEngine.Objects
 
         public void Move()
         {
-
             if (this.Direction)
             {
-
-                this.PosY--;  // LazerGun shot
-                this.h++;
-
+                this.PosY--;  // LazerGun shot                
             }
             else
             {
-
-                this.PosY++; // Invader shot
-                this.h++;
-
+                this.PosY++; // Invader shot                
             }
         }
 
         public virtual void Render(string name, int x, int y)
-        {
-
-            //    if (this.PosY > 5)
-            //    {
-            //        Console.SetCursorPosition(this.PosX - 1, this.PosY);
-            //        Console.Write("^");
-            //        Console.SetCursorPosition(this.PosX - 1, this.PosY + 1);
-            //        Console.Write("");
-            //    }
-            //    else
-            //    { LazerGun.first_shot = false; }
-            //}
-
-        }
+        {}
     }
 }

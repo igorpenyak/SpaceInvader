@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SpaceInvaders.ConsoleUI
 {
-    class ConsoleDraw:GameObject,GameEngine.Objects.Interfaces.IRenderable
+    class ConsoleDraw : GameObject, GameEngine.Objects.Interfaces.IRenderable
     {
 
         public ConsoleDraw() :base("Draw", 0, 0)
@@ -18,47 +18,18 @@ namespace SpaceInvaders.ConsoleUI
         {
             switch (name)
             { 
-                case ("Gun"):
-                    if (x >= 0 && x < 57)
-                    {
-                        Console.SetCursorPosition(x, y);
-                        char[] Gun = { 'X', 'X', 'X' };
-                        foreach (var g in Gun)
-                        {
-                            Console.Write(g);
-                        }
-                    }
+                case ("Gun"):                   
+                    Console.SetCursorPosition(x, y);                      
+                    Console.Write("XXXX");                                        
                 break;
 
-                case ("Bullet"):
-                    //if (y > 2)
-                    //{
-                   
+                case ("Bullet"):                                      
                     Console.SetCursorPosition(x+1, y);
-                    Console.Write("^");
-                    ////if (y >= 48)
-                    ////{ y = 46; };
-                   // Console.SetCursorPosition(x, y + 1);
-                    //Console.Write("");
-                    //}
-                    //else
-                    //{ 
-                    //    LazerGun.first_shot = false; 
-                    //}                    
+                    Console.Write("^");                     
                 break;
 
                 case ("Invader"):
-                     Console.SetCursorPosition(x, y);
-                    //char[,] Invader = { { 'X', 'X', 'X', 'X' }, { ' ', 'X', 'X', ' ' } };
-                    //for (int i = 0; i < Invader.GetLength(1); i++)
-                    //{
-                    //    Console.Write(Invader[0, i]);
-                    //}
-                    //Console.SetCursorPosition(x, y + 1);
-                    //for (int i = 0; i < Invader.GetLength(1); i++)
-                    //{
-                    //    Console.Write(Invader[1, i]);
-                    //}
+                     Console.SetCursorPosition(x, y);                   
                      Console.Write("^___^");
                 break;
 
@@ -67,17 +38,11 @@ namespace SpaceInvaders.ConsoleUI
                 Console.WriteLine("Build a shield!");
                 break;
 
-                case ("Field"):  
-                    //Console.CursorVisible=false;
+                case ("Field"):                 
                     Console.SetWindowSize(x, y);
                     Console.SetBufferSize(x, y);
-                        break;
-
-
-
-
-
-
+                break;
+                    
             }
         
         }
