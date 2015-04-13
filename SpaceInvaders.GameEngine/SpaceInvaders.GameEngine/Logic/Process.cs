@@ -22,6 +22,8 @@ namespace SpaceInvaders.GameEngine
             public List<GameObject> m_GameObjects = new List<GameObject>();
             public List<Bullet> b_list = new List<Bullet>();
             public Invader[,] i_arr = new Invader[6, 3];
+            Score sc = new Score();
+          
 
 
             public Process()
@@ -33,13 +35,18 @@ namespace SpaceInvaders.GameEngine
           {
             Game Playground = new Game(x, y);  //Define Size of playground
             LazerGun gun = new LazerGun(x/2, y-1);
+            
 
-            SetEnemy(i_arr, y-1, 50, 2);
+            SetEnemy(i_arr, y-1, 50, 5);
             m_GameObjects.Add(Playground);
-            m_GameObjects.Add(gun);
-                
-          }  
-        
+            m_GameObjects.Add(gun);                       
+            }
+
+            public void UpdScore(int number)
+            {
+                sc.AddScore(number);
+            
+            }
             private static void SetEnemy(Invader[,] arr, int x, int s, int pos_y)  // set an army of invaders
         { 
             int posx=7;            
@@ -200,7 +207,12 @@ namespace SpaceInvaders.GameEngine
                     }
                 }
             }
+
+               obj.Show(sc.name, sc.score);
+               obj.Show(m_GameObjects[1].Name, m_GameObjects[1].NumberOfLives);
+                
                 #endregion
+
             Collision.FindCollision(this);
         }
 

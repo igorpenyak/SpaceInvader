@@ -7,10 +7,13 @@ using System.Threading.Tasks;
 
 namespace SpaceInvaders.GameEngine.Objects
 {
-    public class LazerGun : GameObject, IRenderable, IUpdateble
+    public class LazerGun : GameObject, IRenderable, IUpdateble, ISettings
     {
-        private int _numberOfLive=3;
+        
         public static bool first_shot;
+
+        
+    
 
 
         #region Constructor
@@ -41,7 +44,7 @@ namespace SpaceInvaders.GameEngine.Objects
         }
         public virtual void Render(string name, int x, int y)
         {}
-      
+               
 
         public override void Update(int meta_key)
         {
@@ -62,6 +65,7 @@ namespace SpaceInvaders.GameEngine.Objects
             }           
         }
 
+         
         
         public override void isDie()
         {            
@@ -71,11 +75,13 @@ namespace SpaceInvaders.GameEngine.Objects
             }
             if(_numberOfLive < 1)
             {
-                this.Live = false;               
+                this.Live = false;              
             }
+            
         }
-       
 
+        public virtual void Show(string name, int number)
+        { }
 
 
     }

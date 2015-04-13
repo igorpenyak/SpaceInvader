@@ -47,5 +47,20 @@ namespace SpaceInvaders.ConsoleUI
         
         }
 
+        public override void Show(string name, int number)
+        {
+            switch (name)
+            {
+                case ("Score"):
+                    Console.SetCursorPosition(37, 2);
+                    Console.Write("Score: {0}", number);
+                    break;
+
+                case ("Gun"):
+                    Console.SetCursorPosition(12, 2);
+                    Console.Write("Lives: {0}", number);
+                    break;
+            }
+        }
     }
 }

@@ -14,6 +14,16 @@ namespace SpaceInvaders.GameEngine.Objects
         public int PosY { get; set; }
         public string Name { get; protected set; }
         public bool Live { get; set; }
+
+        protected int _numberOfLive=3;
+        public int NumberOfLives
+        {
+            get
+            {
+                return _numberOfLive;
+            }
+        }
+
         
         #endregion
         
@@ -29,13 +39,21 @@ namespace SpaceInvaders.GameEngine.Objects
 
         #region Virtual Methods
         public virtual void isDie()
-        {}
+        {            
+        }
+        public int Lives(int x)
+        {
+            return x;
+        }
                 
         public virtual void Render(string name, int x, int y)
         {}
        
         public virtual void Update(int meta_key)
         {}
+
+        public virtual void Show(string name,int number)
+        { }
         #endregion
         
     }

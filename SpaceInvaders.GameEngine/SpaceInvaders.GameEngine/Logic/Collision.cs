@@ -21,9 +21,21 @@ namespace SpaceInvaders.GameEngine
                         {
                         
                             if (isCollision(game.i_arr[i, j], game.b_list[b]))  // when LazerGun kill an Invader
-                            {
+                            {                                                              
                                 game.b_list.Remove(game.b_list[b]);
                                 game.i_arr[i, j].Live = false;
+                                if (i == 1)
+                                {
+                                    game.UpdScore(50); 
+                                }
+                                else if (i == 2)
+                                {
+                                    game.UpdScore(70);
+                                }
+                                else
+                                {
+                                    game.UpdScore(100);
+                                }
                             }                           
                         }
 
