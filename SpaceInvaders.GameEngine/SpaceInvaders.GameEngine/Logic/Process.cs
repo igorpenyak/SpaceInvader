@@ -23,7 +23,7 @@ namespace SpaceInvaders.GameEngine
             public List<GameObject> m_GameObjects = new List<GameObject>();
             public List<Bullet> b_list = new List<Bullet>();
             public Invader[,] i_arr = new Invader[6, 3];
-            Score sc = new Score();
+            public Score sc = new Score();
           
 
 
@@ -122,24 +122,34 @@ namespace SpaceInvaders.GameEngine
             private static long getCurrentTime()
         {
             DateTime currentDate = DateTime.Now;
-            return currentDate.Ticks;
+            return currentDate.Millisecond;
         }                  
 
-           public void Update(int k,GameObject obj)  
-            {
-
-            if (!this.m_GameObjects[1].Live || _count>5)
+        public void TryExitGame()
+        {
+         if (!this.m_GameObjects[1].Live || _count>5)
             {
                 this.IsExit = true;
                 return;
             }
+        }
 
+        public void TryChangeLevel()
+        {
             if (this.Level())
             {
                 _count++;
                 NextLevel(_count);
-            }                           
+            }
+        }             
            
+
+
+           public void Update(int k)  
+            {
+
+            TryExitGame();
+            TryChangeLevel();           
             Thread.Sleep(_pause);
 
 	        //elapsedMilliseconds += INTERVAL;
@@ -175,11 +185,21 @@ namespace SpaceInvaders.GameEngine
 
                 }
             }
+
             #endregion
 
-            Console.Clear();
+            Collision.FindCollision(this);
 
-                #region Graphic part
+            }
+
+          
+           
+
+
+           #region Graphic part
+
+           public void Render(GameObject obj)  
+        {                               
                 foreach (var gameObject in m_GameObjects)
                 if (gameObject is IRenderable)
                 {
@@ -215,12 +235,9 @@ namespace SpaceInvaders.GameEngine
 
                obj.Show(sc.name, sc.score);
                obj.Show(m_GameObjects[1].Name, m_GameObjects[1].NumberOfLives);
-                
-                #endregion
-
-            Collision.FindCollision(this);
         }
 
-             
+                #endregion
+
     }
 }

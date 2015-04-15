@@ -57,6 +57,7 @@
     <Compile Include="GameTest.cs" />
     <Compile Include="BulletTest.cs" />
     <Compile Include="LazerGunTest.cs" />
+    <Compile Include="CollisionTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SpaceInvaders.GameEngine\SpaceInvaders.GameEngine.csproj">

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SpaceInvaders.GameEngine
 {
-    class Collision
+   public class Collision
     {
         public static void FindCollision(Process game)
         {
