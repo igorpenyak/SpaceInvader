@@ -10,12 +10,6 @@ namespace SpaceInvaders.GameEngine.Objects
     public class LazerGun : GameObject, IRenderable, IUpdateble, ISettings
     {
         
-        public static bool first_shot;
-
-        
-    
-
-
         #region Constructor
        
         public LazerGun(int x, int y)
@@ -25,8 +19,6 @@ namespace SpaceInvaders.GameEngine.Objects
         }
         #endregion
               
-
-
         public void MoveRight()
         {
             this.PosX++;
@@ -35,15 +27,13 @@ namespace SpaceInvaders.GameEngine.Objects
         {
             this.PosX--;
         }
-                  
-        public void Shot()
-        {}        
+                                
         public static string GetName()
         {
             return "Gun";
         }
-        public virtual void Render(string name, int x, int y)
-        {}
+        //public virtual void Render(string name, int x, int y)
+       // {}
                
 
         public override void Update(int meta_key)
@@ -60,12 +50,11 @@ namespace SpaceInvaders.GameEngine.Objects
                 }
                 //else if (meta_key == 5)
                 //{
-                //    // Shot();
+                //    Shot();
                 //}
             }           
         }
-
-         
+                 
         
         public override void isDie()
         {            
@@ -80,8 +69,8 @@ namespace SpaceInvaders.GameEngine.Objects
             
         }
 
-        public virtual void Show(string name, int number)
-        { }
+        //public virtual void Show(string name, int number)
+       // { }
 
 
     }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SpaceInvaders.ConsoleUI
 {
-    class ConsoleDraw : GameObject, GameEngine.Objects.Interfaces.IRenderable
+    class ConsoleDraw : GameObject, GameEngine.Objects.Interfaces.IRenderable, GameEngine.Objects.Interfaces.ISettings
     {
 
         public ConsoleDraw() :base("Draw", 0, 0)
@@ -20,7 +20,7 @@ namespace SpaceInvaders.ConsoleUI
             { 
                 case ("Gun"):                   
                     Console.SetCursorPosition(x, y);                      
-                    Console.Write("XXXX");                                        
+                    Console.Write("XXX");                                        
                 break;
 
                 case ("Bullet"):                                      

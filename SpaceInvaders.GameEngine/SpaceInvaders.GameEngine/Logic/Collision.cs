@@ -24,11 +24,11 @@ namespace SpaceInvaders.GameEngine
                             {                                                              
                                 game.b_list.Remove(game.b_list[b]);
                                 game.i_arr[i, j].Live = false;
-                                if (i == 1)
+                                if (j == 2)
                                 {
                                     game.UpdScore(50); 
                                 }
-                                else if (i == 2)
+                                else if (j == 1)
                                 {
                                     game.UpdScore(70);
                                 }

@@ -11,12 +11,13 @@ namespace SpaceInvaders.GameEngine
 {
     public class Process
     {
-          
-            public bool IsExit { get; set; }        
-            long previous = getCurrentTime();   
+            public bool IsExit { get; set; }
+            public bool Win { get; set; }   // flag for ending with player's win
+           // private long _previous = getCurrentTime();   
          // const int TIME_LIMIT_SECONDS = 300;
-            const int pause = 100;
+            private const int _pause = 100;
             private int _count=0;
+
         
 
             public List<GameObject> m_GameObjects = new List<GameObject>();
@@ -111,6 +112,10 @@ namespace SpaceInvaders.GameEngine
                     case (5):
                         SetEnemy(i_arr, m_GameObjects[1].PosY,5,20);
                         break;
+                    default:
+                        IsExit = true;
+                        Win = true;
+                        break;
                 }            
             }
 
@@ -135,7 +140,7 @@ namespace SpaceInvaders.GameEngine
                 NextLevel(_count);
             }                           
            
-            Thread.Sleep(pause);
+            Thread.Sleep(_pause);
 
 	        //elapsedMilliseconds += INTERVAL;
 

@@ -23,6 +23,8 @@ namespace SpaceInvaders.GameEngine.Objects
         }
 
         public virtual void Show(string name, int number)
-        { }
+        {
+            score = number;
+        }
     }
 }

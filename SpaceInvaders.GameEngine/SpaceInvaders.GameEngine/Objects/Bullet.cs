@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace SpaceInvaders.GameEngine.Objects
 {
-    public class Bullet : GameObject, IRenderable, IUpdateble
+    public class Bullet : GameObject, IRenderable
     {
         public bool Direction; // направление полета пули. тру - вверх, а фолс соотв вниз
         // public bool _shot;
-        public int h;
+        
 
 
         public Bullet(int x, int y, bool direction)
@@ -20,8 +20,6 @@ namespace SpaceInvaders.GameEngine.Objects
             Direction = direction;
         }
 
-        public virtual void Update()
-        {}
                 
         public void InsertBull(List<Bullet> blist)
         {
@@ -72,6 +70,8 @@ namespace SpaceInvaders.GameEngine.Objects
         }
 
         public virtual void Render(string name, int x, int y)
-        {}
+        {
+            Test = 2;
+        }
     }
 }

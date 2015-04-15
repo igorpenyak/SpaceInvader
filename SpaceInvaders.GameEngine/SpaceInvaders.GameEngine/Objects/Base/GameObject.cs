@@ -15,6 +15,8 @@ namespace SpaceInvaders.GameEngine.Objects
         public string Name { get; protected set; }
         public bool Live { get; set; }
 
+        public int Test { get; set; }
+
         protected int _numberOfLive=3;
         public int NumberOfLives
         {
@@ -39,21 +41,31 @@ namespace SpaceInvaders.GameEngine.Objects
 
         #region Virtual Methods
         public virtual void isDie()
-        {            
-        }
-        public int Lives(int x)
         {
-            return x;
+            if (_numberOfLive != 0)
+            { 
+                this.Live = true;
+            }
         }
-                
-        public virtual void Render(string name, int x, int y)
-        {}
-       
-        public virtual void Update(int meta_key)
-        {}
+        //public int Lives(int x)
+        //{
+        //    return x;
+        //}
 
-        public virtual void Show(string name,int number)
-        { }
+        public virtual void Render(string name, int x, int y)
+        {
+            Test = 1;
+        }
+
+        public virtual void Update(int meta_key)
+        {
+            Test = meta_key;
+        }
+
+        public virtual void Show(string name, int number)
+        {
+            Test = 3;
+        }
         #endregion
         
     }

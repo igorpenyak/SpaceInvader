@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SpaceInvaders.GameEngine.Objects.Interfaces
 {
-    interface ISettings
+    public interface ISettings
     {
         void Show(string s, int number);
         
