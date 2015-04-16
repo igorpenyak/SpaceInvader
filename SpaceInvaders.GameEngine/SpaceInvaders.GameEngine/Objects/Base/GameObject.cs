@@ -8,8 +8,10 @@ namespace SpaceInvaders.GameEngine.Objects
     {
 
         #region Field and Properties
+
+
         protected bool _live = true;
-        public int meta_key {get; set;}       
+      //  public int meta_key {get; set;}       
         public int PosX { get; set; } // position of objects
         public int PosY { get; set; }
         public string Name { get; protected set; }
@@ -47,11 +49,7 @@ namespace SpaceInvaders.GameEngine.Objects
                 this.Live = true;
             }
         }
-        //public int Lives(int x)
-        //{
-        //    return x;
-        //}
-
+       
         public virtual void Render(string name, int x, int y)
         {
             Test = 1;

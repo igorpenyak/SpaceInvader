@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 namespace SpaceInvaders.GameEngine.Objects
 {
     public class Invader : GameObject, IUpdateble, IRenderable
-    {   
-     
-        private int _recall=1; // count how much we update obj        
+    {        
+        private int _recall=1; // count how many times we update obj        
         public int K { get; set; }
         public int bulletEnd { get; set; } // use for bullet behavior
         public int Speed { get; set; }

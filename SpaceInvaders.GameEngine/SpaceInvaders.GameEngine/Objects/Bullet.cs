@@ -69,9 +69,9 @@ namespace SpaceInvaders.GameEngine.Objects
             }
         }
 
-        public virtual void Render(string name, int x, int y)
-        {
-            Test = 2;
-        }
+        //public virtual void Render(string name, int x, int y)
+        //{
+        //    Test = 2;
+        //}
     }
 }

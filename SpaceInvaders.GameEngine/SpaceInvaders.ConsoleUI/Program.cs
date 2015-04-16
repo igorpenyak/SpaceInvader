@@ -18,28 +18,30 @@ namespace SpaceInvaders.ConsoleUI
             Process p = new Process();
             ConsoleDraw draw = new ConsoleDraw();
             p.Init(60,50);
-                            
+            draw.StartScreen();                
+            
             while (!p.IsExit)
             {              
                 int k = Press_Key();
                 p.Update(k);
                 Console.Clear();
                 p.Render(draw);
+
             }
 
             if (p.IsExit && p.Win)
             {
                 Console.Clear();
-                Console.SetCursorPosition(20, 25);
-                Console.WriteLine("Congratulation! You are the Winner! Your score:", p.sc.score );
+                Console.SetCursorPosition(15, 25);
+                Console.WriteLine("Congratulation! You are the Winner! Your score: {0}", p.sc.score );
                 Console.CursorVisible = false;
                 Console.ReadKey();
             }
             else
             {
                 Console.Clear();
-                Console.SetCursorPosition(20, 25);
-                Console.WriteLine("Thanks for playing.Your score:", p.sc.score);
+                Console.SetCursorPosition(15, 25);
+                Console.WriteLine("Thanks for playing. Your score: {0}", p.sc.score);
                 Console.CursorVisible = false;
                 Console.ReadKey();
             }

@@ -208,7 +208,7 @@ namespace SpaceInvaders.GameEngine
                     {                                                                                 
                         for (var i = 0; i < b_list.Count; i++)
                         {                                            
-                            obj.Render(b_list[i].Name, b_list[i].PosX, b_list[i].PosY);                                           
+                            obj.Render(b_list[i].Name, b_list[i].PosX, b_list[i].PosY);        //draw LazerGuns bullet                                   
                         }                                                              
                     }
                 }
@@ -227,7 +227,7 @@ namespace SpaceInvaders.GameEngine
                         if (i_arr[i, j].firstShot())
                         {
                             i_arr[i, j].GetBullet(out name, out _x, out _y);
-                            obj.Render(name, _x, _y);
+                            obj.Render(name, _x, _y);   // draw Invaders  Bullet
                         }
                     }
                 }

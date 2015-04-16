@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SpaceInvaders.GameEngine.Objects
 {
-    public class Score : ISettings
+    public class Score 
     {
         public int score { get; set; }
         public string name { get; set; }
@@ -22,9 +22,9 @@ namespace SpaceInvaders.GameEngine.Objects
             score += x;
         }
 
-        public virtual void Show(string name, int number)
-        {
-            score = number;
-        }
+        //public virtual void Show(string name, int number)
+        //{
+        //    score = number;
+        //}
     }
 }

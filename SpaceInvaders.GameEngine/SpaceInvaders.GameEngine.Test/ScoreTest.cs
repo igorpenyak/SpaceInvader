@@ -26,12 +26,12 @@ namespace SpaceInvaders.GameEngine.Test
         }
 
 
-        [TestMethod]
-        public void ShowTest()
-        {
-            sc.Show(sc.name,70);
+        //[TestMethod]
+        //public void ShowTest()
+        //{
+        //    sc.Show(sc.name,70);
 
-            Assert.AreEqual(70, sc.score);
-        }
+        //    Assert.AreEqual(70, sc.score);
+        //}
     }
 }

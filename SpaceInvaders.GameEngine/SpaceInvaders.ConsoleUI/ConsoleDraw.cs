@@ -14,6 +14,22 @@ namespace SpaceInvaders.ConsoleUI
         { }
 
 
+        public void StartScreen()
+        {
+            Console.SetCursorPosition(25, 4);
+            Console.WriteLine("Space Invaders");
+
+            Console.SetCursorPosition(20, 8);
+            Console.WriteLine("Keys:");
+            Console.WriteLine("\n"+"Right Arrow - move right;");
+            Console.WriteLine("\n" + "Left Arrow - move Left;");
+            Console.WriteLine("\n" + "Space - make shot.");
+            Console.WriteLine("\n" + "Please press any key to play...");
+            Console.ReadKey();
+            
+        
+        }
+
         public override void Render(string name, int x, int y)
         {
             switch (name)
