@@ -68,10 +68,6 @@ namespace SpaceInvaders.GameEngine.Objects
                 this.PosY++; // Invader shot                
             }
         }
-
-        //public virtual void Render(string name, int x, int y)
-        //{
-        //    Test = 2;
-        //}
+       
     }
 }

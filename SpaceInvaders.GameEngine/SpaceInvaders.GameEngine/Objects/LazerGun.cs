@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SpaceInvaders.GameEngine.Objects
 {
-    public class LazerGun : GameObject, IRenderable, IUpdateble, ISettings
+    public class LazerGun : GameObject, IRenderable, ISettings
     {
         
         #region Constructor
@@ -27,24 +27,21 @@ namespace SpaceInvaders.GameEngine.Objects
         {
             this.PosX--;
         }
-                                
+
         public static string GetName()
         {
             return "Gun";
-        }
-        //public virtual void Render(string name, int x, int y)
-       // {}
-               
+        }             
 
-        public override void Update(int meta_key)
+        public override void Update(int meta_key, int x)
         {
             if (this.Live)
             {
-                if (meta_key == 1)
+                if (meta_key == 1 && this.PosX<x-4)
                 {
                     this.MoveRight();
                 }
-                else if (meta_key == -1)
+                else if (meta_key == -1 && this.PosX>0)
                 {
                     this.MoveLeft();
                 }

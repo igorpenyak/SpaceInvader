@@ -33,7 +33,7 @@ namespace SpaceInvaders.GameEngine
             }
 
             public void Init(int x, int y)
-          {
+            {
             Game Playground = new Game(x, y);  //Define Size of playground
             LazerGun gun = new LazerGun(x/2, y-1);
             
@@ -125,25 +125,52 @@ namespace SpaceInvaders.GameEngine
             return currentDate.Millisecond;
         }                  
 
-        public void TryExitGame()
-        {
-         if (!this.m_GameObjects[1].Live || _count>5)
+            public void TryExitGame()
             {
-                this.IsExit = true;
-                return;
+             if (!this.m_GameObjects[1].Live || _count>5)
+                {
+                    this.IsExit = true;
+                    return;
+                }
             }
-        }
 
-        public void TryChangeLevel()
-        {
-            if (this.Level())
+            public void TryChangeLevel()
             {
-                _count++;
-                NextLevel(_count);
-            }
-        }             
+                if (this.Level())
+                {
+                    _count++;
+                    NextLevel(_count);
+                }
+            }             
            
+            public void UpdatePlayer( int k)
+            {
+                Bullet bull = new Bullet(m_GameObjects[1].PosX, m_GameObjects[1].PosY, true);
 
+                if (k == 5) 
+                {
+                    bull.InsertBull(b_list);
+                }
+                
+                m_GameObjects[1].Update(k, m_GameObjects[0].PosX);
+                                                              
+                Bullet.bulletBehavior(b_list,0);  
+            }
+
+            public void UpdateEnemy(int c)
+            {
+                for (var i = 0; i < i_arr.GetLength(0); i++)
+                {
+                    for (var j = 0; j < i_arr.GetLength(1); j++)
+                    {
+                        if (i_arr[i, j].Live)
+                        {
+                            i_arr[i, j].Update(c);
+                        }
+
+                    }
+                }
+            }
 
            public void Update(int k)  
             {
@@ -158,44 +185,16 @@ namespace SpaceInvaders.GameEngine
 
             #region Update objects
 
-            foreach (var g in m_GameObjects)
-            {
-                if (g is IUpdateble)
-                {
-                    Bullet bull = new Bullet(g.PosX, g.PosY, true);
-
-                    if (k == 5)
-                    {
-                        bull.InsertBull(b_list);
-                    }
-                    g.Update(k);
-                            
-                    Bullet.bulletBehavior(b_list,0);                           
-                }
-            }
-
-            for (var i = 0; i < i_arr.GetLength(0); i++)
-            {
-                for (var j = 0; j < i_arr.GetLength(1); j++)
-                {
-                    if (i_arr[i, j].Live)
-                    {
-                        i_arr[i, j].Update((int)current);
-                    }
-
-                }
-            }
+            this.UpdatePlayer(k);
+            this.UpdateEnemy((int)current);                             
 
             #endregion
 
             Collision.FindCollision(this);
 
             }
-
-          
-           
-
-
+                       
+        
            #region Graphic part
 
            public void Render(GameObject obj)  
@@ -208,7 +207,7 @@ namespace SpaceInvaders.GameEngine
                     {                                                                                 
                         for (var i = 0; i < b_list.Count; i++)
                         {                                            
-                            obj.Render(b_list[i].Name, b_list[i].PosX, b_list[i].PosY);        //draw LazerGuns bullet                                   
+                            obj.Render(b_list[i].Name, b_list[i].PosX, b_list[i].PosY);   //draw LazerGuns bullet                                   
                         }                                                              
                     }
                 }

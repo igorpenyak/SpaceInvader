@@ -41,6 +41,15 @@ namespace SpaceInvaders.GameEngine.Objects
         }
         #endregion
 
+        //public bool canMove(int x)
+        //{
+        //    if (this.PosX >= 0 && this.PosX <= x)
+        //    {
+        //        return true;
+        //    }
+        //    return false;
+        //}
+
         #region Virtual Methods
         public virtual void isDie()
         {
@@ -49,7 +58,7 @@ namespace SpaceInvaders.GameEngine.Objects
                 this.Live = true;
             }
         }
-       
+
         public virtual void Render(string name, int x, int y)
         {
             Test = 1;
@@ -59,6 +68,12 @@ namespace SpaceInvaders.GameEngine.Objects
         {
             Test = meta_key;
         }
+
+        public virtual void Update(int meta_key, int x)
+        {
+            Test = meta_key;
+        }
+
 
         public virtual void Show(string name, int number)
         {
