@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using SpaceInvaders.GameEngine;
 using SpaceInvaders.GameEngine.Objects;
 using System.Threading;
+using SpaceInvaders.GameEngine.Logic;
 
 namespace SpaceInvaders.ConsoleUI
 {
@@ -14,27 +15,31 @@ namespace SpaceInvaders.ConsoleUI
         
         static void Main(string[] args)
         {
-            Process p = new Process();
+            IDistanceStrategy d = new DistanceStrategy();
+            Process game = new Process(d);
             ConsoleDraw draw = new ConsoleDraw();
-            p.Init(60,50,7,5);
+            game.Init(60, 50, 7, 5);
             draw.StartScreen();
-            p.toDraw += draw.Render;         
-            p.toShow += draw.Show;
+            game.Draw += draw.Render;
+            game.Show += draw.Show;
 
-            while (!p.IsExit)
+            while (!game.IsExit)
             {              
                 int k = Press_Key();
-                p.Update(k);            
+                game.Update(k);               
                                
                 Console.Clear();
-                p.Render();       
+                game.Render();
+                Thread.Sleep(100);
             }
+            game.Draw -= draw.Render;
+            game.Show -= draw.Show;
 
-            if (p.IsExit && p.Win)
+            if (game.IsExit && game.Win)
             {
                 Console.Clear();
                 Console.SetCursorPosition(15, 25);
-                Console.WriteLine("Congratulation! You are the Winner! Your score: {0}", p.sc.score );
+                Console.WriteLine("Congratulation! You are the Winner! Your score: {0}", game.GetScore );
                 Console.CursorVisible = false;
                 Console.ReadKey();
             }
@@ -42,7 +47,7 @@ namespace SpaceInvaders.ConsoleUI
             {
                 Console.Clear();
                 Console.SetCursorPosition(15, 25);
-                Console.WriteLine("Thanks for playing. Your score: {0}", p.sc.score);
+                Console.WriteLine("Thanks for playing. Your score: {0}", game.GetScore);
                 Console.CursorVisible = false;
                 Console.ReadKey();
             }

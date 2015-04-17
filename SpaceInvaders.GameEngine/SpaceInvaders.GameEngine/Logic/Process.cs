@@ -1,4 +1,5 @@
-﻿using SpaceInvaders.GameEngine.Objects;
+﻿using SpaceInvaders.GameEngine.Logic;
+using SpaceInvaders.GameEngine.Objects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,31 +18,39 @@ namespace SpaceInvaders.GameEngine
             private int _count=0;
             private int _enemy_posx;
             private int _enemy_posy;
+            private readonly IDistanceStrategy _distanceStrategy;
+            List<GameObject> m_GameObjects = new List<GameObject>();
+            List<Bullet> b_list = new List<Bullet>();
+            Invader[,] i_arr;
+            Score sc = new Score();
+
 
         #endregion
 
         #region Properties
         public bool IsExit { get; set; }
         public bool Win { get; set; }   // flag for ending with player's win            
-                
-        public List<GameObject> m_GameObjects = new List<GameObject>();
-        public List<Bullet> b_list = new List<Bullet>();
-        public Invader[,] i_arr;
-        public Score sc = new Score();
-
+        public int GetScore { get 
+            { 
+                return sc.score;
+            }
+        }
+      
         #endregion
         
-        #region Events and Delegates
-        public delegate void DrawMethod(string s, int a, int b);
-        public delegate void ShowMethod(string s, int a);
-        public event DrawMethod toDraw;           
-        public event ShowMethod toShow;
+        #region Events
+      //   public delegate void DrawMethod(string s, int a, int b);
+      //  public delegate void ShowMethod(string s, int a);
+        public event Action<string,int,int> Draw;          
+        public event Action<string,int> Show;
         #endregion
 
 
-        public Process()
+        public Process(IDistanceStrategy distanceStrategy)
         {
             IsExit = false;
+            this._distanceStrategy = distanceStrategy;
+           
         }
 
         public void Init(int x, int y, int pos_x, int pos_y)
@@ -63,6 +72,22 @@ namespace SpaceInvaders.GameEngine
         }
 
         #region Helpers
+               
+        public void OnDraw(string s, int a, int b)
+        {
+            if (this.Draw != null)
+            {
+                this.Draw(s, a, b);
+            }
+        }
+
+        public void OnShow(string s, int a)
+        {
+            if (this.Show != null)
+            {
+                this.Show(s, a);
+            }
+        }
 
         public void UpdScore(int number)
         {
@@ -220,7 +245,7 @@ namespace SpaceInvaders.GameEngine
 
         TryExitGame();
         TryChangeLevel();
-        Thread.Sleep(20);       
+      //  Thread.Sleep(20);       
             
 	    //elapsedMilliseconds += INTERVAL;
 
@@ -233,7 +258,7 @@ namespace SpaceInvaders.GameEngine
 
         #endregion
 
-        Collision.FindCollision(this);
+        FindCollision();
 
         }
                        
@@ -245,13 +270,13 @@ namespace SpaceInvaders.GameEngine
             foreach (var gameObject in m_GameObjects)
             {
                
-                toDraw(gameObject.Name, gameObject.PosX, gameObject.PosY);
+                OnDraw(gameObject.Name, gameObject.PosX, gameObject.PosY);
                 if (gameObject is LazerGun)
                 {                                                                                 
                     for (var i = 0; i < b_list.Count; i++)
                     {                                            
                         //draw LazerGuns bullet    
-                        toDraw(b_list[i].Name, b_list[i].PosX, b_list[i].PosY);   
+                        OnDraw(b_list[i].Name, b_list[i].PosX, b_list[i].PosY);   
                     }                                                              
                 }
             }
@@ -262,25 +287,105 @@ namespace SpaceInvaders.GameEngine
             for (var j = 0; j < i_arr.GetLength(1); j++)
             {
                 if (i_arr[i, j].Live)
-                {                   
-                    toDraw(i_arr[i, j].Name, i_arr[i, j].PosX, i_arr[i, j].PosY);
+                {
+                    OnDraw(i_arr[i, j].Name, i_arr[i, j].PosX, i_arr[i, j].PosY);
                     string name;
                     int _x;
                     int _y;
                     if (i_arr[i, j].firstShot())
                     {
                         i_arr[i, j].GetBullet(out name, out _x, out _y);
-                        toDraw(name, _x, _y);  // draw Invaders  Bullet                             
+                        OnDraw(name, _x, _y);  // draw Invaders  Bullet                             
                     }
                 }
             }
         }
-            toShow(sc.name, sc.score);
-            toShow(m_GameObjects[1].Name, m_GameObjects[1].NumberOfLives);
-            Thread.Sleep(_pause);
+            OnShow(sc.name, sc.score);
+            OnShow(m_GameObjects[1].Name, m_GameObjects[1].NumberOfLives);
+            //Thread.Sleep(_pause);
     }
 
             #endregion
 
+        #region ColliosionsMethod
+
+        public void FindCollision()
+        {
+            for (var i = 0; i < i_arr.GetLength(0); i++)
+            {
+                for (var j = i_arr.GetLength(1) - 1; j >= 0; j--)
+                {
+                    if (i_arr[i, j].Live)
+                    {
+                        CollisionLazerGun(i, j);
+                        CollisionInvader(i, j);
+                    }
+                }
+            }
+        }
+
+        public bool isCollision(GameObject striker, GameObject receiver)
+        {
+            return ((_distanceStrategy.GetDistance(striker, receiver)) <= 0);
+        }
+
+
+        public bool InvaderWin(GameObject obj1, GameObject obj2)
+        {
+            int k = obj2.PosY - obj1.PosY;
+            if (k <= 1)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public void CollisionInvader(int i, int j)
+        {
+
+            if (InvaderWin(i_arr[i, j], m_GameObjects[1]))  // when Invader win
+            {
+                m_GameObjects[1].Live = false;
+            }
+
+
+            if (i_arr[i, j].enem_bullet.Count != 0)
+            {
+
+                if (isCollision(i_arr[i, j].enem_bullet[0], m_GameObjects[1]))
+                {
+                    m_GameObjects[1].isDie();
+                }
+            }
+
+        }
+
+
+        public void CollisionLazerGun( int i, int j)
+        {
+            for (int b = 0; b < b_list.Count; b++)
+            {
+
+                if (isCollision(i_arr[i, j], b_list[b]))  // when LazerGun kill an Invader
+                {
+                    b_list.Remove(b_list[b]);
+                    i_arr[i, j].Live = false;
+                    if (j == 2)
+                    {
+                        UpdScore(50);
+                    }
+                    else if (j == 1)
+                    {
+                        UpdScore(70);
+                    }
+                    else
+                    {
+                        UpdScore(100);
+                    }
+                }
+            }
+        }
+
+        #endregion
     }
 }

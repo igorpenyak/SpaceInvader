@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SpaceInvaders.GameEngine.Logic;
 
 namespace SpaceInvaders.GameEngine.Test
 {
@@ -11,14 +12,16 @@ namespace SpaceInvaders.GameEngine.Test
         [TestMethod]
         public void ConstructorTest()
         {
-            Process p = new Process();
+            IDistanceStrategy d = new DistanceStrategy();
+            Process p = new Process(d);
             Assert.IsFalse(p.IsExit);
         }
 
         [TestMethod]
         public void InitTest()
         {
-            Process p = new Process();
+            IDistanceStrategy d = new DistanceStrategy();
+            Process p = new Process(d);
             p.Init(60,50,5,7);
             Assert.IsTrue(p.m_GameObjects.Count!=0);
         }
@@ -26,7 +29,8 @@ namespace SpaceInvaders.GameEngine.Test
         [TestMethod]
         public void UpdScoreTest()
         {
-            Process p = new Process();
+            IDistanceStrategy d = new DistanceStrategy();
+            Process p = new Process(d);
             p.UpdScore(20);
             Assert.AreEqual(20, p.sc.score);
         }
@@ -34,7 +38,8 @@ namespace SpaceInvaders.GameEngine.Test
         [TestMethod]
         public void UpdateTest()
         {
-            Process p = new Process();
+            IDistanceStrategy d = new DistanceStrategy();
+            Process p = new Process(d);
             p.Init(60,50,5,7);
             p.Update(5);
             Assert.IsTrue(p.b_list.Count!=0);
@@ -43,7 +48,8 @@ namespace SpaceInvaders.GameEngine.Test
         [TestMethod]
         public void UpdateAnotherTest()
         {
-            Process p = new Process();
+            IDistanceStrategy d = new DistanceStrategy();
+            Process p = new Process(d); 
             p.Init(60, 50, 5, 7);
             p.Update(1);
             Assert.IsTrue(p.b_list.Count == 0);      
@@ -52,7 +58,8 @@ namespace SpaceInvaders.GameEngine.Test
           [TestMethod]
         public void TryLevelTest()
         {
-            Process p = new Process();
+            IDistanceStrategy d = new DistanceStrategy();
+            Process p = new Process(d);
             p.Init(60, 50, 5, 7);
             for (var c = 0; c < 6; c++)
             {
@@ -93,7 +100,8 @@ namespace SpaceInvaders.GameEngine.Test
           [TestMethod]
           public void TryExitTest()
           {
-              Process p = new Process();
+              IDistanceStrategy d = new DistanceStrategy();
+              Process p = new Process(d);
               p.Init(60, 50, 5, 7);
               for (var c = 0; c < 6; c++)
               {
@@ -122,7 +130,8 @@ namespace SpaceInvaders.GameEngine.Test
         [ExpectedException(typeof(InvalidOperationException))]
           public void CreateEnemyTest()
           {
-              Process p = new Process();
+              IDistanceStrategy d=new DistanceStrategy();
+              Process p = new Process(d);
               p.CreateEnemyArray(-2, -2);              
           }
 
@@ -130,7 +139,8 @@ namespace SpaceInvaders.GameEngine.Test
           [ExpectedException(typeof(InvalidOperationException))]
           public void InitExceptionTest()
           {
-              Process p = new Process();
+              IDistanceStrategy d = new DistanceStrategy();
+              Process p = new Process(d);
               p.Init(-2, -2, 0, 2);
           }
 
@@ -140,11 +150,12 @@ namespace SpaceInvaders.GameEngine.Test
           {
                bool methodCalled = false;
                int methodCall = 0;
-              Process p = new Process();
+               IDistanceStrategy d = new DistanceStrategy();
+               Process p = new Process(d);
               p.Init(60, 50, 5, 5);          
               p.Update(5);
-              p.toDraw+=delegate{ methodCalled = true;};
-              p.toShow += delegate { methodCall = 1; };
+              p.Draw+=delegate{ methodCalled = true;};
+              p.Show += delegate { methodCall = 1; };
               p.Render();       
                     
            Assert.IsTrue(methodCalled);
@@ -156,11 +167,12 @@ namespace SpaceInvaders.GameEngine.Test
           {
               bool methodCalled = false;
               int methodCall = 0;
-              Process p = new Process();
+              IDistanceStrategy d = new DistanceStrategy();
+              Process p = new Process(d);
               p.Init(60, 50, 5, 5);             
               p.Update(5);
-              p.toDraw += delegate { methodCalled = true; };
-              p.toShow += delegate { methodCall = 1; };
+              p.Draw += delegate { methodCalled = true; };
+              p.Show += delegate { methodCall = 1; };
               p.Render();
 
               Assert.AreEqual(1,methodCall);
@@ -172,14 +184,15 @@ namespace SpaceInvaders.GameEngine.Test
          {
              bool methodCalled = false;
              int methodCall = 0;
-             Process p = new Process();
+             IDistanceStrategy d = new DistanceStrategy();
+             Process p = new Process(d);
              p.Init(60, 50, 5, 5);
              while (!p.i_arr[0, 0].firstShot() && !p.i_arr[1,1].firstShot() && !p.i_arr[1, 0].firstShot())
              {
                  p.Update(0);
              }
-             p.toDraw += delegate { methodCalled = true; };
-             p.toShow += delegate { methodCall = 1; };
+             p.Draw += delegate { methodCalled = true; };
+             p.Show += delegate { methodCall = 1; };
              p.Render();
 
              Assert.AreEqual(1, methodCall);
