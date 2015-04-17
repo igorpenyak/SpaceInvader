@@ -36,11 +36,6 @@ namespace SpaceInvaders.GameEngine.Test
             d.Move();
             Assert.AreEqual(4,d.PosY);
         }
-        [TestMethod]
-        public void RenderTest()
-        {
-            b.Render(b.Name,b.PosX,b.PosY);
-            Assert.AreEqual(2, b.Test);
-        }
+       
     }
 }

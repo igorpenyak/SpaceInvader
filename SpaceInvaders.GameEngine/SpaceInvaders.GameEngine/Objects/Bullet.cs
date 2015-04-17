@@ -1,5 +1,4 @@
-﻿using SpaceInvaders.GameEngine.Objects.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SpaceInvaders.GameEngine.Objects
 {
-    public class Bullet : GameObject, IRenderable
+    public class Bullet : GameObject
     {
         public bool Direction; // направление полета пули. тру - вверх, а фолс соотв вниз
         // public bool _shot;

@@ -1,21 +1,20 @@
-﻿using SpaceInvaders.GameEngine.Objects.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace SpaceInvaders.GameEngine.Objects
 {
-    public class Invader : GameObject, IUpdateble, IRenderable
-    {        
+    public class Invader : GameObject
+    {
+        #region Field and Properties
         private int _recall=1; // count how many times we update obj        
         public int K { get; set; }
         public int bulletEnd { get; set; } // use for bullet behavior
         public int Speed { get; set; }
 
         public List<Bullet> enem_bullet = new List<Bullet>();
-                
+
+        #endregion
+
+
         #region Constructor
         public Invader(int x, int y, int b,int k)
             : base("Invader", x, y)
@@ -27,6 +26,8 @@ namespace SpaceInvaders.GameEngine.Objects
 
         #endregion
 
+
+        #region Methods
         public void Move()
         {
             this.PosY++;
@@ -61,9 +62,8 @@ namespace SpaceInvaders.GameEngine.Objects
              }  
              return false;
         }
-
        
-        public override void Update(int time)
+        public virtual void Update(int time)
         {
             _recall++;
             Bullet b = new Bullet(this.PosX,this.PosY,false);
@@ -98,8 +98,10 @@ namespace SpaceInvaders.GameEngine.Objects
         {            
                 name = enem_bullet[0].Name;
                 x = enem_bullet[0].PosX;
-                y = enem_bullet[0].PosY;                   
+                y = enem_bullet[0].PosY;
         }
+
+        #endregion
 
 
     }

@@ -1,5 +1,4 @@
-﻿using SpaceInvaders.GameEngine.Objects.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace SpaceInvaders.GameEngine.Objects
@@ -17,7 +16,7 @@ namespace SpaceInvaders.GameEngine.Objects
         public string Name { get; protected set; }
         public bool Live { get; set; }
 
-        public int Test { get; set; }
+        public int FakeTest { get; set; }
 
         protected int _numberOfLive=3;
         public int NumberOfLives
@@ -40,16 +39,7 @@ namespace SpaceInvaders.GameEngine.Objects
             this.Live =true;
         }
         #endregion
-
-        //public bool canMove(int x)
-        //{
-        //    if (this.PosX >= 0 && this.PosX <= x)
-        //    {
-        //        return true;
-        //    }
-        //    return false;
-        //}
-
+              
         #region Virtual Methods
         public virtual void isDie()
         {
@@ -58,27 +48,12 @@ namespace SpaceInvaders.GameEngine.Objects
                 this.Live = true;
             }
         }
-
-        public virtual void Render(string name, int x, int y)
-        {
-            Test = 1;
-        }
-
-        public virtual void Update(int meta_key)
-        {
-            Test = meta_key;
-        }
-
+        
         public virtual void Update(int meta_key, int x)
         {
-            Test = meta_key;
-        }
-
-
-        public virtual void Show(string name, int number)
-        {
-            Test = 3;
-        }
+            FakeTest = x;
+        }        
+               
         #endregion
         
     }

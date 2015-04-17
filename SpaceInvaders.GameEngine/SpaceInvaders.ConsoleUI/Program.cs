@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using SpaceInvaders.GameEngine;
 using SpaceInvaders.GameEngine.Objects;
-using SpaceInvaders.GameEngine.Objects.Interfaces;
 using System.Threading;
 
 namespace SpaceInvaders.ConsoleUI
@@ -17,16 +16,18 @@ namespace SpaceInvaders.ConsoleUI
         {
             Process p = new Process();
             ConsoleDraw draw = new ConsoleDraw();
-            p.Init(60,50);
-            draw.StartScreen();                
-            
+            p.Init(60,50,7,5);
+            draw.StartScreen();
+            p.toDraw += draw.Render;         
+            p.toShow += draw.Show;
+
             while (!p.IsExit)
             {              
                 int k = Press_Key();
-                p.Update(k);
+                p.Update(k);            
+                               
                 Console.Clear();
-                p.Render(draw);
-
+                p.Render();       
             }
 
             if (p.IsExit && p.Win)

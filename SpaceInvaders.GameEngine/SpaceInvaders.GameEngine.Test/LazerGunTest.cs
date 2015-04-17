@@ -7,32 +7,35 @@ namespace SpaceInvaders.GameEngine.Test
     [TestClass]
     public class LazerGunTest
     {
-        LazerGun l = new LazerGun(2,5);
 
         [TestMethod]
         public void ConstructorTest()
         {
+            LazerGun l = new LazerGun(2, 5);
             Assert.AreEqual(2,l.PosX);
         }
 
         [TestMethod]
         public void GetNameTest()
         {
+            LazerGun l = new LazerGun(2, 5);
             Assert.AreEqual(l.Name, LazerGun.GetName());
         }
 
         [TestMethod]
         public void UpdateTest()
         {
-            l.Update(1);
-            Assert.AreEqual(3, l.PosX);
-            l.Update(-1);
-            Assert.AreEqual(2,l.PosX);
+            LazerGun l = new LazerGun(5, 2);
+            l.Update(1,10);
+            Assert.AreEqual(6, l.PosX);
+            l.Update(-1,10);
+            Assert.AreEqual(5,l.PosX);
         }
 
         [TestMethod]
         public void isDieTest()
         {
+            LazerGun l = new LazerGun(2, 5);
             while (l.NumberOfLives != 0)
             { l.isDie(); }
             Assert.AreEqual(0, l.NumberOfLives);

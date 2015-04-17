@@ -6,24 +6,27 @@ namespace SpaceInvaders.GameEngine.Test
     [TestClass]
     public class ProcessTest
     {
-        Process p = new Process();
+        
 
         [TestMethod]
         public void ConstructorTest()
         {
+            Process p = new Process();
             Assert.IsFalse(p.IsExit);
         }
 
         [TestMethod]
         public void InitTest()
         {
-            p.Init(10,20);
+            Process p = new Process();
+            p.Init(60,50,5,7);
             Assert.IsTrue(p.m_GameObjects.Count!=0);
         }
 
         [TestMethod]
         public void UpdScoreTest()
         {
+            Process p = new Process();
             p.UpdScore(20);
             Assert.AreEqual(20, p.sc.score);
         }
@@ -31,7 +34,8 @@ namespace SpaceInvaders.GameEngine.Test
         [TestMethod]
         public void UpdateTest()
         {
-            p.Init(10,10);
+            Process p = new Process();
+            p.Init(60,50,5,7);
             p.Update(5);
             Assert.IsTrue(p.b_list.Count!=0);
         }
@@ -39,7 +43,8 @@ namespace SpaceInvaders.GameEngine.Test
         [TestMethod]
         public void UpdateAnotherTest()
         {
-            p.Init(10, 10);
+            Process p = new Process();
+            p.Init(60, 50, 5, 7);
             p.Update(1);
             Assert.IsTrue(p.b_list.Count == 0);      
         }
@@ -47,7 +52,8 @@ namespace SpaceInvaders.GameEngine.Test
           [TestMethod]
         public void TryLevelTest()
         {
-            p.Init(10, 10);
+            Process p = new Process();
+            p.Init(60, 50, 5, 7);
             for (var c = 0; c < 6; c++)
             {
                 for (var i = 0; i < p.i_arr.GetLength(0); i++)
@@ -87,7 +93,8 @@ namespace SpaceInvaders.GameEngine.Test
           [TestMethod]
           public void TryExitTest()
           {
-              p.Init(10, 10);
+              Process p = new Process();
+              p.Init(60, 50, 5, 7);
               for (var c = 0; c < 6; c++)
               {
                   for (var i = 0; i < p.i_arr.GetLength(0); i++)
@@ -111,5 +118,72 @@ namespace SpaceInvaders.GameEngine.Test
               }
           }
 
+          [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+          public void CreateEnemyTest()
+          {
+              Process p = new Process();
+              p.CreateEnemyArray(-2, -2);              
+          }
+
+          [TestMethod]
+          [ExpectedException(typeof(InvalidOperationException))]
+          public void InitExceptionTest()
+          {
+              Process p = new Process();
+              p.Init(-2, -2, 0, 2);
+          }
+
+          [TestMethod]
+          
+          public void RenderTest()
+          {
+               bool methodCalled = false;
+               int methodCall = 0;
+              Process p = new Process();
+              p.Init(60, 50, 5, 5);          
+              p.Update(5);
+              p.toDraw+=delegate{ methodCalled = true;};
+              p.toShow += delegate { methodCall = 1; };
+              p.Render();       
+                    
+           Assert.IsTrue(methodCalled);
+
+          }
+
+         [TestMethod]
+          public void RenderTest_2()
+          {
+              bool methodCalled = false;
+              int methodCall = 0;
+              Process p = new Process();
+              p.Init(60, 50, 5, 5);             
+              p.Update(5);
+              p.toDraw += delegate { methodCalled = true; };
+              p.toShow += delegate { methodCall = 1; };
+              p.Render();
+
+              Assert.AreEqual(1,methodCall);
+
+          }
+
+         [TestMethod]
+         public void RenderTest_3()
+         {
+             bool methodCalled = false;
+             int methodCall = 0;
+             Process p = new Process();
+             p.Init(60, 50, 5, 5);
+             while (!p.i_arr[0, 0].firstShot() && !p.i_arr[1,1].firstShot() && !p.i_arr[1, 0].firstShot())
+             {
+                 p.Update(0);
+             }
+             p.toDraw += delegate { methodCalled = true; };
+             p.toShow += delegate { methodCall = 1; };
+             p.Render();
+
+             Assert.AreEqual(1, methodCall);
+
+         }
     }
 }

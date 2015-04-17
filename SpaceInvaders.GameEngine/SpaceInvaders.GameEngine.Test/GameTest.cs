@@ -22,28 +22,13 @@ namespace SpaceInvaders.GameEngine.Test
         }
 
         [TestMethod]
-        public void RenderTest()
-        {
-            Game g = new Game(10, 10);
-            g.Render(g.Name,g.PosX,g.PosY);
-            Assert.AreEqual(1,g.Test);
-        }
-
-        [TestMethod]
         public void UpdateTest()
         {
             Game g = new Game(10, 10);
-            g.Update(5);
-            Assert.AreEqual(5, g.Test);
+            g.Update(5,2);
+            Assert.AreEqual(2,g.FakeTest);
         }
 
-        [TestMethod]
-        public void ShowTest()
-        {
-            Game g = new Game(10, 10);
-            g.Show(g.Name, g.PosX);
-            Assert.AreEqual(3, g.Test);
-        }
 
 
 

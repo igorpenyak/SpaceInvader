@@ -1,13 +1,7 @@
-﻿using SpaceInvaders.GameEngine.Objects.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace SpaceInvaders.GameEngine.Objects
 {
-    public class LazerGun : GameObject, IRenderable, ISettings
+    public class LazerGun : GameObject
     {
         
         #region Constructor
@@ -18,7 +12,8 @@ namespace SpaceInvaders.GameEngine.Objects
             Live = true;
         }
         #endregion
-              
+
+        #region Methods
         public void MoveRight()
         {
             this.PosX++;
@@ -33,25 +28,20 @@ namespace SpaceInvaders.GameEngine.Objects
             return "Gun";
         }             
 
-        public override void Update(int meta_key, int x)
+        public override void Update(int meta_key, int endField)
         {
             if (this.Live)
             {
-                if (meta_key == 1 && this.PosX<x-4)
+                if (meta_key == 1 && this.PosX < endField - 4)
                 {
                     this.MoveRight();
                 }
-                else if (meta_key == -1 && this.PosX>0)
+                else if (meta_key == -1 && this.PosX > 2)
                 {
                     this.MoveLeft();
                 }
-                //else if (meta_key == 5)
-                //{
-                //    Shot();
-                //}
-            }           
-        }
-                 
+            }
+        }                 
         
         public override void isDie()
         {            
@@ -63,12 +53,10 @@ namespace SpaceInvaders.GameEngine.Objects
             {
                 this.Live = false;              
             }
-            
+
         }
 
-        //public virtual void Show(string name, int number)
-       // { }
-
+        #endregion
 
     }
 }

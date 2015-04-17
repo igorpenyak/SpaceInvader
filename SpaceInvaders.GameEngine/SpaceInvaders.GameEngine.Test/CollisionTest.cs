@@ -20,21 +20,63 @@ namespace SpaceInvaders.GameEngine.Test
             Assert.AreEqual(2.0, d);
         }
 
-         
-        //[TestMethod]
-        //public void findColisionSimpleTest()
-        //{
-        //    Bullet b3 = new Bullet(5,9,false);
-        //    Process p = new Process();
-        //    LazerGun l = new LazerGun(5,9);
-        //    Invader inv = new Invader(5,9,10,2);
-        //    p.m_GameObjects.Insert(1, l);
+        [TestMethod]
+        public void InvaderWineTest()
+        {
+            Invader inv = new Invader(5, 5, 2, 5);
+            LazerGun l = new LazerGun(5, 5);
+            bool t = Collision.InvaderWin(inv, l);
+            Assert.IsTrue(t);
+        }
 
-        //    p.i_arr[1, 1] = inv;
-        //    p.i_arr[1, 1].enem_bullet.Add(b3);          
-        //    Collision.FindCollision(p);
-        //    Assert.AreEqual(2,p.m_GameObjects[1].NumberOfLives);
-        //}
+        [TestMethod]
+        public void CollisionInvaderTest_1()
+        {
+          
+            Process p = new Process();
+    
+            p.Init(60, 24, 5, 3);
+            while (Collision.InvaderWin(p.m_GameObjects[1],p.i_arr[1,1]))
+            {               
+                p.Update(0);               
+            }
+            
+            Assert.IsTrue(!p.m_GameObjects[1].Live);          
+        }      
+
+        [TestMethod]
+        public void findCollisionTest()
+        {
+            int a=1;
+            int b=5;
+            int count = 0;
+            
+            
+            Process p = new Process();
+
+            p.Init(40, 50, 5, 5);
+            while (p.sc.score<220)
+            {
+                if (a == b)
+                {
+                    p.Update(a);
+                    b = 5;
+                }
+                else
+                {
+                    while (count < 4)
+                    {
+                        p.Update(b);
+                        count++;
+                    }
+                    count = 0;
+                    b = a;
+                }
+            }
+
+            Assert.IsTrue(p.sc.score!=0);
+
+        }
     
     }
 }
