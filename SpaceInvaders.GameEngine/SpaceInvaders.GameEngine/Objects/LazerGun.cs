@@ -28,7 +28,7 @@ namespace SpaceInvaders.GameEngine.Objects
             return "Gun";
         }             
 
-        public override void Update(int meta_key, int endField)
+        public void Update(int meta_key, int endField)
         {
             if (this.Live)
             {
@@ -43,7 +43,7 @@ namespace SpaceInvaders.GameEngine.Objects
             }
         }                 
         
-        public override void isDie()
+        public void isDie()
         {            
             if (this.Live)
             {

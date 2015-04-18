@@ -30,33 +30,28 @@ namespace SpaceInvaders.ConsoleUI
         
         }
 
-        public void Render(string name, int x, int y)
+        public void Render(GameObject obj)
         {
-            switch (name)
+            switch (obj.Name)
             { 
                 case ("Gun"):                   
-                    Console.SetCursorPosition(x-2, y);                      
+                    Console.SetCursorPosition(obj.PosX-2, obj.PosY);                      
                     Console.Write("XXXXX");                                        
                 break;
 
-                case ("Bullet"):                                      
-                    Console.SetCursorPosition(x+1, y);
+                case ("Bullet"):
+                Console.SetCursorPosition(obj.PosX + 1, obj.PosY);
                     Console.Write("^");                     
                 break;
 
                 case ("Invader"):
-                     Console.SetCursorPosition(x, y);                   
+                Console.SetCursorPosition(obj.PosX, obj.PosY);                   
                      Console.Write("^___^");
                 break;
 
-                case ("Shield"):
-                Console.SetCursorPosition(x, y);
-                Console.WriteLine("Build a shield!");
-                break;
-
-                case ("Field"):                 
-                    Console.SetWindowSize(x, y);
-                    Console.SetBufferSize(x, y);
+                case ("Field"):
+                Console.SetWindowSize(obj.PosX, obj.PosY);
+                Console.SetBufferSize(obj.PosX, obj.PosY);
                 break;                    
             }
         

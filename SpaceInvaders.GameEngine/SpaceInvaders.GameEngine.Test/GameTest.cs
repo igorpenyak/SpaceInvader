@@ -20,17 +20,7 @@ namespace SpaceInvaders.GameEngine.Test
             g.isDie();
             Assert.IsTrue(g.Live);
         }
-
-        [TestMethod]
-        public void UpdateTest()
-        {
-            Game g = new Game(10, 10);
-            g.Update(5,2);
-            Assert.AreEqual(2,g.FakeTest);
-        }
-
-
-
+              
 
     }
 }

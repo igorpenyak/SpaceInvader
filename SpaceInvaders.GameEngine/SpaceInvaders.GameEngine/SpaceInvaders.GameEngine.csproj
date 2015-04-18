@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Logic\DistanceStrategy.cs" />
     <Compile Include="Logic\IDistanceStrategy.cs" />
+    <Compile Include="Objects\Base\IGameObject.cs" />
     <Compile Include="Objects\Game.cs" />
     <Compile Include="Objects\Bullet.cs" />
     <Compile Include="Objects\Base\GameObject.cs" />

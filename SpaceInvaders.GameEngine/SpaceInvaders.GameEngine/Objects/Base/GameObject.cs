@@ -1,24 +1,32 @@
-﻿using System;
+﻿using SpaceInvaders.GameEngine.Objects.Base;
+using System;
 using System.Collections.Generic;
 
 namespace SpaceInvaders.GameEngine.Objects
 {
-    public abstract class GameObject
+    public abstract class GameObject : IGameObject
     {
 
         #region Field and Properties
 
-
+        private int _posx;   // position of objects
+        private int _posy;
         protected bool _live = true;
-      //  public int meta_key {get; set;}       
-        public int PosX { get; set; } // position of objects
-        public int PosY { get; set; }
+        protected int _numberOfLive = 3;
+           
+        public int PosX 
+        {
+            get { return this._posx; }
+            protected set { this._posx = value; }
+        } 
+        public int PosY 
+        {
+            get { return this._posy; }
+            protected set { this._posy = value; }
+        }
         public string Name { get; protected set; }
         public bool Live { get; set; }
-
-        public int FakeTest { get; set; }
-
-        protected int _numberOfLive=3;
+                        
         public int NumberOfLives
         {
             get
@@ -38,23 +46,7 @@ namespace SpaceInvaders.GameEngine.Objects
             Name = name;
             this.Live =true;
         }
-        #endregion
-              
-        #region Virtual Methods
-        public virtual void isDie()
-        {
-            if (_numberOfLive != 0)
-            { 
-                this.Live = true;
-            }
-        }
-        
-        public virtual void Update(int meta_key, int x)
-        {
-            FakeTest = x;
-        }        
-               
-        #endregion
-        
+        #endregion              
+          
     }
 }

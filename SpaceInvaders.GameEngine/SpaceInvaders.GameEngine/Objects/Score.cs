@@ -3,18 +3,26 @@ namespace SpaceInvaders.GameEngine.Objects
 {
     public class Score 
     {
-        public int score { get; set; }
-        public string name { get; set; }
+        private int _score;
+        private string _name;
+        public int score 
+        {
+            get { return this._score; }            
+        }
+        public string name
+        {
+             get { return this._name; } 
+        }
 
         public Score() 
         {
-            name = "Score";
-            score = 0;
+            _name = "Score";
+            _score = 0;
         }
 
         public void AddScore(int x)
         {
-            score += x;
+            _score += x;
         }
                
     }

@@ -111,15 +111,11 @@ namespace SpaceInvaders.GameEngine.Test
              Bullet b = new Bullet(inv.PosX, inv.PosY, false);
              inv.Speed = 1;
              inv.enem_bullet.Add(b);
-             int x;
-             int y;
-             string s;
+             
+             Bullet c = inv.GetBullet();
 
-             inv.GetBullet(out s,out x, out y);
-
-             Assert.AreEqual("Bullet",s );
-             Assert.AreEqual(inv.PosX, x );
-             Assert.AreEqual(inv.PosY, y);
+             Assert.AreEqual(2,c.PosX );
+           
          }
 
     }

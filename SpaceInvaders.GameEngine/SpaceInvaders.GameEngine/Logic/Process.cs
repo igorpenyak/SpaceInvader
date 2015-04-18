@@ -19,10 +19,12 @@ namespace SpaceInvaders.GameEngine
             private int _enemy_posx;
             private int _enemy_posy;
             private readonly IDistanceStrategy _distanceStrategy;
-            List<GameObject> m_GameObjects = new List<GameObject>();
+       
             List<Bullet> b_list = new List<Bullet>();
             Invader[,] i_arr;
-            Score sc = new Score();
+            Score _sc = new Score();
+            LazerGun _gun;
+            Game _playground;
 
 
         #endregion
@@ -32,16 +34,14 @@ namespace SpaceInvaders.GameEngine
         public bool Win { get; set; }   // flag for ending with player's win            
         public int GetScore { get 
             { 
-                return sc.score;
+                return _sc.score;
             }
         }
       
         #endregion
         
         #region Events
-      //   public delegate void DrawMethod(string s, int a, int b);
-      //  public delegate void ShowMethod(string s, int a);
-        public event Action<string,int,int> Draw;          
+        public event Action<GameObject> Draw;          
         public event Action<string,int> Show;
         #endregion
 
@@ -62,22 +62,22 @@ namespace SpaceInvaders.GameEngine
 
             Game Playground = new Game(x, y);  //Define Size of playground
             LazerGun gun = new LazerGun(x/2, y-1);
+            _gun = gun;
+            _playground = Playground;
 
             _enemy_posx = pos_x;
             _enemy_posy = pos_y;
             CreateEnemyArray(x, y);
-            SetEnemy(i_arr, y-1, 50, pos_x, pos_y);
-            m_GameObjects.Add(Playground);
-            m_GameObjects.Add(gun);                       
+            SetEnemy(i_arr, y-1, 50, pos_x, pos_y);                               
         }
 
         #region Helpers
-               
-        public void OnDraw(string s, int a, int b)
+        
+        public void OnDraw(GameObject gameObj)
         {
             if (this.Draw != null)
             {
-                this.Draw(s, a, b);
+                this.Draw(gameObj);
             }
         }
 
@@ -91,7 +91,7 @@ namespace SpaceInvaders.GameEngine
 
         public void UpdScore(int number)
         {
-            sc.AddScore(number);
+            _sc.AddScore(number);
             
         }
 
@@ -115,7 +115,7 @@ namespace SpaceInvaders.GameEngine
                
                 i_arr = new Invader[i, j];         
         }
-        private static void SetEnemy(Invader[,] arr, int x, int s, int pos_x, int pos_y)  // set an army of invaders
+        private void SetEnemy(Invader[,] arr, int x, int s, int pos_x, int pos_y)  // set an army of invaders
     { 
         int posx=pos_x;            
 
@@ -161,23 +161,23 @@ namespace SpaceInvaders.GameEngine
             switch (c)
             {
                 case (1):
-                    SetEnemy(i_arr, m_GameObjects[1].PosY, 35, _enemy_posx, _enemy_posy + 3);
+                    SetEnemy(i_arr, _gun.PosY, 35, _enemy_posx, _enemy_posy + 3);
                     break;
 
                 case (2):
-                    SetEnemy(i_arr, m_GameObjects[1].PosY, 25, _enemy_posx, _enemy_posy + 7);
+                    SetEnemy(i_arr, _gun.PosY, 25, _enemy_posx, _enemy_posy + 7);
                     break;
 
                 case (3):
-                    SetEnemy(i_arr, m_GameObjects[1].PosY, 20, _enemy_posx, _enemy_posy + 9);
+                    SetEnemy(i_arr, _gun.PosY, 20, _enemy_posx, _enemy_posy + 9);
                     break;
 
                 case (4):
-                    SetEnemy(i_arr, m_GameObjects[1].PosY, 10, _enemy_posx, _enemy_posy + 12);
+                    SetEnemy(i_arr, _gun.PosY, 10, _enemy_posx, _enemy_posy + 12);
                     break;
 
                 case (5):
-                    SetEnemy(i_arr, m_GameObjects[1].PosY, 5, _enemy_posx, _enemy_posy + 15);
+                    SetEnemy(i_arr, _gun.PosY, 5, _enemy_posx, _enemy_posy + 15);
                     break;
                 default:
                     IsExit = true;
@@ -194,7 +194,7 @@ namespace SpaceInvaders.GameEngine
 
         public void TryExitGame()
         {
-            if (!this.m_GameObjects[1].Live || _count>5)
+            if (!this._gun.Live || _count > 5)
             {
                 this.IsExit = true;
                 return;
@@ -212,14 +212,14 @@ namespace SpaceInvaders.GameEngine
            
         public void UpdatePlayer(int k)
         {
-            Bullet bull = new Bullet(m_GameObjects[1].PosX, m_GameObjects[1].PosY, true);
+            Bullet bull = new Bullet(_gun.PosX, _gun.PosY, true);
 
             if (k == 5) 
             {
                 bull.InsertBull(b_list);
             }
-                
-            m_GameObjects[1].Update(k, m_GameObjects[0].PosX);                                                              
+
+            _gun.Update(k, _playground.PosX);                                                              
             Bullet.bulletBehavior(b_list,0);  
         }
 
@@ -267,41 +267,31 @@ namespace SpaceInvaders.GameEngine
 
         public void Render()  
     {
-            foreach (var gameObject in m_GameObjects)
-            {
-               
-                OnDraw(gameObject.Name, gameObject.PosX, gameObject.PosY);
-                if (gameObject is LazerGun)
-                {                                                                                 
-                    for (var i = 0; i < b_list.Count; i++)
-                    {                                            
-                        //draw LazerGuns bullet    
-                        OnDraw(b_list[i].Name, b_list[i].PosX, b_list[i].PosY);   
-                    }                                                              
-                }
-            }
-
-
+            OnDraw(_playground);
+            OnDraw(_gun);                                                              
+            for (var i = 0; i < b_list.Count; i++)
+            {                                         
+                //draw LazerGuns bullet    
+                OnDraw(b_list[i]);   
+            }                                                              
+  
         for (var i = 0; i < i_arr.GetLength(0); i++)
         {
             for (var j = 0; j < i_arr.GetLength(1); j++)
             {
                 if (i_arr[i, j].Live)
                 {
-                    OnDraw(i_arr[i, j].Name, i_arr[i, j].PosX, i_arr[i, j].PosY);
-                    string name;
-                    int _x;
-                    int _y;
+                    OnDraw(i_arr[i, j]);
+                   
                     if (i_arr[i, j].firstShot())
                     {
-                        i_arr[i, j].GetBullet(out name, out _x, out _y);
-                        OnDraw(name, _x, _y);  // draw Invaders  Bullet                             
+                        OnDraw(i_arr[i, j].GetBullet());  // draw Invaders  Bullet                             
                     }
                 }
             }
         }
-            OnShow(sc.name, sc.score);
-            OnShow(m_GameObjects[1].Name, m_GameObjects[1].NumberOfLives);
+            OnShow(_sc.name, _sc.score);
+            OnShow(_gun.Name, _gun.NumberOfLives);
             //Thread.Sleep(_pause);
     }
 
@@ -343,18 +333,18 @@ namespace SpaceInvaders.GameEngine
         public void CollisionInvader(int i, int j)
         {
 
-            if (InvaderWin(i_arr[i, j], m_GameObjects[1]))  // when Invader win
+            if (InvaderWin(i_arr[i, j], _gun))  // when Invader win
             {
-                m_GameObjects[1].Live = false;
+                _gun.Live = false;
             }
 
 
             if (i_arr[i, j].enem_bullet.Count != 0)
             {
 
-                if (isCollision(i_arr[i, j].enem_bullet[0], m_GameObjects[1]))
+                if (isCollision(i_arr[i, j].enem_bullet[0], _gun))
                 {
-                    m_GameObjects[1].isDie();
+                    _gun.isDie();
                 }
             }
 

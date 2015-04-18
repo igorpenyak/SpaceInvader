@@ -94,11 +94,9 @@ namespace SpaceInvaders.GameEngine.Objects
             return false;
         }
 
-        public void GetBullet(out string name,out int x,out int y)
-        {            
-                name = enem_bullet[0].Name;
-                x = enem_bullet[0].PosX;
-                y = enem_bullet[0].PosY;
+        public Bullet GetBullet()
+        {
+            return enem_bullet[0];
         }
 
         #endregion
