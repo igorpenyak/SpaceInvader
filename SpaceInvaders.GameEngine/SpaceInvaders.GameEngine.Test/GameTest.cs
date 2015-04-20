@@ -13,13 +13,7 @@ namespace SpaceInvaders.GameEngine.Test
             Assert.AreEqual("Field", g.Name);
         }
 
-        [TestMethod]
-        public void isDieTest()
-        {
-            Game g = new Game(10, 10);
-            g.isDie();
-            Assert.IsTrue(g.Live);
-        }
+      
               
 
     }

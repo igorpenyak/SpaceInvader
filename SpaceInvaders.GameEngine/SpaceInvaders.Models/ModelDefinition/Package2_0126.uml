@@ -67,6 +67,15 @@
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
+        <suppliersInternal>
+          <interfaceRealization
+            Id="ed628787-d2af-495e-b07d-dd7393300883">
+            <interfaceMoniker
+              Id="b3ecc7a6-5aba-4e5b-bf81-f3d472c59e47"
+              LastKnownName="IGameObject"
+              LastKnownLocation="Package1_2323.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
         <ownedAttributesInternal>
           <property
             Id="0a311e41-cac5-4cb8-aacc-8838b70c8ac6"
@@ -603,8 +612,9 @@
             </type_NamedElement>
           </property>
           <property
-            Id="4e5e5ca6-af4d-4007-9921-88a76436442f"
-            name="FakeTest"
+            Id="8320d081-22d5-4987-afe6-881b8851d2e7"
+            name="_posx"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -614,63 +624,116 @@
             isComposite="false">
             <referencesInternal>
               <reference
-                Id="b30e4d85-23e1-4ca5-b278-4de5c68e73fb"
-                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DGameObject Member%3DFakeTest"
+                Id="38b0c549-7fe1-4b09-af60-c676e1d7059d"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DGameObject Member%3D_posx"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
               <stereotypeInstance
-                Id="09cefbf3-d81f-4c8b-bb75-55b4d0d365a6"
-                name="property"
+                Id="ee8659a2-5a2e-414c-a83d-5923d0fba597"
+                name="field"
                 profile="CSharpProfile">
                 <propertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="aeb18b5e-863a-4b31-b22e-b479409f32d1">
+                    Id="d069810e-07af-44b9-96af-75fcf2791fb8">
                     <propertyInstance
-                      Id="b3d86ea8-97c2-474c-8a81-d8cfcdde0db7"
+                      Id="9e61ba73-3626-451b-82a3-6adabb89eb70"
                       name="ClrAttributes" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="ede17ffd-99ab-48fa-9eb4-0f69bc1f9975">
+                    Id="d400bd9d-cd79-4ec7-a5b4-119e50f4f580">
                     <propertyInstance
-                      Id="16964a13-8993-4e0b-825b-e7ff6e68b492"
-                      name="Get"
-                      value="public" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="81ad6348-2506-4f9a-80f6-e8b309155ec5">
-                    <propertyInstance
-                      Id="c086e710-63a5-45e0-9c7d-8d92b2c35379"
-                      name="HasBody"
+                      Id="8587a1ef-33db-4c54-9b46-f4c32fb4390c"
+                      name="IsConst"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="fa023b6a-a987-4c71-aeb0-bd27e696ef50">
+                    Id="71e7404e-5b47-4194-8e53-59958c36d3d1">
                     <propertyInstance
-                      Id="0a0d65f6-cf92-4d0b-8471-9f75a6002dac"
-                      name="IsUnsafe"
+                      Id="5503ae2f-6845-4ed2-9492-8dafd10fb829"
+                      name="IsNullable"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="a5f8a977-493c-46cc-8b18-0bfcad32e8d3">
+                    Id="de80c4b7-8f17-4ff7-ac3a-cf89ab080279">
                     <propertyInstance
-                      Id="a8f3677a-abf9-4397-86c9-19d65f7822a9"
-                      name="Inheritance"
-                      value="none" />
+                      Id="7d9c92a6-4304-4e94-993a-9e05e0fc00ad"
+                      name="IsVolatile"
+                      value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="e67a548e-8505-4b8c-84c1-967dccbe6b78">
+                    Id="22ca7af2-dc5b-41ea-a376-52dbfb3a4c13">
                     <propertyInstance
-                      Id="ddc228de-e8d0-4dcc-b85d-8c44dc294470"
+                      Id="ab7b87c4-3e6a-4e07-b5ec-5610fc54475a"
                       name="PackageVisibility"
                       value="internal" />
                   </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="SpaceInvaders.Models.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="620f4618-32d4-4c64-bd0f-cc2782991d38"
+            name="_posy"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="a57d270b-419a-4d1c-8e7e-5d1a879b0e2e"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DGameObject Member%3D_posy"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="4bcde865-11be-4afe-84b0-90d494162045"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="5b4a3543-59b2-4816-ab9c-2471d08ba29e">
+                    Id="c97c154f-fef7-4ae3-95f6-1afc78739237">
                     <propertyInstance
-                      Id="0d040215-261a-4856-b573-d057b2e6a98e"
-                      name="Set"
-                      value="public" />
+                      Id="755fca25-33a7-446e-ae87-5d04c438f297"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ee6420e9-d848-4eec-98d5-fafed401236b">
+                    <propertyInstance
+                      Id="ada33458-497d-45bd-9c9a-835cccd02f40"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2daf5345-71f1-4c69-8bc7-3880b48c5924">
+                    <propertyInstance
+                      Id="d8fc9187-acbc-4c45-b764-715fb6cff9b1"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="222f1fea-1e68-4b43-bce9-2b82b04ff7bf">
+                    <propertyInstance
+                      Id="2db1aed6-c5e1-4930-90f8-68ee8e9eec3a"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0fcb0fd2-1702-456e-a897-03cd434165a6">
+                    <propertyInstance
+                      Id="35583dd0-63a7-4ed2-b8b6-c36833879b57"
+                      name="PackageVisibility"
+                      value="internal" />
                   </stereotypeInstanceHasPropertyInstances>
                 </propertyInstances>
               </stereotypeInstance>
@@ -808,176 +871,6 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
-          <operation
-            Id="d4b1e26a-44f3-4a3b-80d9-19468c24c6a5"
-            name="isDie"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <referencesInternal>
-              <reference
-                Id="c9f20a4e-86a9-4124-be9d-88d0c10d0d9c"
-                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DGameObject Member%3DisDie"
-                tag="ViewCode" />
-            </referencesInternal>
-            <appliedStereotypesInternal>
-              <stereotypeInstance
-                Id="38d90d02-a555-4d70-9cc3-2c40e9807b8e"
-                name="method"
-                profile="CSharpProfile">
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="70db1bf0-5819-4d71-9fd4-1266cbd93f45">
-                    <propertyInstance
-                      Id="39f95ea4-13a5-4423-87a0-dec9fac59a43"
-                      name="ClrAttributes" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="7455323b-d199-4204-a43d-835730801ddf">
-                    <propertyInstance
-                      Id="91afbbd1-462b-410b-99f2-70e70f48204d"
-                      name="IsPartial"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="1c70816f-4896-4c34-a39e-44c510f97373">
-                    <propertyInstance
-                      Id="3ac04a5d-222c-497a-8f9c-8c2368ee4807"
-                      name="IsUnsafe"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="e024c24c-e04e-42ee-b26c-a3cecad298af">
-                    <propertyInstance
-                      Id="aeb2fa11-20b4-455a-9fdc-4ff6c32fbbcc"
-                      name="Inheritance"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="14a3c2a0-6a9f-40f2-ae72-9c4b47709a3b">
-                    <propertyInstance
-                      Id="eb31e0a7-4b57-4a0f-ab8c-643449a8da1c"
-                      name="PackageVisibility"
-                      value="internal" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="f69f61cd-5ce0-4c54-84f0-2ec200327adc">
-                    <propertyInstance
-                      Id="f6751507-6a42-4b85-948b-6ce3f6bf1839"
-                      name="params"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-          </operation>
-          <operation
-            Id="41d39f84-43be-461f-9150-2b4313dd955e"
-            name="Update"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <referencesInternal>
-              <reference
-                Id="ee046dce-0063-4704-9ff4-5a20bb57ab17"
-                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DGameObject Member%3D(Name%3DUpdate OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)])"
-                tag="ViewCode" />
-            </referencesInternal>
-            <appliedStereotypesInternal>
-              <stereotypeInstance
-                Id="665494cc-aa87-409c-9923-5af6ba398bd4"
-                name="method"
-                profile="CSharpProfile">
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="0e6335c4-80ca-466b-85a4-92ee3363ec50">
-                    <propertyInstance
-                      Id="553585e4-1c9c-4bda-8f3a-6bde6b047152"
-                      name="ClrAttributes" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="48971d63-5e64-43f6-95fe-bba5af272434">
-                    <propertyInstance
-                      Id="dd339c60-e860-4062-a3fb-53613f00bd64"
-                      name="IsPartial"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="0de2f18d-32c2-46bd-a2af-791a3eccfe33">
-                    <propertyInstance
-                      Id="07dc2336-792b-47e1-b6ca-ffc18703b978"
-                      name="IsUnsafe"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="2b4a64b9-b3d4-47de-811b-92267433fad1">
-                    <propertyInstance
-                      Id="38a58f11-5593-4000-aa15-c29ba2653270"
-                      name="Inheritance"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="e2764395-1ec1-44d0-908c-e44dd034da13">
-                    <propertyInstance
-                      Id="c33dbb8d-7f5a-4db8-b5a8-98b779dbfee0"
-                      name="PackageVisibility"
-                      value="internal" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="8fac81de-f8fc-4eb5-84ae-41f1a4569285">
-                    <propertyInstance
-                      Id="a76b38df-7dc4-4384-81d6-c6f495ccbdc8"
-                      name="params"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="45f036c6-c644-4210-ab6d-43a78ac395d7"
-                  name="meta_key"
-                  direction="In">
-                  <referencesInternal>
-                    <reference
-                      Id="c521c348-50e9-404f-b9aa-b6e45e07cb61"
-                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DGameObject Member%3D(Name%3DUpdate OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3Dmeta_key"
-                      tag="ViewCode" />
-                  </referencesInternal>
-                  <type_NamedElement>
-                    <primitiveTypeMoniker
-                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
-                      LastKnownName="Integer"
-                      LastKnownLocation="SpaceInvaders.Models.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="33309960-a42d-417d-b3da-1fe202b0a4f3"
-                  name="x"
-                  direction="In">
-                  <referencesInternal>
-                    <reference
-                      Id="d41ef49f-b45d-4d4f-ad19-92d52365f073"
-                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DGameObject Member%3D(Name%3DUpdate OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3Dx"
-                      tag="ViewCode" />
-                  </referencesInternal>
-                  <type_NamedElement>
-                    <primitiveTypeMoniker
-                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
-                      LastKnownName="Integer"
-                      LastKnownLocation="SpaceInvaders.Models.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -991,13 +884,14 @@
       <class
         Id="1fad6fc7-8942-450a-9acc-689da4757edf"
         name="Invader"
+        visibility="Private"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
         <referencesInternal>
           <reference
             Id="b428be3f-01f3-451a-bb2f-de2be2ba18a7"
-            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DInvader"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3D(Name%3DInvader ArrayRank%3D2 ParentType%3DInvader)"
             tag="ViewCode" />
         </referencesInternal>
         <appliedStereotypesInternal>
@@ -1053,6 +947,74 @@
               LastKnownLocation="Package2_0126.uml" />
           </generalization>
         </generalsInternal>
+        <targetEnds>
+          <association
+            Id="f20e1433-0295-467b-be0a-1749e8f63237"
+            isDerived="false"
+            sourceEndRoleName="Invader"
+            targetEndRoleName="EnemyBullet"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="ba903d67-4f98-4fb0-a374-386f4cfc26a4"
+              LastKnownName="Bullet"
+              LastKnownLocation="Package2_0126.uml" />
+            <description>Property EnemyBullet references type Bullet.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5a22232b-3f92-4dff-a2e5-442b79681520"
+                  name="Invader"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="99779f31-421f-46e5-84bf-bb579cb145d5"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="5b7a989a-5007-4cf9-befe-57fd0b757c96"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fc472996-2ee7-48f9-9e65-e57e54513485"
+                  name="EnemyBullet"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="76985350-5eb0-4a5f-bac2-10cbe81fa21e"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="7108ab7f-2714-45fb-9f5b-156e16e0b1d8"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="47d8e7c6-75eb-4c21-9b24-de3abb2e81ee"
@@ -1364,6 +1326,7 @@
           <property
             Id="a0bd9ce1-88f8-4527-aece-3c0d24989684"
             name="enem_bullet"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1425,6 +1388,166 @@
                 Id="2a26974b-bb4c-4d59-8a38-1f2326f7805e"
                 LastKnownName="List&lt;Bullet‎&gt;"
                 LastKnownLocation="Package6_0126.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="9aaea2b5-8b01-47eb-9b9a-f7caf968ac3b"
+            name="CanShot"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="6c57c361-a311-4696-93fa-65c751c5b1bb"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DInvader Member%3DCanShot"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="07f13199-433a-4e4f-a24a-f59537810e21"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ecbf81d9-b31f-4a8e-8654-52ec66377002">
+                    <propertyInstance
+                      Id="d127dd22-fc03-4d77-98bb-5621868d7c0d"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3374b3e2-283b-4c3e-8785-6baf3a2f87fa">
+                    <propertyInstance
+                      Id="fb7dabad-c2ed-487f-b118-d2c0589d3be7"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="aaf34914-1eec-44b9-923f-b9a978d2580d">
+                    <propertyInstance
+                      Id="e6548ff9-944e-44fc-ba47-0c9609afad48"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="318d4f8d-56d2-4085-a1f8-c35821120f98">
+                    <propertyInstance
+                      Id="467caea0-dcdb-400c-8d68-93002ac94f1d"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2dcf8e0f-c283-4c91-8d7e-320d251dcd74">
+                    <propertyInstance
+                      Id="cc8ed456-ca01-49f0-9f0e-bc8663fef38d"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d1dadf3d-6f48-4a02-91fe-64c752f6879d">
+                    <propertyInstance
+                      Id="e8335bb4-9533-4992-a4b3-38064c46ac2f"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e4b4bb22-8b68-4878-8ee1-61313614005f">
+                    <propertyInstance
+                      Id="8fa6519b-0a36-4568-a6da-2c093d3a9863"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="SpaceInvaders.Models.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="ab788605-f232-40b2-aa0d-d3335876572e"
+            name="EnemyBullet"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="187f436b-5cd4-4839-8aba-f70a618ecfb9"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DInvader Member%3DEnemyBullet"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="1a897e2b-f463-4731-b93f-8eeb3498803f"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="243af67d-179f-47aa-b253-eb3adb1a2fdc">
+                    <propertyInstance
+                      Id="d1c96e8f-c2c7-4928-b0d3-5e06550deb08"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="16904456-69c0-407e-9c55-1a6232631119">
+                    <propertyInstance
+                      Id="37d78fda-1d0d-499e-868c-79d7410ffc5e"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7d35d939-cf78-485d-8520-354e1d46f8d7">
+                    <propertyInstance
+                      Id="6f1d56d3-a848-4585-af29-05cbd7174697"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="888ef6bb-da53-4f01-bda7-7cfc583c78b8">
+                    <propertyInstance
+                      Id="924234cc-4635-44a9-8f52-cfdc241a992a"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0529fa35-bf3d-4dca-b9ce-4c2940109a7d">
+                    <propertyInstance
+                      Id="8a67294f-1c56-49e3-b37a-937e60c97ba9"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="60dd8718-5679-484c-aca7-4116bcbbeaa4">
+                    <propertyInstance
+                      Id="a2ca4e2b-9af2-4cc4-bd59-250de81268d8"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4dda8d45-8d95-4a15-a909-f7fdad269a7f">
+                    <propertyInstance
+                      Id="c458df0a-54af-481d-9aca-882a786ab0dd"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="ba903d67-4f98-4fb0-a374-386f4cfc26a4"
+                LastKnownName="Bullet"
+                LastKnownLocation="Package2_0126.uml" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
@@ -1620,13 +1743,13 @@
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="37068ee0-005b-49b3-9973-321023cc8f9e"
-                  name="b"
+                  Id="2b82b01b-a343-4766-af27-b76efc619a5e"
+                  name="bulletEnd"
                   direction="In">
                   <referencesInternal>
                     <reference
-                      Id="04adf08b-a930-4cb0-99cc-7e66ac20dc39"
-                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DInvader Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3Db"
+                      Id="2043efa8-d121-4e43-aa19-4ff99f790833"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DInvader Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3DbulletEnd"
                       tag="ViewCode" />
                   </referencesInternal>
                   <type_NamedElement>
@@ -1639,137 +1762,13 @@
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="a1c85044-b66a-4cbe-9958-d6457d505370"
-                  name="k"
+                  Id="2d1dc822-fe96-4a54-8de4-138143952b31"
+                  name="randomShot"
                   direction="In">
                   <referencesInternal>
                     <reference
-                      Id="2be8c653-b451-4d45-b085-ba10822add3e"
-                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DInvader Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3Dk"
-                      tag="ViewCode" />
-                  </referencesInternal>
-                  <type_NamedElement>
-                    <primitiveTypeMoniker
-                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
-                      LastKnownName="Integer"
-                      LastKnownLocation="SpaceInvaders.Models.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation
-            Id="e3700188-f6fa-4f33-b241-a6da6f4e01c8"
-            name="GetBullet"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <referencesInternal>
-              <reference
-                Id="c93f39b3-4563-4250-959c-9bd7625f88d0"
-                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DInvader Member%3D(Name%3DGetBullet OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString ParamKind%3DRef)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32 ParamKind%3DRef)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32 ParamKind%3DRef)])"
-                tag="ViewCode" />
-            </referencesInternal>
-            <appliedStereotypesInternal>
-              <stereotypeInstance
-                Id="df471752-757a-4187-be56-197d679c0e8e"
-                name="method"
-                profile="CSharpProfile">
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="2c70bf37-9bd4-4382-b058-4eccbc595953">
-                    <propertyInstance
-                      Id="b797917b-5d1b-4a35-bb10-b5fd0f560c48"
-                      name="ClrAttributes" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="e53f0c32-2920-4c47-8b90-9058df3633c6">
-                    <propertyInstance
-                      Id="0414d93c-db5e-478f-a3c1-54cc3cb4169f"
-                      name="IsPartial"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="b6f31c06-14f0-4d74-a3c5-e3f5644ee332">
-                    <propertyInstance
-                      Id="ec2f829e-7803-44f9-96c1-6d5af65b9dff"
-                      name="IsUnsafe"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="1a016b5c-99ae-4a97-acd8-8afeb784d118">
-                    <propertyInstance
-                      Id="54a0263c-ceec-458f-a373-1cce0270feb1"
-                      name="Inheritance"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="bbe16629-d1d2-491c-a981-22f31d82f724">
-                    <propertyInstance
-                      Id="5099bf06-7ae6-4470-b1f4-f4eeaf29c729"
-                      name="PackageVisibility"
-                      value="internal" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="fc61ab03-4323-4ed8-807e-17df2bd486a7">
-                    <propertyInstance
-                      Id="fff155ad-6896-4592-b157-7dacb60dd10c"
-                      name="params"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="30727e5c-6c88-44ed-83d0-5cbfea1a6fa1"
-                  name="name"
-                  direction="Out">
-                  <referencesInternal>
-                    <reference
-                      Id="5c6a512a-6114-4d11-8489-876d31db86a3"
-                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DInvader Member%3D(Name%3DGetBullet OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString ParamKind%3DRef)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32 ParamKind%3DRef)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32 ParamKind%3DRef)]) ParameterIdentifier%3Dname"
-                      tag="ViewCode" />
-                  </referencesInternal>
-                  <type_NamedElement>
-                    <primitiveTypeMoniker
-                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
-                      LastKnownName="String"
-                      LastKnownLocation="SpaceInvaders.Models.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="803be429-8780-4f18-8aa6-e69daf44a6bc"
-                  name="x"
-                  direction="Out">
-                  <referencesInternal>
-                    <reference
-                      Id="39843a21-5465-4310-bba9-31bb63531a57"
-                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DInvader Member%3D(Name%3DGetBullet OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString ParamKind%3DRef)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32 ParamKind%3DRef)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32 ParamKind%3DRef)]) ParameterIdentifier%3Dx"
-                      tag="ViewCode" />
-                  </referencesInternal>
-                  <type_NamedElement>
-                    <primitiveTypeMoniker
-                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
-                      LastKnownName="Integer"
-                      LastKnownLocation="SpaceInvaders.Models.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="a3590af9-f8f3-4cb9-9d6b-5ab34928901b"
-                  name="y"
-                  direction="Out">
-                  <referencesInternal>
-                    <reference
-                      Id="1ae8331b-d2ce-4298-acb0-17f416329923"
-                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DInvader Member%3D(Name%3DGetBullet OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString ParamKind%3DRef)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32 ParamKind%3DRef)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32 ParamKind%3DRef)]) ParameterIdentifier%3Dy"
+                      Id="21c45581-3879-463a-8681-c4da16f6da2c"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DInvader Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3DrandomShot"
                       tag="ViewCode" />
                   </referencesInternal>
                   <type_NamedElement>
@@ -2104,6 +2103,85 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="867673df-5aad-4815-94a4-1d186f892067"
+            name="GetBullet"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="4e595170-dada-4029-8fcf-223a06fdfc95"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DInvader Member%3DGetBullet"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="7ee8b997-7a6e-4327-9cf2-e4a2b405639d"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9a71ba95-2f09-417d-a684-1b92f433aad0">
+                    <propertyInstance
+                      Id="9465f267-53fd-496b-91af-30fbfeb94752"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="502c3e78-d0f9-4f54-9df3-82a6980f9737">
+                    <propertyInstance
+                      Id="06cec8a7-f366-4175-86b7-bce7ad3cb7b4"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8478fa56-3cc4-4d6d-b36f-c99e4454966a">
+                    <propertyInstance
+                      Id="16102c62-9864-41fe-8f26-a93aa3294b66"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e72032ad-0afe-43b5-85ee-fe9d81351bd4">
+                    <propertyInstance
+                      Id="51e4758c-121a-4551-a0f7-362f09750585"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c0c951f1-9f9a-4f01-9c96-6d78c2b421f8">
+                    <propertyInstance
+                      Id="32464d19-5e26-442b-8260-ee0bd5250a88"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="44f652ba-cfee-4ccf-8755-33870ff7c9f1">
+                    <propertyInstance
+                      Id="72e0408c-a371-4f81-86ed-7c44420d8369"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6abee4c8-b31d-4a8b-9fbf-d8d973b2cb5c"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="ba903d67-4f98-4fb0-a374-386f4cfc26a4"
+                      LastKnownName="Bullet"
+                      LastKnownLocation="Package2_0126.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -2432,7 +2510,7 @@
             </appliedStereotypesInternal>
           </operation>
           <operation
-            Id="39c2f0a1-feaf-49e5-b961-50f3c97d86a6"
+            Id="c061e47b-fdbe-4602-9f71-5e4f24f124dd"
             name="InsertBull"
             isLeaf="false"
             isStatic="false"
@@ -2441,54 +2519,54 @@
             isQuery="false">
             <referencesInternal>
               <reference
-                Id="2a54f5fa-03f0-4173-80e1-acbdeaed411d"
+                Id="14549578-7406-4148-b9b9-a055b728a06a"
                 handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DBullet Member%3D(Name%3DInsertBull OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections.Generic Type%3D(Name%3DList GenericParameterCount%3D1 GenericArguments%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DBullet)]))])"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
               <stereotypeInstance
-                Id="8f53e475-9474-4330-971c-b055d048037f"
+                Id="e5450504-240a-4132-b024-839ed4168a6e"
                 name="method"
                 profile="CSharpProfile">
                 <propertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="b9440dbe-6d89-45ab-9d9d-a20824eeaf0d">
+                    Id="807b09c3-2aef-49e3-b9e5-3c8250218900">
                     <propertyInstance
-                      Id="9b961ce4-3c24-4819-b361-75b6298aab1d"
+                      Id="d3caa81f-3dac-45fd-839e-7ff41b368d40"
                       name="ClrAttributes" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="3f5a5524-8220-4463-8862-c46972e6144d">
+                    Id="ed55d02e-cc63-43ec-9892-8df684a03be9">
                     <propertyInstance
-                      Id="c58765a4-e881-4966-93e7-6bf76c82f8a8"
+                      Id="b6ed5439-ac56-4122-ae73-57bcdcaa3bba"
                       name="IsPartial"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="11934d9d-1032-4913-99a1-cc4b85c1bb28">
+                    Id="1d08c05d-3bb6-434f-923e-26d6a0018d65">
                     <propertyInstance
-                      Id="111648e4-cfc8-4d83-97c6-005adfe83799"
+                      Id="bc176ae2-02b5-4517-9a46-23a21c9e5272"
                       name="IsUnsafe"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="ea019cd2-f680-4b9e-8ada-0e53a9b25dbd">
+                    Id="58aaa68d-073e-4d2d-9c54-ccfd795bda5d">
                     <propertyInstance
-                      Id="f55cd19e-c40a-4224-891d-2847840cd6b0"
+                      Id="48bf48bd-2504-4941-993f-f877837a6d26"
                       name="Inheritance"
                       value="none" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="6273dc0a-1394-4485-a0cc-2c085026b469">
+                    Id="e6a988d6-ade9-41e4-9fc7-8d05d675da3e">
                     <propertyInstance
-                      Id="19bc61b2-9cac-45eb-9ade-3e099126f9d9"
+                      Id="96bfba06-5712-4965-b4c9-59297ef2630d"
                       name="PackageVisibility"
                       value="internal" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="a81a1e78-f872-4773-8016-0030e3fda796">
+                    Id="ce8f1f3d-4028-4581-9051-e8572f8940d7">
                     <propertyInstance
-                      Id="412e8f9d-bac8-4d26-a4a0-fc17a76e689d"
+                      Id="b724cc39-a20a-407c-9314-a410de84210e"
                       name="params"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
@@ -2498,12 +2576,12 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="a7deb79b-a464-40cf-8115-4c5add408dbe"
+                  Id="cce5a2ae-3eaf-4226-878a-8b36268a46a2"
                   name="blist"
                   direction="In">
                   <referencesInternal>
                     <reference
-                      Id="c55730f5-a510-4909-8d6d-b0208f15d3c5"
+                      Id="686acc4b-5445-47d3-b573-e29158434439"
                       handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DBullet Member%3D(Name%3DInsertBull OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections.Generic Type%3D(Name%3DList GenericParameterCount%3D1 GenericArguments%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DBullet)]))]) ParameterIdentifier%3Dblist"
                       tag="ViewCode" />
                   </referencesInternal>
@@ -2518,7 +2596,7 @@
             </ownedParameters>
           </operation>
           <operation
-            Id="80d82c8a-b466-45ec-b21d-e9dcdd2f13eb"
+            Id="bc46216f-0153-4c4f-93f3-f60e9be7f43e"
             name="RemoveBull"
             isLeaf="false"
             isStatic="false"
@@ -2527,54 +2605,54 @@
             isQuery="false">
             <referencesInternal>
               <reference
-                Id="778b2564-891c-4517-9443-2474432fe4a7"
+                Id="520c44c8-824b-482c-9baa-49e599be392e"
                 handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DBullet Member%3D(Name%3DRemoveBull OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections.Generic Type%3D(Name%3DList GenericParameterCount%3D1 GenericArguments%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DBullet)]))%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)])"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
               <stereotypeInstance
-                Id="0cd50d75-7aa2-4c74-81b5-229ed2936a71"
+                Id="bcdd23b0-8631-4855-ac8a-2fd281d50aa3"
                 name="method"
                 profile="CSharpProfile">
                 <propertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="eaec779a-d865-48df-a828-986a6a0ee7a5">
+                    Id="22022979-c1f4-47c0-8733-8344921b0405">
                     <propertyInstance
-                      Id="b2e7cdad-8af7-4f00-b343-06b0db6df4b7"
+                      Id="bdb92ba4-a960-4845-8416-a337e770590c"
                       name="ClrAttributes" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="fca4997b-b736-4f43-92f2-79ad706176db">
+                    Id="79247c9e-8350-4c1e-9daa-7ced71d79b53">
                     <propertyInstance
-                      Id="2ffbfec3-bf1c-4f51-8889-27e4adc018f3"
+                      Id="e4f5c1f3-d5a2-49db-9615-4cf648f2d359"
                       name="IsPartial"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="85175334-7778-450e-92ca-2b900d4c5ab0">
+                    Id="dea6ec3d-b021-4268-99e7-3b523fb575b9">
                     <propertyInstance
-                      Id="dfece1a1-4ccd-4614-b1ae-bf0f60ae6c08"
+                      Id="bee66d6b-fd75-49c8-8a43-2569881f5735"
                       name="IsUnsafe"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="c1bde91f-85cc-49b9-8f4b-1de71178b5ef">
+                    Id="545d28b8-0de8-446e-9b91-b33b74b83e26">
                     <propertyInstance
-                      Id="79c8fe4a-8803-4a7b-ac4b-f1ffed383f81"
+                      Id="7f53ea4e-f4d6-409a-9bb5-1b93aff16486"
                       name="Inheritance"
                       value="none" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="7b1349eb-e9d9-4367-930a-4e41e5ae3407">
+                    Id="70028e53-c2f9-4936-b11c-91659bd62c95">
                     <propertyInstance
-                      Id="c3b643a2-a860-434b-8a7f-b8543d679d0d"
+                      Id="eda94259-d6c6-42ed-9236-fde10e8df243"
                       name="PackageVisibility"
                       value="internal" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="c6c50212-b7da-4e5a-8f46-6eb39deb9091">
+                    Id="5d13abb8-5ba7-4d20-ad41-fa8c2f39a9de">
                     <propertyInstance
-                      Id="eec74c96-f7b6-47bc-8e35-9f2f9c0f533d"
+                      Id="4dd434d4-d928-4446-88a2-a75cf2fb6695"
                       name="params"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
@@ -2584,12 +2662,12 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="1361b26f-de4f-4139-8da8-0df9c0106d1b"
+                  Id="7f05d316-3634-4a23-b88a-9bd94995283f"
                   name="blist"
                   direction="In">
                   <referencesInternal>
                     <reference
-                      Id="9e52a646-2cb3-4617-bc03-eb95202d0bef"
+                      Id="62f79b12-bc28-4c9e-8c6b-95e3e88734b8"
                       handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DBullet Member%3D(Name%3DRemoveBull OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections.Generic Type%3D(Name%3DList GenericParameterCount%3D1 GenericArguments%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DBullet)]))%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3Dblist"
                       tag="ViewCode" />
                   </referencesInternal>
@@ -2603,12 +2681,12 @@
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="a4886f26-259a-4092-b57c-cf83dd69ad88"
+                  Id="3bb0f6ca-0346-45a5-91d6-390d5517d236"
                   name="end"
                   direction="In">
                   <referencesInternal>
                     <reference
-                      Id="d652386e-e7b0-4886-b928-430bc96b4731"
+                      Id="9a79ca0d-b53f-4a45-93f5-e0cb432d3157"
                       handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DBullet Member%3D(Name%3DRemoveBull OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections.Generic Type%3D(Name%3DList GenericParameterCount%3D1 GenericArguments%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DBullet)]))%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3Dend"
                       tag="ViewCode" />
                   </referencesInternal>
@@ -2623,7 +2701,7 @@
             </ownedParameters>
           </operation>
           <operation
-            Id="ea5c10bf-30f5-4507-96d2-e0426231c4a1"
+            Id="5c8fc3d3-d23a-440f-aaf4-980c739559e6"
             name="bulletBehavior"
             isLeaf="false"
             isStatic="true"
@@ -2632,54 +2710,54 @@
             isQuery="false">
             <referencesInternal>
               <reference
-                Id="082e81f8-f17f-4c2b-af97-70cd47b29672"
+                Id="251e1718-6ef6-4bc5-8bef-97b92645e71b"
                 handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DBullet Member%3D(Name%3DbulletBehavior OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections.Generic Type%3D(Name%3DList GenericParameterCount%3D1 GenericArguments%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DBullet)]))%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)])"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
               <stereotypeInstance
-                Id="f4c1e756-94dc-46e3-b0c1-1394d2959150"
+                Id="884369a2-6580-48c2-ba3a-90e4aa68f317"
                 name="method"
                 profile="CSharpProfile">
                 <propertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="7b83a681-ac84-4284-868e-25ef3d31006e">
+                    Id="c5baba75-88fa-4876-b444-db917a4a9069">
                     <propertyInstance
-                      Id="ce5cc07e-7d69-4c1b-9e79-a7db161ce66d"
+                      Id="218c7e1d-c565-441a-a2fe-a0a79f3b6923"
                       name="ClrAttributes" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="b1c7a57c-dcee-441e-b95d-487897c8b6dc">
+                    Id="fdba591d-ea87-40b2-a30c-3bdca89391e8">
                     <propertyInstance
-                      Id="d908044d-4645-4ceb-815a-a78283bb2a38"
+                      Id="e2bbfebc-75f7-4eae-8124-b97903837a22"
                       name="IsPartial"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="68b6270d-d00e-4e36-b4fe-69e6ee3f5a93">
+                    Id="119820c2-f0fb-4a74-ac03-628b40ad9a58">
                     <propertyInstance
-                      Id="f314b71f-b15b-4bd0-993a-c31d55645020"
+                      Id="a929bddd-89cc-4c4a-81c5-0a6b3bd540be"
                       name="IsUnsafe"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="e41e8506-2c13-4b95-9485-4d3768e8885f">
+                    Id="826028fb-56b4-4e75-8ccc-01fbb2f71597">
                     <propertyInstance
-                      Id="884e40aa-b713-42b5-977d-64bcfc9170a6"
+                      Id="e5998b30-11e1-41a7-9a11-56e3a8d6b9cf"
                       name="Inheritance"
                       value="none" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="07778241-c644-46d5-955f-f4fd750deded">
+                    Id="97b00f4d-f756-41aa-8d45-5c092b50aa98">
                     <propertyInstance
-                      Id="c8a24b25-9786-45aa-b4f5-bff5c0f7214e"
+                      Id="f7a540c0-9c45-48f4-ac1d-5333033a9360"
                       name="PackageVisibility"
                       value="internal" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="ecfecc52-ad3a-45b4-892e-924481b95725">
+                    Id="6818a600-5410-49bc-ba31-b6ed73b7273a">
                     <propertyInstance
-                      Id="d8aee3d8-1da6-4048-9691-e64d1fb41d2f"
+                      Id="b849eae0-be1b-4618-aa42-1d4e3ba53b89"
                       name="params"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
@@ -2689,12 +2767,12 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="73d5cce3-f46c-4f1c-a395-38ccc2a15a03"
+                  Id="9b8510a8-fe17-4cf6-9fa9-8ec1023dfa2e"
                   name="blist"
                   direction="In">
                   <referencesInternal>
                     <reference
-                      Id="0cccd6af-ad86-4f87-8071-f56a122a71d4"
+                      Id="1280a741-0bc3-4365-9764-f066c54e2f86"
                       handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DBullet Member%3D(Name%3DbulletBehavior OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections.Generic Type%3D(Name%3DList GenericParameterCount%3D1 GenericArguments%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DBullet)]))%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3Dblist"
                       tag="ViewCode" />
                   </referencesInternal>
@@ -2708,12 +2786,12 @@
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="125d42c7-a3ba-4d5d-876c-a556d201595d"
+                  Id="8eefb009-71c9-402c-885a-73854fb98b1f"
                   name="end"
                   direction="In">
                   <referencesInternal>
                     <reference
-                      Id="bbccb9b1-2fa2-4a0f-aa51-6515c37c0113"
+                      Id="ee812da5-f4db-4b07-8847-7d94d392debe"
                       handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DBullet Member%3D(Name%3DbulletBehavior OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections.Generic Type%3D(Name%3DList GenericParameterCount%3D1 GenericArguments%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DBullet)]))%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3Dend"
                       tag="ViewCode" />
                   </referencesInternal>
@@ -3340,13 +3418,22 @@
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
+        <suppliersInternal>
+          <dependency
+            Id="24c2d796-b3a1-4cfd-94c5-455a398df993">
+            <classMoniker
+              Id="0647f944-21f6-44d4-b660-35b98d014a26"
+              LastKnownName="Process"
+              LastKnownLocation="Package1_0126.uml" />
+          </dependency>
+        </suppliersInternal>
         <ownedAttributesInternal>
           <property
             Id="e0f05fa4-ffb5-4951-b506-5509a6d07562"
             name="name"
             isLeaf="false"
             isStatic="false"
-            isReadOnly="false"
+            isReadOnly="true"
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
@@ -3409,7 +3496,7 @@
                     <propertyInstance
                       Id="8634b2c7-d879-4845-b7a8-a31088cbb7f1"
                       name="Set"
-                      value="public" />
+                      value="none" />
                   </stereotypeInstanceHasPropertyInstances>
                 </propertyInstances>
               </stereotypeInstance>
@@ -3426,7 +3513,7 @@
             name="score"
             isLeaf="false"
             isStatic="false"
-            isReadOnly="false"
+            isReadOnly="true"
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
@@ -3489,7 +3576,141 @@
                     <propertyInstance
                       Id="67ede809-a171-470d-9fe8-325be480f0be"
                       name="Set"
-                      value="public" />
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="SpaceInvaders.Models.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="626085f9-c129-437d-ba44-5863fc88e33c"
+            name="_name"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="9e46ce0d-595f-4897-a5b3-0a15c63c659b"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DScore Member%3D_name"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="f0f51ab0-c12d-4486-982a-a161d85df575"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3856bc28-374a-4fbb-8397-386af0b349df">
+                    <propertyInstance
+                      Id="735e0d7d-6525-4cfa-849d-a11ee1f8d150"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="083e4e57-512a-44af-b1fd-35e7ed6cac56">
+                    <propertyInstance
+                      Id="8cd80330-4440-4624-80cb-d3f451507ed5"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b55445ec-f321-478c-9514-68b6cfdbf11c">
+                    <propertyInstance
+                      Id="19fb1062-d53a-4475-b066-d2dba879b492"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c3c51c6c-6715-4ac9-9b6f-4de20d54c3b4">
+                    <propertyInstance
+                      Id="39f5ba3e-32a8-46a9-a125-5ce024adf47c"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="07683f88-b02b-40c5-b370-41dd1c815865">
+                    <propertyInstance
+                      Id="c258b5d2-f3ba-474a-ace5-f8723807da9b"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="SpaceInvaders.Models.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="f6d01364-d3c3-43e3-b47b-c0ccb0b2194c"
+            name="_score"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="db4cf203-b057-4ee2-aa82-fcb8c3f5370e"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DScore Member%3D_score"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="48809bc0-d37c-438a-bece-b9f1c7fecb43"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="26c23ea1-2cf5-423c-8e78-3d67ae5bb0b7">
+                    <propertyInstance
+                      Id="214aa7ca-0e29-467f-973c-e2b6614109da"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="015a65dd-5c28-4c61-b11c-78902cf731a3">
+                    <propertyInstance
+                      Id="d4248eb5-4652-43a5-9256-5037e23d351d"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2a50ae53-d132-48c2-b906-8b43b1c3aa24">
+                    <propertyInstance
+                      Id="43656c18-eb40-46e4-a975-77e9361b82f6"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cc14eef6-9af4-4f49-af6f-df034d3082dd">
+                    <propertyInstance
+                      Id="68c6b59b-4867-495f-8ad9-65287deaca85"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1fa9672b-9188-4589-8920-56aec0c219ed">
+                    <propertyInstance
+                      Id="ed12b075-8e1c-451d-80bd-dfe41544f8cb"
+                      name="PackageVisibility"
+                      value="internal" />
                   </stereotypeInstanceHasPropertyInstances>
                 </propertyInstances>
               </stereotypeInstance>
@@ -3590,7 +3811,7 @@
             </ownedParameters>
           </operation>
           <operation
-            Id="9432dcb3-3b4e-4abd-be79-06f68f07dea9"
+            Id="da55a6fc-6964-4c33-9e34-e04e1401ed13"
             name="Score"
             isLeaf="false"
             isStatic="false"
@@ -3599,54 +3820,54 @@
             isQuery="false">
             <referencesInternal>
               <reference
-                Id="5078bfdd-7f33-4edb-9b49-bae49e9c1695"
+                Id="c32ed96b-df03-4d7e-95af-5e149ef6f239"
                 handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DScore Member%3D.ctor"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
               <stereotypeInstance
-                Id="d406aa29-f09e-4af3-a761-b8c2c1c53ae3"
+                Id="2c55aa8d-a674-4081-8056-2ea4558c57b9"
                 name="method"
                 profile="CSharpProfile">
                 <propertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="66a69722-97e8-415e-94db-e72166b2e8ed">
+                    Id="0dcc2d42-94de-4928-baad-d97d33195b82">
                     <propertyInstance
-                      Id="3eb8cfdf-a182-48a7-89aa-f5b62b39d575"
+                      Id="c590c13f-49b6-4d79-adb6-60e633da3fbc"
                       name="ClrAttributes" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="0343ddc9-97aa-4851-8b6c-254f1c1db0b2">
+                    Id="80278bf9-cc31-4f61-9605-42d3dafe2409">
                     <propertyInstance
-                      Id="da266392-a85c-4cab-9981-7aa471452c2b"
+                      Id="98c4d222-79cb-4796-ab9f-476611932e88"
                       name="IsPartial"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="43275d3e-e291-477f-a78f-7b7985e37894">
+                    Id="8944138f-5799-41f9-9018-abe22328caca">
                     <propertyInstance
-                      Id="20c83474-7c45-4033-a9b3-18f6a9f0e9dd"
+                      Id="d255c80b-392e-4474-a88e-29b35dc45df2"
                       name="IsUnsafe"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="e6a3d42c-fd18-421c-a6fe-c8289a249917">
+                    Id="cc5cb148-746a-4ce6-bf69-ad53a912c728">
                     <propertyInstance
-                      Id="a311c6d3-8089-4076-858d-c6989438ac04"
+                      Id="120d7a7d-2e64-4575-b869-72bc08b818ea"
                       name="Inheritance"
                       value="none" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="3ce3e672-b96e-4871-81f4-cae143a36b1f">
+                    Id="17098f9d-0168-4bcb-808e-aab02346db89">
                     <propertyInstance
-                      Id="b28d28ca-dd12-47c3-8d4d-14722b7ea0d8"
+                      Id="35c5508f-225d-4d96-ae86-de3c18e8ccf8"
                       name="PackageVisibility"
                       value="internal" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="c5a498bf-e8d2-46da-997c-47870d9c0530">
+                    Id="07cef478-7128-4d9a-8944-bc6e66b8ee6c">
                     <propertyInstance
-                      Id="b9a6722f-d4bc-4e6a-9cf4-90db211c0251"
+                      Id="499519b2-67de-475f-8b80-f0d0d99b866f"
                       name="params"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
@@ -3832,6 +4053,12 @@
           </operation>
         </ownedOperationsInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="041b602f-c574-428a-925e-5936c552a3e6"
+        LastKnownName="Base"
+        LastKnownLocation="Package1_2323.uml" />
     </packageHasNamedElement>
   </packagedElements>
 </package>

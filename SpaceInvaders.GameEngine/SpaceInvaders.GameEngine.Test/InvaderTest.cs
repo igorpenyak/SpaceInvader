@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SpaceInvaders.GameEngine.Objects;
+using System.Collections.Generic;
 
 namespace SpaceInvaders.GameEngine.Test
 {
@@ -35,10 +36,12 @@ namespace SpaceInvaders.GameEngine.Test
         [TestMethod]
         public void UpdateTest()
         {
+          
             Invader inv = new Invader(2, 3, 20, 9);
+       
             inv.Speed = 1;
             inv.Update(10000);
-            Assert.IsTrue(inv.enem_bullet.Count==0);
+            Assert.IsTrue(inv.CanShot==0);
         }
 
         [TestMethod]
@@ -55,16 +58,18 @@ namespace SpaceInvaders.GameEngine.Test
             inv.Speed = 1;
             inv.Update(208);
             inv.Update(208);
-            Assert.IsTrue(inv.enem_bullet.Count != 0);              
+            Assert.IsTrue(inv.CanShot != 0);              
          } 
 
          [TestMethod]
          public void firstShotTrueTest()
          {
              Invader inv = new Invader(2, 3, 20, 9);
+             PrivateObject privateObj = new PrivateObject(inv);
              Bullet b = new Bullet(1,2,false);
-             inv.Speed = 1;
-             inv.enem_bullet.Add(b);
+             List<Bullet> bullet_list = (List<Bullet>)privateObj.GetField("enem_bullet");
+                 inv.Speed = 1;
+             bullet_list.Add(b);
              Assert.IsTrue(inv.firstShot());
          }
 
@@ -82,19 +87,19 @@ namespace SpaceInvaders.GameEngine.Test
                  {
                      inv.K = 4;
                      inv.Update(416);                     
-                     Assert.IsTrue(inv.enem_bullet.Count != 0);
+                     Assert.IsTrue(inv.CanShot != 0);
                  }
                  else if(i==5)
                  {
                      inv.K = 7;
                      inv.Update(416);                   
-                     Assert.IsTrue(inv.enem_bullet.Count != 0);
+                     Assert.IsTrue(inv.CanShot != 0);
                  }
                  else if (i == 8)
                  {
                      inv.K = 2;
                      inv.Update(416);                     
-                     Assert.IsTrue(inv.enem_bullet.Count != 0);
+                     Assert.IsTrue(inv.CanShot != 0);
                  }
                  else 
                  {
@@ -109,14 +114,26 @@ namespace SpaceInvaders.GameEngine.Test
          {
              Invader inv = new Invader(2, 3, 20, 9);
              Bullet b = new Bullet(inv.PosX, inv.PosY, false);
-             inv.Speed = 1;
-             inv.enem_bullet.Add(b);
-             
+
+             PrivateObject privateObj = new PrivateObject(inv);
+             List<Bullet> bullet_list = (List<Bullet>)privateObj.GetField("enem_bullet");
+
+             inv.Speed = 1;            
+             bullet_list.Add(b);
              Bullet c = inv.GetBullet();
 
-             Assert.AreEqual(2,c.PosX );
-           
+             Assert.AreEqual(2,c.PosX );           
          }
+         [TestMethod]
+         public void GetEnemy_BulletTest()
+         {
+             Invader inv = new Invader(2, 3, 20, 9);
+             
+             inv.Speed = 1;
+             inv.Update(208);
+             Bullet b = inv.EnemyBullet;          
 
+             Assert.AreEqual(b.PosX, inv.PosX);
+         }
     }
 }

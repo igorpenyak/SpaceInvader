@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="041b602f-c574-428a-925e-5936c552a3e6"
+  name="Base"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="3eca1574-b7bc-498d-a748-24b306347328"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DSpaceInvaders.GameEngine.Objects.Base"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <Interface
+        Id="b3ecc7a6-5aba-4e5b-bf81-f3d472c59e47"
+        name="IGameObject"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="b56897cd-27f3-43fd-8d21-0631f1a8e650"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects.Base Type%3DIGameObject"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="1ad715de-98b5-4c09-959a-45f3cddbe88f"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ecd69cc1-fcd1-486e-ba1d-a8d9d6d63181">
+                <propertyInstance
+                  Id="049fd465-7b87-41da-959e-797a0b132b5b"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4a2467fe-aa3e-4439-af6b-41d55f4d27ff">
+                <propertyInstance
+                  Id="eee26783-14da-46ac-92a4-2c52e8958d4f"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="cf9b217a-7f89-4263-b953-32765339f482">
+                <propertyInstance
+                  Id="6575b1c7-a6b9-4034-882f-7738895a1c00"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7dfca925-b92c-441b-8637-f3fb447438cd">
+                <propertyInstance
+                  Id="e37dc25a-7d6b-4881-b8f2-46f70be45437"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedAttributes>
+          <property
+            Id="11e01643-a311-4789-bef5-8af3794abf31"
+            name="PosX"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="6a83a622-1551-44ef-bc6d-6ee1b5f65fc1"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects.Base Type%3DIGameObject Member%3DPosX"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="ccc99c60-2b18-43ad-aed5-eaea681680fc"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="71a6a3fe-5f06-4a8c-85d6-000b0f1ee5d9">
+                    <propertyInstance
+                      Id="4975f84c-dd5b-492f-8db8-54968ae6a537"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9cd29e49-0e73-4285-911e-3031a91cfe46">
+                    <propertyInstance
+                      Id="f6a1655e-cffb-4876-8ffc-e4c3dea6cf52"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="01fd1344-7bdf-497f-a45c-93c208c77382">
+                    <propertyInstance
+                      Id="c247e84b-6684-4c0e-be7b-d20ac2ce68d5"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="86afa821-11d7-44fc-9711-57b8bac31aa4">
+                    <propertyInstance
+                      Id="dd1b7a1b-477d-48a4-aeb7-1ecbacb227b5"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dedf5ca6-f402-4838-af4a-c42242cf178d">
+                    <propertyInstance
+                      Id="849f686c-7f89-4cdf-9746-c3ee5ca64768"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6ecda223-902d-4e59-8b23-7bc8d49a6634">
+                    <propertyInstance
+                      Id="08aa4107-c3bb-4ad2-a926-e446eb709a4b"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="abe83793-b4b0-417d-b422-7c5d679c593f">
+                    <propertyInstance
+                      Id="5b49a88e-b2a0-4a29-b9ba-bbb88559c905"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="SpaceInvaders.Models.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="597a420a-e1c6-44ae-bd1c-4e23ad37ee24"
+            name="PosY"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="4fb33e10-6d0d-4bf3-ab21-f2f4dc017aeb"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects.Base Type%3DIGameObject Member%3DPosY"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="90cdb119-3344-4b6d-8b49-a892c2cd57df"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="449ea335-64f9-4439-baf1-fabc2750cb69">
+                    <propertyInstance
+                      Id="0aec8297-8f9f-4367-94f5-c8ba79e7a961"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9d231b20-7d41-4bc1-8987-40bf0ed55451">
+                    <propertyInstance
+                      Id="ce0439b5-4be0-48ef-af19-cc3d48359601"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="344bcda8-53df-4875-a87d-639b23959ae1">
+                    <propertyInstance
+                      Id="c93563c5-a140-409f-bcd9-44372a303979"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3376b629-e23a-4e31-8322-a4522c04e31a">
+                    <propertyInstance
+                      Id="ef4aa4db-59f0-4f9a-be27-ea75344773f6"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a4b5a08a-5761-4cd1-9719-c7cb06fc5346">
+                    <propertyInstance
+                      Id="a97a0e2e-9a9f-47c5-92dd-0a245efb53bc"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5112c879-8ca9-420e-a640-cfbdc274d772">
+                    <propertyInstance
+                      Id="89309757-5e25-4764-b144-2aa816ea6a0b"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d1b22a47-0a90-4cd4-ba12-7f85c0708b7a">
+                    <propertyInstance
+                      Id="ffaf3b8d-844a-4561-9337-d4ad69f9281d"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="SpaceInvaders.Models.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributes>
+      </Interface>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

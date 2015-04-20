@@ -307,8 +307,8 @@ namespace SpaceInvaders.GameEngine
                 {
                     if (i_arr[i, j].Live)
                     {
-                        CollisionLazerGun(i, j);
-                        CollisionInvader(i, j);
+                        CollisionLazerGun(i_arr, i, j,b_list);
+                        CollisionInvader(i_arr, i, j, _gun);
                     }
                 }
             }
@@ -330,36 +330,36 @@ namespace SpaceInvaders.GameEngine
             return false;
         }
 
-        public void CollisionInvader(int i, int j)
+        public void CollisionInvader(Invader[,] Enemy, int i, int j, LazerGun gun)
         {
 
-            if (InvaderWin(i_arr[i, j], _gun))  // when Invader win
+            if (InvaderWin(Enemy[i, j], gun))  // when Invader win
             {
-                _gun.Live = false;
+                gun.Live = false;
             }
 
 
-            if (i_arr[i, j].enem_bullet.Count != 0)
+            if (Enemy[i, j].CanShot != 0)
             {
 
-                if (isCollision(i_arr[i, j].enem_bullet[0], _gun))
+                if (isCollision(Enemy[i, j].EnemyBullet, gun))
                 {
-                    _gun.isDie();
+                    gun.isDie();
                 }
             }
 
         }
 
 
-        public void CollisionLazerGun( int i, int j)
+        public void CollisionLazerGun( Invader[,] Enemy, int i, int j, List<Bullet> gun_bullet)
         {
-            for (int b = 0; b < b_list.Count; b++)
+            for (int b = 0; b < gun_bullet.Count; b++)
             {
 
-                if (isCollision(i_arr[i, j], b_list[b]))  // when LazerGun kill an Invader
+                if (isCollision(Enemy[i, j], gun_bullet[b]))  // when LazerGun kill an Invader
                 {
-                    b_list.Remove(b_list[b]);
-                    i_arr[i, j].Live = false;
+                    b_list.Remove(gun_bullet[b]);
+                    Enemy[i, j].Live = false;
                     if (j == 2)
                     {
                         UpdScore(50);

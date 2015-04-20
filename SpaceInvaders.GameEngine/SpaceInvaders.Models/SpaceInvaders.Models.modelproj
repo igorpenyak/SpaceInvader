@@ -33,6 +33,9 @@
     <Content Include="ModelDefinition\Package1_0126.uml">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="ModelDefinition\Package1_2323.uml">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="ModelDefinition\Package2_0126.uml">
       <SubType>Content</SubType>
     </Content>
@@ -49,6 +52,9 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package_0126.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_2323.uml">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\SpaceInvaders.Models.uml">

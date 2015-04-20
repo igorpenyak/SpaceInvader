@@ -10,18 +10,28 @@ namespace SpaceInvaders.GameEngine.Objects
         public int bulletEnd { get; set; } // use for bullet behavior
         public int Speed { get; set; }
 
-        public List<Bullet> enem_bullet = new List<Bullet>();
+        List<Bullet> enem_bullet = new List<Bullet>();
+
+        public int CanShot 
+        { 
+            get { return enem_bullet.Count; }
+        }
+        public Bullet EnemyBullet 
+        {
+            get { return enem_bullet[0]; }             
+        }
 
         #endregion
 
 
         #region Constructor
-        public Invader(int x, int y, int b,int k)
+        public Invader(int x, int y, int bulletEnd,int randomShot)
             : base("Invader", x, y)
         {
-            this.bulletEnd = b;
-            this.K = k;
+            this.bulletEnd = bulletEnd;
+            this.K = randomShot;
             Live = true;
+            Speed = 1;
         }
 
         #endregion
@@ -63,7 +73,7 @@ namespace SpaceInvaders.GameEngine.Objects
              return false;
         }
        
-        public virtual void Update(int time)
+        public void Update(int time)
         {
             _recall++;
             Bullet b = new Bullet(this.PosX,this.PosY,false);
