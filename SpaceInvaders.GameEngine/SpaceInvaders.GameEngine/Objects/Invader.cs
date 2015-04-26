@@ -26,7 +26,7 @@ namespace SpaceInvaders.GameEngine.Objects
 
         #region Constructor
         public Invader(int x, int y, int bulletEnd,int randomShot)
-            : base("Invader", x, y)
+            : base(x, y)
         {
             this.bulletEnd = bulletEnd;
             this.K = randomShot;

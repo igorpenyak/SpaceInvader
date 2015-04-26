@@ -24,7 +24,7 @@ namespace SpaceInvaders.GameEngine.Objects
             get { return this._posy; }
             protected set { this._posy = value; }
         }
-        public string Name { get; protected set; }
+      
         public bool Live { get; set; }
                         
         public int NumberOfLives
@@ -39,11 +39,10 @@ namespace SpaceInvaders.GameEngine.Objects
         #endregion
         
         #region Constructor
-        public GameObject(string name, int x, int y)
+        public GameObject(int x, int y)
         {
             PosX = x;
-            PosY = y;
-            Name = name;
+            PosY = y;            
             this.Live =true;
         }
         #endregion              

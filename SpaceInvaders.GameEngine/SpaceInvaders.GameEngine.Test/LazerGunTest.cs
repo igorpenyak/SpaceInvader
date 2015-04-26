@@ -19,16 +19,16 @@ namespace SpaceInvaders.GameEngine.Test
         public void GetNameTest()
         {
             LazerGun l = new LazerGun(2, 5);
-            Assert.AreEqual(l.Name, LazerGun.GetName());
+            Assert.AreEqual(2, l.PosX);
         }
 
         [TestMethod]
         public void UpdateTest()
         {
             LazerGun l = new LazerGun(5, 2);
-            l.Update(1,10);
+            l.Update(KeyPress.Right,10);
             Assert.AreEqual(6, l.PosX);
-            l.Update(-1,10);
+            l.Update(KeyPress.Left,10);
             Assert.AreEqual(5,l.PosX);
         }
 

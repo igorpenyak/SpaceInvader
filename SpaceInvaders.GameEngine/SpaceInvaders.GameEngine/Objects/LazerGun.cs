@@ -7,7 +7,7 @@ namespace SpaceInvaders.GameEngine.Objects
         #region Constructor
        
         public LazerGun(int x, int y)
-            : base("Gun", x, y)
+            : base(x, y)
         {
             Live = true;
         }
@@ -23,20 +23,15 @@ namespace SpaceInvaders.GameEngine.Objects
             this.PosX--;
         }
 
-        public static string GetName()
-        {
-            return "Gun";
-        }             
-
-        public void Update(int meta_key, int endField)
+        public void Update(KeyPress Key, int endField)
         {
             if (this.Live)
             {
-                if (meta_key == 1 && this.PosX < endField - 4)
+                if (Key == KeyPress.Right && this.PosX < endField - 4)
                 {
                     this.MoveRight();
                 }
-                else if (meta_key == -1 && this.PosX > 2)
+                else if (Key == KeyPress.Left && this.PosX > 2)
                 {
                     this.MoveLeft();
                 }

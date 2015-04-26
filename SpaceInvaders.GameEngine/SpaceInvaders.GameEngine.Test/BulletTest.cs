@@ -30,15 +30,24 @@ namespace SpaceInvaders.GameEngine.Test
             b_l.Add(c);
             c.RemoveBull(b_l, 5);
             Assert.IsTrue(b_l.Count == 0);
-
         }
+
         [TestMethod]
         public void MoveTest()
         {
             Bullet d = new Bullet(5,5,true);
             d.Move();
-            Assert.AreEqual(4,d.PosY);
+            Assert.AreEqual(4,d.PosY);          
+        }
+
+        [TestMethod]
+        public void DirectionTest()
+        {
+            Bullet d = new Bullet(5, 5, true);
+        
+            Assert.IsTrue(d.Direction);
         }
        
+
     }
 }

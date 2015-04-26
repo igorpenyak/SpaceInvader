@@ -8,30 +8,35 @@ namespace SpaceInvaders.GameEngine.Objects
 {
     public class Bullet : GameObject
     {
-        public bool Direction; // направление полета пули. тру - вверх, а фолс соотв вниз
-        // public bool _shot;
-        
-
-
-        public Bullet(int x, int y, bool direction)
-            : base("Bullet", x, y)
+        private bool _direction; // if it`s true, bullet moves up
+        public bool Direction
         {
-            Direction = direction;
+            get 
+            {
+                return _direction;
+            }
         }
-
-                
+               
+        public Bullet(int x, int y, bool direction)
+            : base(x, y)
+        {
+            _direction = direction;
+        }
+                        
         public void InsertBull(List<Bullet> blist)
         {
             blist.Add(this);
+            this.Live = true;
         }
 
         public void RemoveBull(List<Bullet> blist,int end)
         {
-            if (this.Direction)
+            if (this._direction)
             {
-                if (this.PosY < 1)
+                if (this.PosY < 5)
                 {
                     blist.RemoveAt(blist.IndexOf(this));
+                    this.Live = false;
                 }
             }
             else 
@@ -39,6 +44,7 @@ namespace SpaceInvaders.GameEngine.Objects
                 if (this.PosY > end-1)
                 {
                     blist.RemoveAt(blist.IndexOf(this));
+                    this.Live = false;
                 }
             } 
         }
@@ -58,7 +64,7 @@ namespace SpaceInvaders.GameEngine.Objects
 
         public void Move()
         {
-            if (this.Direction)
+            if (this._direction)
             {
                 this.PosY--;  // LazerGun shot                
             }

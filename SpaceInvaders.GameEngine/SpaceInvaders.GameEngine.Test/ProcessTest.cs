@@ -8,8 +8,6 @@ namespace SpaceInvaders.GameEngine.Test
     [TestClass]
     public class ProcessTest
     {
-        
-
         [TestMethod]
         public void ConstructorTest()
         {
@@ -17,16 +15,7 @@ namespace SpaceInvaders.GameEngine.Test
             Process p = new Process(d);
             Assert.IsFalse(p.IsExit);
         }
-
-        //[TestMethod]
-        //public void InitTest()
-        //{
-        //    IDistanceStrategy d = new DistanceStrategy();
-        //    Process p = new Process(d);
-        //    p.Init(60,50,5,7);
-        //    Assert.IsTrue(p.m_GameObjects.Count!=0);
-        //}
-
+                
         [TestMethod]
         public void UpdScoreTest()
         {
@@ -34,27 +23,7 @@ namespace SpaceInvaders.GameEngine.Test
             Process p = new Process(d);
             p.UpdScore(20);
             Assert.AreEqual(20, p.GetScore);
-        }
-
-        //[TestMethod]
-        //public void UpdateTest()
-        //{
-        //    IDistanceStrategy d = new DistanceStrategy();
-        //    Process p = new Process(d);
-        //    p.Init(60,50,5,7);
-        //    p.Update(5);
-        //    Assert.IsTrue(p.b_list.Count!=0);
-        //}
-
-        //[TestMethod]
-        //public void UpdateAnotherTest()
-        //{
-        //    IDistanceStrategy d = new DistanceStrategy();
-        //    Process p = new Process(d); 
-        //    p.Init(60, 50, 5, 7);
-        //    p.Update(1);
-        //    Assert.IsTrue(p.b_list.Count == 0);      
-        //}
+        }              
 
         [TestMethod]
         public void TryLevelTest()
@@ -165,8 +134,8 @@ namespace SpaceInvaders.GameEngine.Test
                int methodCall = 0;
                IDistanceStrategy d = new DistanceStrategy();
                Process p = new Process(d);
-              p.Init(60, 50, 5, 5);          
-              p.Update(5);
+              p.Init(60, 50, 5, 5);
+              p.Update(KeyPress.Shot);
               p.Draw+=delegate{ methodCalled = true;};
               p.Show += delegate { methodCall = 1; };
               p.Render();       
@@ -181,8 +150,8 @@ namespace SpaceInvaders.GameEngine.Test
               int methodCall = 0;
               IDistanceStrategy d = new DistanceStrategy();
               Process p = new Process(d);
-              p.Init(60, 50, 5, 5);             
-              p.Update(5);
+              p.Init(60, 50, 5, 5);
+              p.Update(KeyPress.Shot);
               p.Draw += delegate { methodCalled = true; };
               p.Show += delegate { methodCall = 1; };
               p.Render();
@@ -214,6 +183,48 @@ namespace SpaceInvaders.GameEngine.Test
 
              Assert.AreEqual(1, methodCall);
          }
+
+         [TestMethod]
+         public void InputTest()
+         {
+             bool methodCalled = false;
+             IDistanceStrategy d = new DistanceStrategy();
+             Process p = new Process(d);
+             p.Init(60, 50, 5, 5);
+
+             p.InputKey += delegate { methodCalled = true; return KeyPress.Shot; };
+             p.Update(p.OnInputKey());
+            
+             Assert.IsTrue(methodCalled);
+         }
+
+         [TestMethod]
+         public void InputTest2()
+         {
+             bool methodCalled = false;
+             IDistanceStrategy d = new DistanceStrategy();
+             Process p = new Process(d);
+             p.Init(60, 50, 5, 5);               
+             Assert.AreEqual(KeyPress.Wait,p.OnInputKey());
+         }
+
+
+         [TestMethod]
+
+         public void ClearTest()
+         {
+             
+             int methodCall = 0;
+             IDistanceStrategy d = new DistanceStrategy();
+             Process p = new Process(d);
+             p.Init(60, 50, 5, 5);
+
+             p.Clear += delegate { methodCall = 1; };
+             p.Render();
+
+             Assert.AreEqual(1,methodCall);
+         }
+
 
          [TestMethod]
          public void InvaderWin_Test()
@@ -283,15 +294,137 @@ namespace SpaceInvaders.GameEngine.Test
 
                  while (a!=3)
                  {
-                     p.Update(5);
+                     p.Update(KeyPress.Shot);
                      
                      a++;
                  }
-                 p.Update(5);
-                 p.Update(1);
+                 p.Update(KeyPress.Shot);
+                 p.Update(KeyPress.Right);
              }        
 
              Assert.IsTrue(p.GetScore>=220);
+         }
+
+         [TestMethod]
+         public void PauseTest()
+         {
+             IDistanceStrategy d = new DistanceStrategy();
+             Process p = new Process(d);            
+             p.Init(60, 50, 5, 5);
+             p.Pause();          
+             Assert.AreEqual(Status.IsPaused,p.GameStatus);
+         }
+        
+         [TestMethod]
+         [ExpectedException(typeof(InvalidOperationException))]
+         public void PauseExceptionTest()
+         {
+             IDistanceStrategy d = new DistanceStrategy();
+             Process p = new Process(d);
+             p.Pause();
+         }
+
+         [TestMethod]
+         [ExpectedException(typeof(InvalidOperationException))]
+         public void RestoreExceptionTest()
+         {
+             IDistanceStrategy d = new DistanceStrategy();
+             Process p = new Process(d);
+             p.Restore();
+         }
+
+         [TestMethod]
+         public void RestoreTest()
+         {
+             IDistanceStrategy d = new DistanceStrategy();
+             Process p = new Process(d);
+             p.Init(60, 50, 5, 5);
+             p.Restore();
+             Assert.AreEqual(Status.IsRuning, p.GameStatus);
+         }
+
+         [TestMethod]
+         public void RestoreTest1()
+         {
+             IDistanceStrategy d = new DistanceStrategy();
+             Process p = new Process(d);
+             p.Init(60, 50, 5, 5);
+             p.Pause();
+             p.Restore();
+             Assert.AreEqual(Status.IsRuning, p.GameStatus);
+         }
+
+         [TestMethod]
+         public void HideBulletTest()
+         {
+
+             IDistanceStrategy d = new DistanceStrategy();
+             Process p = new Process(d);
+
+             PrivateObject privateobj = new PrivateObject(p);
+
+             p.Init(60, 50, 5, 7);
+
+             Invader[,] inv = (Invader[,])privateobj.GetField("i_arr");
+             for (var c = 0; c < 6; c++)
+             {
+                 for (var i = 0; i < inv.GetLength(0); i++)
+                 {
+                     for (var j = 0; j < inv.GetLength(1); j++)
+                     {
+                         inv[i, j].Live = false;
+                     }
+                 }
+
+                 int count = 0;
+                 while (count != 10)
+                 {
+                     p.Update(KeyPress.Shot);
+                     count++;
+                 }
+                 p.TryChangeLevel();
+                 if (c == 0)
+                 {
+                     Assert.AreEqual(35, inv[1, 1].Speed);
+                 }
+                
+
+             }
+         }
+         [TestMethod]
+         public void UpdateObjectTest()
+         {
+             IDistanceStrategy d = new DistanceStrategy();
+             Process p = new Process(d);
+             p.Init(60, 50, 5, 5);
+             KeyPress k = KeyPress.Restore;
+             p.InputKey += delegate { return k; };
+             p.Pause();
+             if (p.GameStatus == Status.IsPaused)
+             {
+                 while (p.GameStatus != Status.IsRuning)
+                 {
+                 }
+             }
+             Assert.IsTrue(p.GameStatus == Status.IsRuning);
+         }
+
+
+         [TestMethod]
+         public void UpdateObjectTest1()
+         {         
+             IDistanceStrategy d = new DistanceStrategy();
+             Process p = new Process(d);       
+             p.Init(60, 50, 5, 5);
+             p.InputKey += TestingKey;      
+            while (p.GameStatus != Status.IsPaused)
+            { }
+             Assert.IsTrue(p.GameStatus == Status.IsPaused);       
+         }
+
+         public static KeyPress TestingKey()
+         {
+             return KeyPress.Pause;         
          }
     }
 }

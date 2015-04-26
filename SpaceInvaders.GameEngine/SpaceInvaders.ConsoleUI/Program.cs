@@ -18,38 +18,32 @@ namespace SpaceInvaders.ConsoleUI
             IDistanceStrategy d = new DistanceStrategy();
             Process game = new Process(d);
             ConsoleDraw draw = new ConsoleDraw();
-            game.Init(60, 50, 7, 5);
-            draw.StartScreen();
             game.Draw += draw.Render;
             game.Show += draw.Show;
+            game.Clear += Console.Clear;
+                      
+            draw.StartScreen();
+            game.Init(60, 50, 7, 5);
+            game.InputKey += Press_Key;
 
-            while (!game.IsExit)
-            {              
-                int k = Press_Key();
-                game.Update(k);               
-                               
-                Console.Clear();
-                game.Render();
-                Thread.Sleep(100);
-            }
-            game.Draw -= draw.Render;
-            game.Show -= draw.Show;
+            while (true)
+            {
+                if(game.IsExit)
+                {
+                    game.Draw -= draw.Render;
+                    game.Show -= draw.Show;
+                    game.Clear -= Console.Clear;
+                    game.InputKey -= Press_Key;
 
-            if (game.IsExit && game.Win)
-            {
-                Console.Clear();
-                Console.SetCursorPosition(15, 25);
-                Console.WriteLine("Congratulation! You are the Winner! Your score: {0}", game.GetScore );
-                Console.CursorVisible = false;
-                Console.ReadKey();
-            }
-            else
-            {
-                Console.Clear();
-                Console.SetCursorPosition(15, 25);
-                Console.WriteLine("Thanks for playing. Your score: {0}", game.GetScore);
-                Console.CursorVisible = false;
-                Console.ReadKey();
+                    if (game.Win)
+                    {                      
+                        draw.GameOverScreen("Congratulation! You are the Winner!", game.GetScore);                      
+                    }
+                    else
+                    {
+                        draw.GameOverScreen("Thanks for playing.", game.GetScore);                      
+                    }
+                }
             }
                
         }
@@ -57,25 +51,33 @@ namespace SpaceInvaders.ConsoleUI
         //take user's command
         #region Statics Method
 
-        private static int Press_Key() // transformate user`s command 
+        private static KeyPress Press_Key() // transformate user`s command 
         {                      
             ConsoleKey key = readKey();
 
             if (key == ConsoleKey.RightArrow)
             {
-                return 1;
+                return KeyPress.Right;
             }
             else if (key == ConsoleKey.LeftArrow)
             {
-                return -1;
+                return KeyPress.Left;
             }
             else if (key == ConsoleKey.Spacebar)
             {                      
-                return 5;
+                return KeyPress.Shot;
+            }
+            else if (key == ConsoleKey.Escape)
+            {
+                return KeyPress.Pause;
+            }
+            else if (key == ConsoleKey.Enter)
+            {
+                return KeyPress.Restore;
             }
             else
             {
-                return 0; 
+                return KeyPress.Wait; 
             }       
         }                       
          
