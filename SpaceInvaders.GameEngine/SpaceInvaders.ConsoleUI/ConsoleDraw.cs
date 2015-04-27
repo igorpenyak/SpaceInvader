@@ -80,7 +80,7 @@ namespace SpaceInvaders.ConsoleUI
             Console.Clear();
             Console.SetCursorPosition(15, 25);
             Console.WriteLine(s);
-            Console.SetCursorPosition(15, 25);
+            Console.SetCursorPosition(15, 26);
             Console.WriteLine("Your score: {0}", i);
             Console.CursorVisible = false;
             Console.ReadKey();

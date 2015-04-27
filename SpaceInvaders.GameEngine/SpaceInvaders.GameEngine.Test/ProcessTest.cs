@@ -22,7 +22,7 @@ namespace SpaceInvaders.GameEngine.Test
             IDistanceStrategy d = new DistanceStrategy();
             Process p = new Process(d);
             p.UpdScore(20);
-            Assert.AreEqual(20, p.GetScore);
+            Assert.AreEqual(20, p.Score);
         }              
 
         [TestMethod]
@@ -36,7 +36,7 @@ namespace SpaceInvaders.GameEngine.Test
             
             p.Init(60, 50, 5, 7);
 
-            Invader[,] inv = (Invader[,])privateobj.GetField("i_arr");
+            Invader[,] inv = (Invader[,])privateobj.GetField("_invadersArray");
             for (var c = 0; c < 6; c++)
             {
                 for (var i = 0; i < inv.GetLength(0); i++)
@@ -84,7 +84,7 @@ namespace SpaceInvaders.GameEngine.Test
             p.Init(60, 50, 5, 7);
 
 
-            Invader[,] inv = (Invader[,])privateobj.GetField("i_arr");
+            Invader[,] inv = (Invader[,])privateobj.GetField("_invadersArray");
             LazerGun gun = (LazerGun)privateobj.GetField("_gun");
             for (var c = 0; c < 6; c++)
             {
@@ -161,23 +161,21 @@ namespace SpaceInvaders.GameEngine.Test
 
          [TestMethod]
          public void RenderTest_3()
-         {
-             bool methodCalled = false;
+         {             
              int methodCall = 0;
              IDistanceStrategy d = new DistanceStrategy();
              Process p = new Process(d);
              PrivateObject privateobj = new PrivateObject(p);
 
              p.Init(30, 24, 3, 3);
-             Invader[,] inv = (Invader[,])privateobj.GetField("i_arr");
+             Invader[,] inv = (Invader[,])privateobj.GetField("_invadersArray");
 
-             while (!inv[0, 1].firstShot())
+             while (!inv[0, 1].IsFirstShot())
              {
                  p.Update(0);
-                 inv[0, 1].Update(208);
-                 
+                 inv[0, 1].Update(208);                 
              }
-             p.Draw += delegate { methodCalled = true; };
+             
              p.Show += delegate { methodCall = 1; };
              p.Render();
 
@@ -288,7 +286,7 @@ namespace SpaceInvaders.GameEngine.Test
              int a;
              p.Init(60, 50, 5, 5);
 
-             while (p.GetScore<=220)
+             while (p.Score<=220)
              {
                  a = 0;
 
@@ -302,7 +300,7 @@ namespace SpaceInvaders.GameEngine.Test
                  p.Update(KeyPress.Right);
              }        
 
-             Assert.IsTrue(p.GetScore>=220);
+             Assert.IsTrue(p.Score>=220);
          }
 
          [TestMethod]
@@ -365,7 +363,7 @@ namespace SpaceInvaders.GameEngine.Test
 
              p.Init(60, 50, 5, 7);
 
-             Invader[,] inv = (Invader[,])privateobj.GetField("i_arr");
+             Invader[,] inv = (Invader[,])privateobj.GetField("_invadersArray");
              for (var c = 0; c < 6; c++)
              {
                  for (var i = 0; i < inv.GetLength(0); i++)

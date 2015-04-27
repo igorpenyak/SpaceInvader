@@ -49,7 +49,7 @@ namespace SpaceInvaders.GameEngine.Objects
             } 
         }
 
-        public static void bulletBehavior(List <Bullet> blist, int end)  // insert and remove bull from list
+        public static void BulletBehavior(List <Bullet> blist, int end)  // insert and remove bull from list
         {
             for (var i = 0; i < blist.Count; i++)
                 {

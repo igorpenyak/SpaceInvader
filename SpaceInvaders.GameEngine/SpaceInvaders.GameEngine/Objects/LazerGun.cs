@@ -3,7 +3,16 @@ namespace SpaceInvaders.GameEngine.Objects
 {
     public class LazerGun : GameObject
     {
-        
+        private int _numberOfLive = 3;
+
+
+        public int NumberOfLives
+        {
+            get
+            {
+                return _numberOfLive;
+            }
+        }
         #region Constructor
        
         public LazerGun(int x, int y)

@@ -37,11 +37,11 @@ namespace SpaceInvaders.ConsoleUI
 
                     if (game.Win)
                     {                      
-                        draw.GameOverScreen("Congratulation! You are the Winner!", game.GetScore);                      
+                        draw.GameOverScreen("Congratulation! You are the Winner!", game.Score);                      
                     }
                     else
                     {
-                        draw.GameOverScreen("Thanks for playing.", game.GetScore);                      
+                        draw.GameOverScreen("Thanks for playing.", game.Score);                      
                     }
                 }
             }

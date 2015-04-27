@@ -10,9 +10,8 @@ namespace SpaceInvaders.GameEngine.Objects
         #region Field and Properties
 
         private int _posx;   // position of objects
-        private int _posy;
-        protected bool _live = true;
-        protected int _numberOfLive = 3;
+        private int _posy;      
+       
            
         public int PosX 
         {
@@ -26,16 +25,7 @@ namespace SpaceInvaders.GameEngine.Objects
         }
       
         public bool Live { get; set; }
-                        
-        public int NumberOfLives
-        {
-            get
-            {
-                return _numberOfLive;
-            }
-        }
-
-        
+                                     
         #endregion
         
         #region Constructor

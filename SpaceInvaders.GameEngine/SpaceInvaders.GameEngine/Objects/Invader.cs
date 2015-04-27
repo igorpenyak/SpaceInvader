@@ -7,28 +7,28 @@ namespace SpaceInvaders.GameEngine.Objects
         #region Field and Properties
         private int _recall=1; // count how many times we update obj        
         public int K { get; set; }
-        public int bulletEnd { get; set; } // use for bullet behavior
+        public int EndOfField { get; set; } // use for bullet behavior
         public int Speed { get; set; }
 
-        List<Bullet> enem_bullet = new List<Bullet>();
+        List<Bullet> _enemyBullet = new List<Bullet>();
 
         public int CanShot 
         { 
-            get { return enem_bullet.Count; }
+            get { return _enemyBullet.Count; }
         }
         public Bullet EnemyBullet 
         {
-            get { return enem_bullet[0]; }             
+            get { return _enemyBullet[0]; }             
         }
 
         #endregion
 
 
         #region Constructor
-        public Invader(int x, int y, int bulletEnd,int randomShot)
+        public Invader(int x, int y, int endOfField, int randomShot)
             : base(x, y)
         {
-            this.bulletEnd = bulletEnd;
+            this.EndOfField = endOfField;
             this.K = randomShot;
             Live = true;
             Speed = 1;
@@ -52,7 +52,7 @@ namespace SpaceInvaders.GameEngine.Objects
              return false;
          }
      
-        private bool canShot()
+        private bool EnemyCanShot()
          {
              if (K % 7==0 && _recall%7==0 )
              {
@@ -78,15 +78,15 @@ namespace SpaceInvaders.GameEngine.Objects
             _recall++;
             Bullet b = new Bullet(this.PosX,this.PosY,false);
 
-                if (this.Shot(time) && this.canShot() && enem_bullet.Count == 0)
+                if (this.Shot(time) && this.EnemyCanShot() && _enemyBullet.Count == 0)
                 {
-                    b.InsertBull(enem_bullet);
-                    Bullet.bulletBehavior(enem_bullet, bulletEnd);                            
+                    b.InsertBull(_enemyBullet);
+                    Bullet.BulletBehavior(_enemyBullet, EndOfField);                            
                 }
             
-                if (enem_bullet.Count != 0)
+                if (_enemyBullet.Count != 0)
                 {
-                    Bullet.bulletBehavior(enem_bullet, bulletEnd);
+                    Bullet.BulletBehavior(_enemyBullet, EndOfField);
                 }
 
                 if (_recall%Speed==0)
@@ -95,18 +95,18 @@ namespace SpaceInvaders.GameEngine.Objects
                 }
             }
 
-        public bool firstShot()
+        public bool IsFirstShot()
         {
-            if (enem_bullet.Count != 0)
+            if (_enemyBullet.Count != 0)
             {
                 return true;
             }
             return false;
         }
 
-        public Bullet GetBullet()
+        public Bullet GetEnemyBullet()
         {
-            return enem_bullet[0];
+            return _enemyBullet[0];
         }
 
         #endregion
