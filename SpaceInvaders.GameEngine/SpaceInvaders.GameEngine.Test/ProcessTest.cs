@@ -268,7 +268,7 @@ namespace SpaceInvaders.GameEngine.Test
                  invaders[0, 1].Update(208);                 
 
              }
-             while (!p.isCollision(invaders[0, 1].EnemyBullet, gun))
+             while (!p.IsCollision(invaders[0, 1].EnemyBullet, gun))
              {
                  invaders[0, 1].Update(516);              
              }

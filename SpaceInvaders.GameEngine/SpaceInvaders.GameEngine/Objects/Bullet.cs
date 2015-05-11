@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace SpaceInvaders.GameEngine.Objects
 {
     public class Bullet : GameObject
     {
-        private bool _direction; // if it`s true, bullet moves up
+        #region Field and Property
+
+        private readonly bool _direction; // if it`s true, bullet moves up
         public bool Direction
         {
             get 
@@ -16,13 +14,20 @@ namespace SpaceInvaders.GameEngine.Objects
                 return _direction;
             }
         }
-               
+
+        #endregion
+
+        #region Constructor
+
         public Bullet(int x, int y, bool direction)
             : base(x, y)
         {
             _direction = direction;
         }
-                        
+
+        #endregion
+
+        #region Methods
         public void InsertBull(List<Bullet> blist)
         {
             blist.Add(this);
@@ -73,6 +78,7 @@ namespace SpaceInvaders.GameEngine.Objects
                 this.PosY++; // Invader shot                
             }
         }
-       
+
+        #endregion
     }
 }

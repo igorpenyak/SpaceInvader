@@ -1,16 +1,13 @@
 ﻿using SpaceInvaders.GameEngine;
+using SpaceInvaders.GameEngine.Logic.EventArguments;
 using SpaceInvaders.GameEngine.Objects;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SpaceInvaders.ConsoleUI
 {
-    class ConsoleDraw 
+    class ConsoleDraw
     {
-        
+        #region Methods
         public void StartScreen()
         {
             Console.SetCursorPosition(25, 4);
@@ -29,7 +26,7 @@ namespace SpaceInvaders.ConsoleUI
             Console.ReadKey();           
         }
 
-        public void Render(GameObject obj)
+        public void Render(object sender, GameObject obj)
         { 
             if(obj is Field)
             {
@@ -85,12 +82,13 @@ namespace SpaceInvaders.ConsoleUI
             Console.CursorVisible = false;
             Console.ReadKey();
         }
-     
-        public void Show(Score sc)
+
+        public void Show(object sender, Score sc)
         {         
             Console.SetCursorPosition(37, 2);
-            Console.Write("Score: {0}", sc.score);            
+            Console.Write("Score: {0}", sc.score);
         }
 
+        #endregion    
     }
 }

@@ -20,7 +20,7 @@ namespace SpaceInvaders.ConsoleUI
             ConsoleDraw draw = new ConsoleDraw();
             game.Draw += draw.Render;
             game.Show += draw.Show;
-            game.Clear += Console.Clear;
+            game.Clear += Clear;
                       
             draw.StartScreen();
             game.Init(60, 50, 7, 5);
@@ -32,7 +32,7 @@ namespace SpaceInvaders.ConsoleUI
                 {
                     game.Draw -= draw.Render;
                     game.Show -= draw.Show;
-                    game.Clear -= Console.Clear;
+                    game.Clear -= Clear;
                     game.InputKey -= Press_Key;
 
                     if (game.Win)
@@ -50,7 +50,7 @@ namespace SpaceInvaders.ConsoleUI
 
         //take user's command
         #region Statics Method
-
+      
         private static KeyPress Press_Key() // transformate user`s command 
         {                      
             ConsoleKey key = readKey();
@@ -98,6 +98,11 @@ namespace SpaceInvaders.ConsoleUI
             {
                 Console.ReadKey(true);
             }
+        }
+
+        private static void Clear(object sender, EventArgs e)
+        {
+            Console.Clear();
         }
 
         #endregion  

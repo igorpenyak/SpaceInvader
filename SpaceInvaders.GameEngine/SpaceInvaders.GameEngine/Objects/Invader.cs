@@ -5,12 +5,26 @@ namespace SpaceInvaders.GameEngine.Objects
     public class Invader : GameObject
     {
         #region Field and Properties
-        private int _recall=1; // count how many times we update obj        
+
+        private const double _multiply = 0.5;
+        private const int _evenDivider = 52;
+        private const int _shotConditionOne = 7;
+        private const int _shotConditionTwo = 10;
+        private const int _shotConditionTree = 5;
+        private const int _shotConditionFour = 2;
+        private const int _shotDividerOne = 7;
+        private const int _shotDividerTwo = 2;
+        private const int _shotDividerTree = 4;
+        private const int _shotDividerFour = 9;
+     
+
+
+        private byte _recall=1; // count how many times we update obj        
         public int K { get; set; }
         public int EndOfField { get; set; } // use for bullet behavior
         public int Speed { get; set; }
 
-        List<Bullet> _enemyBullet = new List<Bullet>();
+        private List<Bullet> _enemyBullet = new List<Bullet>();
 
         public int CanShot 
         { 
@@ -45,7 +59,7 @@ namespace SpaceInvaders.GameEngine.Objects
 
         public bool Shot(int time)
          {
-             if (time*0.5%52 == 0)
+             if ( ((time * _multiply) % _evenDivider) == 0)
              {
                  return true;
              }
@@ -54,19 +68,19 @@ namespace SpaceInvaders.GameEngine.Objects
      
         private bool EnemyCanShot()
          {
-             if (K % 7==0 && _recall%7==0 )
+             if ( (K % _shotDividerOne==0) && (_recall%_shotConditionOne==0) )
              {
                  return true;
              }
-             else if (K % 2 == 0 && _recall % 10 == 0)
+             else if ( (K % _shotDividerTwo == 0) && (_recall % _shotConditionTwo == 0) )
              {
                  return true;
              }
-             else if (K % 4 == 0 && _recall % 5 == 0)
+             else if ( (K % _shotDividerTree == 0) && (_recall % _shotConditionFour == 0) )
              {
                  return true;
              }
-             else if (K % 9 == 0 && _recall % 2 == 0)
+             else if ( (K % _shotDividerFour == 0) && (_recall % _shotConditionFour == 0) )
              {
                  return true;
              }  
