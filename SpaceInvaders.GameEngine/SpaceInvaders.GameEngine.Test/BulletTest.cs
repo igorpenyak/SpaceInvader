@@ -12,8 +12,8 @@ namespace SpaceInvaders.GameEngine.Test
         [TestMethod]
         public void RemoveBullTest()
         {
-            Bullet b = new Bullet(1, 0, true);
-            Bullet c = new Bullet(1, 5, false);
+            Bullet b = new Bullet(1, 0, true, 1);
+            Bullet c = new Bullet(1, 5, false, 1);
             List<Bullet> b_l = new List<Bullet>();
             b_l.Add(b);
             b.RemoveBull(b_l,1);
@@ -24,8 +24,8 @@ namespace SpaceInvaders.GameEngine.Test
         [TestMethod]
         public void RemoveEnemyBullTest()
         {
-            Bullet b = new Bullet(1, 0, true);
-            Bullet c = new Bullet(1, 5, false);
+            Bullet b = new Bullet(1, 0, true, 1);
+            Bullet c = new Bullet(1, 5, false, 1);
             List<Bullet> b_l = new List<Bullet>();
             b_l.Add(c);
             c.RemoveBull(b_l, 5);
@@ -35,7 +35,7 @@ namespace SpaceInvaders.GameEngine.Test
         [TestMethod]
         public void MoveTest()
         {
-            Bullet d = new Bullet(5,5,true);
+            Bullet d = new Bullet(5,5,true, 1);
             d.Move();
             Assert.AreEqual(4,d.PosY);          
         }
@@ -43,7 +43,7 @@ namespace SpaceInvaders.GameEngine.Test
         [TestMethod]
         public void DirectionTest()
         {
-            Bullet d = new Bullet(5, 5, true);
+            Bullet d = new Bullet(5, 5, true, 1);
         
             Assert.IsTrue(d.Direction);
         }

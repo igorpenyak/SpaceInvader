@@ -72,7 +72,7 @@ namespace SpaceInvaders.ConsoleUI
             Console.Write("^");      
         }
 
-        public void GameOverScreen(String s, int i)
+        public static void GameOverScreen(String s, int i)
         {
             Console.Clear();
             Console.SetCursorPosition(15, 25);

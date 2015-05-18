@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -42,6 +43,7 @@
     <Compile Include="Logic\DistanceStrategy.cs" />
     <Compile Include="Logic\EventArguments\GameObjectEventArgs.cs" />
     <Compile Include="Logic\EventArguments\ScoreEventArgs.cs" />
+    <Compile Include="Logic\FormsDistanceStrategy.cs" />
     <Compile Include="Logic\IDistanceStrategy.cs" />
     <Compile Include="Objects\Base\IGameObject.cs" />
     <Compile Include="Objects\Field.cs" />

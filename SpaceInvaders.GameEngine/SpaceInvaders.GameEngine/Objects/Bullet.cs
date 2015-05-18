@@ -5,7 +5,7 @@ namespace SpaceInvaders.GameEngine.Objects
     public class Bullet : GameObject
     {
         #region Field and Property
-
+        private int _index;
         private readonly bool _direction; // if it`s true, bullet moves up
         public bool Direction
         {
@@ -19,10 +19,11 @@ namespace SpaceInvaders.GameEngine.Objects
 
         #region Constructor
 
-        public Bullet(int x, int y, bool direction)
+        public Bullet(int x, int y, bool direction, int i)
             : base(x, y)
         {
             _direction = direction;
+            _index = i;
         }
 
         #endregion
@@ -38,7 +39,7 @@ namespace SpaceInvaders.GameEngine.Objects
         {
             if (this._direction)
             {
-                if (this.PosY < 5)
+                if (this.PosY < 5*_index)
                 {
                     blist.RemoveAt(blist.IndexOf(this));
                     this.Live = false;
@@ -46,7 +47,7 @@ namespace SpaceInvaders.GameEngine.Objects
             }
             else 
             {
-                if (this.PosY > end-1)
+                if (this.PosY > end-1*_index)
                 {
                     blist.RemoveAt(blist.IndexOf(this));
                     this.Live = false;
@@ -71,11 +72,11 @@ namespace SpaceInvaders.GameEngine.Objects
         {
             if (this._direction)
             {
-                this.PosY--;  // LazerGun shot                
+                this.PosY-=2*_index;  // LazerGun shot                
             }
             else
             {
-                this.PosY++; // Invader shot                
+                this.PosY+=2*_index; // Invader shot                
             }
         }
 

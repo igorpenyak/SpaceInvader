@@ -11,14 +11,14 @@ namespace SpaceInvaders.GameEngine.Test
         [TestMethod]
         public void ConstructorTest()
         {
-            Invader inv = new Invader(2, 3, 20, 9);
+            Invader inv = new Invader(2, 3, 20, 9,1);
             Assert.AreEqual(2,inv.PosX);
         }
 
         [TestMethod]
         public void MoveTest()
         {
-            Invader inv = new Invader(2, 3, 20, 9);
+            Invader inv = new Invader(2, 3, 20, 9, 1);
             inv.Move();
             Assert.AreEqual(4, inv.PosY);
 
@@ -27,7 +27,7 @@ namespace SpaceInvaders.GameEngine.Test
         [TestMethod]
         public void ShotTest()
         {
-            Invader inv = new Invader(2, 3, 20, 9);
+            Invader inv = new Invader(2, 3, 20, 9, 1);
             Assert.IsFalse(inv.Shot(10));
             Assert.IsFalse(!inv.Shot(208));
         }
@@ -36,9 +36,8 @@ namespace SpaceInvaders.GameEngine.Test
         [TestMethod]
         public void UpdateTest()
         {
-          
-            Invader inv = new Invader(2, 3, 20, 9);
-       
+
+            Invader inv = new Invader(2, 3, 20, 9, 1);       
             inv.Speed = 1;
             inv.Update(10000);
             Assert.IsTrue(inv.CanShot==0);
@@ -47,14 +46,14 @@ namespace SpaceInvaders.GameEngine.Test
         [TestMethod]
         public void firstShotTest()
         {
-            Invader inv = new Invader(2, 3, 20, 9);
+            Invader inv = new Invader(2, 3, 20, 9, 1);
             Assert.IsFalse(inv.IsFirstShot());
         }
 
          [TestMethod]
        public void UpdateTrueTest()
         {
-            Invader inv = new Invader(2, 3, 20, 9);
+            Invader inv = new Invader(2, 3, 20, 9, 1);
             inv.Speed = 1;
             inv.Update(208);
             inv.Update(208);
@@ -64,9 +63,9 @@ namespace SpaceInvaders.GameEngine.Test
          [TestMethod]
          public void FirstShotTrueTest()
          {
-             Invader inv = new Invader(2, 3, 20, 9);
+             Invader inv = new Invader(2, 3, 20, 9, 1);
              PrivateObject privateObj = new PrivateObject(inv);
-             Bullet b = new Bullet(1,2,false);
+             Bullet b = new Bullet(1,2,false,1);
              List<Bullet> bullet_list = (List<Bullet>)privateObj.GetField("_enemyBullet");
                  inv.Speed = 1;
              bullet_list.Add(b);
@@ -77,7 +76,7 @@ namespace SpaceInvaders.GameEngine.Test
          [TestMethod]
          public void canShotTrueTest()
          {
-             Invader inv = new Invader(2, 3, 20, 9);
+             Invader inv = new Invader(2, 3, 20, 9, 1);
              inv.Speed = 1;
 
              for (var i = 0; i <= 9; i++)
@@ -112,8 +111,8 @@ namespace SpaceInvaders.GameEngine.Test
          [TestMethod]
          public void GetBulletTest()
          {
-             Invader inv = new Invader(2, 3, 20, 9);
-             Bullet b = new Bullet(inv.PosX, inv.PosY, false);
+             Invader inv = new Invader(2, 3, 20, 9, 1);
+             Bullet b = new Bullet(inv.PosX, inv.PosY, false,1);
 
              PrivateObject privateObj = new PrivateObject(inv);
              List<Bullet> bullet_list = (List<Bullet>)privateObj.GetField("_enemyBullet");
@@ -127,7 +126,7 @@ namespace SpaceInvaders.GameEngine.Test
          [TestMethod]
          public void GetEnemy_BulletTest()
          {
-             Invader inv = new Invader(2, 3, 20, 9);
+             Invader inv = new Invader(2, 3, 20, 9, 1);
              
              inv.Speed = 1;
              inv.Update(208);

@@ -9,12 +9,12 @@ using System.Timers;
 
 namespace SpaceInvaders.GameEngine
 {
-    public enum KeyPress
+    public enum ChooseKey
     {
-        Left,
-        Right,
-        Shot,
         Wait,
+        Right,
+        Left,       
+        Shot,       
         Pause,
         Restore
     }
@@ -26,30 +26,55 @@ namespace SpaceInvaders.GameEngine
         IsPaused,
         IsExit
     }
-    public class Process
+    public class GameCommand
     {
         #region Fields
         
-            private const int _pause = 100;
-            private const int _enemyColumns = 10;
-            private const int _enemyRows = 8;
-            private const int _numberEnemyRows = 3;
+            private const int THE_PAUSE = 100;
+            private const int THE_ENEMYCOLUNS = 70;
+            private const int THE_ENEMYROWS = 50;
+            private const int THE_NUMBERENEMYROWS = 5;
             private readonly IDistanceStrategy _distanceStrategy;   
 
             private int _count=0;
             private int _enemyPosX;
             private int _enemyPosY;
-            private Timer _timer;                           
-                         
-            List<Bullet> _gunBulletList = new List<Bullet>();
-            Invader[,] _invadersArray;
-            Score _score = new Score();
-            LazerGun _gun;
-            Field _playground;
+            private int _gunIndex;
+            private int _enemyIndex;
+            private int _bulletIndex;
+
+          //  private Timer _timer;                           
+
+            private List<Bullet> _gunBulletList = new List<Bullet>();
+            private Invader[,] _invadersArray;
+            private Score _score = new Score();
+            private LazerGun _gun;
+            private Field _playground;
 
         #endregion
 
         #region Properties
+
+            public List<Bullet> GunBulletList
+            {
+                get {
+                    return _gunBulletList;
+                }
+            }
+            public Invader[,] InvadersArray
+            {
+                get
+                {
+                    return _invadersArray;
+                }
+            }
+            public LazerGun LazerGun
+            {
+                get
+                {
+                    return _gun;
+                }
+            }
 
         public bool IsExit { get; set; }     
         public bool Win { get; protected set; }   // flag for ending with player's win            
@@ -61,7 +86,7 @@ namespace SpaceInvaders.GameEngine
             }
         }
         public Status GameStatus { get; private set; }
-        public KeyPress Key { get; set; } 
+        public ChooseKey Key { get; set; } 
               
         #endregion
         
@@ -70,17 +95,20 @@ namespace SpaceInvaders.GameEngine
         public event EventHandler<GameObject> Draw;          
         public event EventHandler<Score> Show;
         public event EventHandler<EventArgs> Clear;
-        public event Func<KeyPress> InputKey;
+        public event Func<ChooseKey> InputKey;
 
         #endregion
         
-        public Process(IDistanceStrategy distanceStrategy)
+        public GameCommand(IDistanceStrategy distanceStrategy, int g, int e, int b)
         {
             IsExit = false;
             this._distanceStrategy = distanceStrategy;
             GameStatus = Status.IsNeedInitialize;
-            _timer = new Timer(100);
-            _timer.Elapsed += GameUpdate; 
+            _gunIndex = g;
+            _enemyIndex = e;
+            _bulletIndex = b;
+          //  _timer = new Timer(500);
+            
         }
 
         public void Init(int x, int y, int pos_x, int pos_y)
@@ -91,17 +119,19 @@ namespace SpaceInvaders.GameEngine
             }
 
             Field Playground = new Field(x, y);  //Define Size of playground
-            LazerGun gun = new LazerGun(x/2, y-1);
+            LazerGun gun = new LazerGun(x/2, y-1, _gunIndex);
             _gun = gun;
             _playground = Playground;
 
             _enemyPosX = pos_x;
             _enemyPosY = pos_y;
             CreateEnemyArray(x, y);
-            SetEnemy(_invadersArray, y-1, 50, pos_x, pos_y);
+            SetEnemy(_invadersArray, y-1, 40, pos_x, pos_y);
 
             GameStatus = Status.IsRuning;
-            _timer.Start();
+          //  _timer.Start();
+           // _timer.Elapsed += GameUpdate; 
+            
         }
 
         #region Helpers
@@ -130,14 +160,14 @@ namespace SpaceInvaders.GameEngine
             }
         }
 
-        public KeyPress OnInputKey()
+        public ChooseKey OnInputKey()
         {
             if (this.InputKey != null)
             {
-                return this.InputKey();                
+               return this.InputKey();                
             }
 
-            return KeyPress.Wait;
+          return ChooseKey.Wait;
         }
 
         public void UpdScore(int number)
@@ -149,15 +179,15 @@ namespace SpaceInvaders.GameEngine
         public void CreateEnemyArray(int x, int y)
         {
 
-            int i = x / _enemyColumns;
+            int i = x / THE_ENEMYCOLUNS;
             int j;
-            if (y / _enemyRows < _numberEnemyRows)
+            if (y / THE_ENEMYROWS < THE_NUMBERENEMYROWS)
             {
-                j = y / _enemyRows;
+                j = y / THE_ENEMYROWS;
             }
             else
             {
-                j = _numberEnemyRows;
+                j = THE_NUMBERENEMYROWS;
             }
 
             #region Validation
@@ -219,11 +249,11 @@ namespace SpaceInvaders.GameEngine
             GameStatus = Status.IsRuning;                      
         }
 
-        public void UpdatePlayer(KeyPress key)
+        public void UpdatePlayer(ChooseKey key)
         {
-            Bullet bull = new Bullet(_gun.PosX, _gun.PosY, true);
+            Bullet bull = new Bullet(_gun.PosX, _gun.PosY, true, _bulletIndex);
 
-            if (key == KeyPress.Shot) 
+            if (key == ChooseKey.Shot) 
             {
                 bull.InsertBull(_gunBulletList);
             }
@@ -256,12 +286,12 @@ namespace SpaceInvaders.GameEngine
 
                 for (int j = 0; j < arr.GetLength(1); j++)
                 {
-                    Invader invader = new Invader(posx, posy, x, posx + posy);
+                    Invader invader = new Invader(posx, posy, x, posx + posy, _enemyIndex);
                     invader.Speed = speed;
                     arr[i, j] = invader;
-                    posy += 6;
+                    posy += 30;
                 }
-                posx += 8;
+                posx += 70;
             }
         }
 
@@ -338,14 +368,15 @@ namespace SpaceInvaders.GameEngine
                                 
         #endregion
         
-        public void GameUpdate(object source, ElapsedEventArgs e)
+      //  public void GameUpdate(object source, ElapsedEventArgs e)
+            public void GameUpdate()
         {
             Key = OnInputKey();
-            if (Key == KeyPress.Pause)
+            if (Key == ChooseKey.Pause)
             {
                 this.Pause();
             }
-            else if (Key == KeyPress.Restore)
+            else if (Key == ChooseKey.Restore)
             {
                 this.Restore();               
             }
@@ -353,10 +384,10 @@ namespace SpaceInvaders.GameEngine
             {
                 this.Update(Key);
             }
-           this.Render();
+          this.Render();
         }
              
-        public void Update(KeyPress key)  
+        public void Update(ChooseKey key)  
         {
             if (GameStatus!= Status.IsPaused)
             {                
@@ -381,7 +412,7 @@ namespace SpaceInvaders.GameEngine
         public void Render()  
     {
             OnClear();
-            OnDraw(_playground);
+         //  OnDraw(_playground);
             OnDraw(_gun);              
                                                 
             for (var i = 0; i < _gunBulletList.Count; i++)
@@ -404,7 +435,8 @@ namespace SpaceInvaders.GameEngine
                     }
                 }
             }
-            OnShow(_score);               
+            OnShow(_score);
+            
     }
 
         #endregion
@@ -480,9 +512,13 @@ namespace SpaceInvaders.GameEngine
                     {
                         UpdScore(70);
                     }
-                    else
+                    else if (j == 0)
                     {
                         UpdScore(100);
+                    }
+                    else
+                    {
+                        UpdScore(30);
                     }
                 }
             }

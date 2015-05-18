@@ -12,7 +12,7 @@ namespace SpaceInvaders.GameEngine.Test
         public void ConstructorTest()
         {
             IDistanceStrategy d = new DistanceStrategy();
-            Process p = new Process(d);
+            GameCommand p = new GameCommand(d, 1, 1, 1);
             Assert.IsFalse(p.IsExit);
         }
                 
@@ -20,7 +20,7 @@ namespace SpaceInvaders.GameEngine.Test
         public void UpdScoreTest()
         {
             IDistanceStrategy d = new DistanceStrategy();
-            Process p = new Process(d);
+            GameCommand p = new GameCommand(d, 1, 1, 1);
             p.UpdScore(20);
             Assert.AreEqual(20, p.Score);
         }              
@@ -30,7 +30,7 @@ namespace SpaceInvaders.GameEngine.Test
         {
             
             IDistanceStrategy d = new DistanceStrategy();
-            Process p = new Process(d);
+            GameCommand p = new GameCommand(d, 1, 1, 1);
 
             PrivateObject privateobj=new PrivateObject(p);
             
@@ -78,7 +78,7 @@ namespace SpaceInvaders.GameEngine.Test
         public void TryExitTest()
         {
             IDistanceStrategy d = new DistanceStrategy();
-            Process p = new Process(d);
+            GameCommand p = new GameCommand(d,1,1,1);
             PrivateObject privateobj = new PrivateObject(p);
             
             p.Init(60, 50, 5, 7);
@@ -113,7 +113,7 @@ namespace SpaceInvaders.GameEngine.Test
           public void CreateEnemyTest()
           {
               IDistanceStrategy d=new DistanceStrategy();
-              Process p = new Process(d);
+              GameCommand p = new GameCommand(d, 1, 1, 1);
               p.CreateEnemyArray(-2, -2);              
           }
 
@@ -122,7 +122,7 @@ namespace SpaceInvaders.GameEngine.Test
           public void InitExceptionTest()
           {
               IDistanceStrategy d = new DistanceStrategy();
-              Process p = new Process(d);
+              GameCommand p = new GameCommand(d, 1, 1, 1);
               p.Init(-2, -2, 0, 2);
           }
 
@@ -133,9 +133,9 @@ namespace SpaceInvaders.GameEngine.Test
                bool methodCalled = false;
                int methodCall = 0;
                IDistanceStrategy d = new DistanceStrategy();
-               Process p = new Process(d);
+               GameCommand p = new GameCommand(d, 1, 1, 1);
               p.Init(60, 50, 5, 5);
-              p.Update(KeyPress.Shot);
+              p.Update(ChooseKey.Shot);
               p.Draw+=delegate{ methodCalled = true;};
               p.Show += delegate { methodCall = 1; };
               p.Render();       
@@ -149,9 +149,9 @@ namespace SpaceInvaders.GameEngine.Test
               bool methodCalled = false;
               int methodCall = 0;
               IDistanceStrategy d = new DistanceStrategy();
-              Process p = new Process(d);
+              GameCommand p = new GameCommand(d, 1, 1, 1);
               p.Init(60, 50, 5, 5);
-              p.Update(KeyPress.Shot);
+              p.Update(ChooseKey.Shot);
               p.Draw += delegate { methodCalled = true; };
               p.Show += delegate { methodCall = 1; };
               p.Render();
@@ -164,7 +164,7 @@ namespace SpaceInvaders.GameEngine.Test
          {             
              int methodCall = 0;
              IDistanceStrategy d = new DistanceStrategy();
-             Process p = new Process(d);
+             GameCommand p = new GameCommand(d, 1, 1, 1);
              PrivateObject privateobj = new PrivateObject(p);
 
              p.Init(30, 24, 3, 3);
@@ -187,10 +187,10 @@ namespace SpaceInvaders.GameEngine.Test
          {
              bool methodCalled = false;
              IDistanceStrategy d = new DistanceStrategy();
-             Process p = new Process(d);
+             GameCommand p = new GameCommand(d, 1, 1, 1);
              p.Init(60, 50, 5, 5);
 
-             p.InputKey += delegate { methodCalled = true; return KeyPress.Shot; };
+             p.InputKey += delegate { methodCalled = true; return ChooseKey.Shot; };
              p.Update(p.OnInputKey());
             
              Assert.IsTrue(methodCalled);
@@ -201,9 +201,9 @@ namespace SpaceInvaders.GameEngine.Test
          {
              bool methodCalled = false;
              IDistanceStrategy d = new DistanceStrategy();
-             Process p = new Process(d);
+             GameCommand p = new GameCommand(d, 1, 1, 1);
              p.Init(60, 50, 5, 5);               
-             Assert.AreEqual(KeyPress.Wait,p.OnInputKey());
+             Assert.AreEqual(ChooseKey.Wait,p.OnInputKey());
          }
 
 
@@ -214,7 +214,7 @@ namespace SpaceInvaders.GameEngine.Test
              
              int methodCall = 0;
              IDistanceStrategy d = new DistanceStrategy();
-             Process p = new Process(d);
+             GameCommand p = new GameCommand(d,1,1,1);
              p.Init(60, 50, 5, 5);
 
              p.Clear += delegate { methodCall = 1; };
@@ -227,10 +227,10 @@ namespace SpaceInvaders.GameEngine.Test
          [TestMethod]
          public void InvaderWin_Test()
          {
-             LazerGun gun = new LazerGun(5,5);
-             Invader invader = new Invader(5,6,20,9);
+             LazerGun gun = new LazerGun(5,5,1);
+             Invader invader = new Invader(5,6,20,9,1);
              IDistanceStrategy d = new DistanceStrategy();
-             Process p = new Process(d);
+             GameCommand p = new GameCommand(d, 1, 1, 1);
              bool a=p.InvaderWin(gun,invader);
              Assert.AreEqual(true, a);                         
          }
@@ -238,15 +238,15 @@ namespace SpaceInvaders.GameEngine.Test
          [TestMethod]
          public void CollisionInvader_Test()
          {
-             LazerGun gun = new LazerGun(5, 5);
+             LazerGun gun = new LazerGun(5, 5, 1);
              Invader[,] invaders = new Invader[1,2];
-             Invader invader = new Invader(5, 6, 20, 9);
+             Invader invader = new Invader(5, 6, 20, 9, 1);
              invaders[0, 0] = invader;
-             invaders[0, 1] = new Invader(5, 6, 10, 7);
+             invaders[0, 1] = new Invader(5, 6, 10, 7, 1);
                 
 
              IDistanceStrategy d = new DistanceStrategy();
-             Process p = new Process(d);
+             GameCommand p = new GameCommand(d, 1, 1, 1);
 
              p.CollisionInvader(invaders,0,1,gun);             
              Assert.IsFalse(gun.Live);
@@ -255,17 +255,17 @@ namespace SpaceInvaders.GameEngine.Test
          [TestMethod]
          public void CollisionInvader_Test1()
          {
-             LazerGun gun = new LazerGun(5, 15);
+             LazerGun gun = new LazerGun(5, 15, 1);
              Invader[,] invaders = new Invader[1, 2];
       
-             invaders[0, 1] = new Invader(5, 5, 15, 9);
+             invaders[0, 1] = new Invader(5, 5, 15, 9, 1);
              invaders[0, 1].Speed = 40;
 
              IDistanceStrategy d = new DistanceStrategy();
-             Process p = new Process(d);
+             GameCommand p = new GameCommand(d, 1, 1, 1);
              while (invaders[0,1].CanShot ==0) 
              {
-                 invaders[0, 1].Update(208);                 
+                 invaders[0, 1].Update(208);                  
 
              }
              while (!p.IsCollision(invaders[0, 1].EnemyBullet, gun))
@@ -282,7 +282,7 @@ namespace SpaceInvaders.GameEngine.Test
          public void CollisionLazerGun_Test1()
          {
              IDistanceStrategy d = new DistanceStrategy();
-             Process p = new Process(d);
+             GameCommand p = new GameCommand(d, 1, 1, 1);
              int a;
              p.Init(60, 50, 5, 5);
 
@@ -292,12 +292,12 @@ namespace SpaceInvaders.GameEngine.Test
 
                  while (a!=3)
                  {
-                     p.Update(KeyPress.Shot);
+                     p.Update(ChooseKey.Shot);
                      
                      a++;
                  }
-                 p.Update(KeyPress.Shot);
-                 p.Update(KeyPress.Right);
+                 p.Update(ChooseKey.Shot);
+                 p.Update(ChooseKey.Right);
              }        
 
              Assert.IsTrue(p.Score>=220);
@@ -307,7 +307,7 @@ namespace SpaceInvaders.GameEngine.Test
          public void PauseTest()
          {
              IDistanceStrategy d = new DistanceStrategy();
-             Process p = new Process(d);            
+             GameCommand p = new GameCommand(d, 1, 1, 1);            
              p.Init(60, 50, 5, 5);
              p.Pause();          
              Assert.AreEqual(Status.IsPaused,p.GameStatus);
@@ -318,7 +318,7 @@ namespace SpaceInvaders.GameEngine.Test
          public void PauseExceptionTest()
          {
              IDistanceStrategy d = new DistanceStrategy();
-             Process p = new Process(d);
+             GameCommand p = new GameCommand(d, 1, 1, 1);
              p.Pause();
          }
 
@@ -327,7 +327,7 @@ namespace SpaceInvaders.GameEngine.Test
          public void RestoreExceptionTest()
          {
              IDistanceStrategy d = new DistanceStrategy();
-             Process p = new Process(d);
+             GameCommand p = new GameCommand(d, 1, 1, 1);
              p.Restore();
          }
 
@@ -335,7 +335,7 @@ namespace SpaceInvaders.GameEngine.Test
          public void RestoreTest()
          {
              IDistanceStrategy d = new DistanceStrategy();
-             Process p = new Process(d);
+             GameCommand p = new GameCommand(d, 1, 1, 1);
              p.Init(60, 50, 5, 5);
              p.Restore();
              Assert.AreEqual(Status.IsRuning, p.GameStatus);
@@ -345,7 +345,7 @@ namespace SpaceInvaders.GameEngine.Test
          public void RestoreTest1()
          {
              IDistanceStrategy d = new DistanceStrategy();
-             Process p = new Process(d);
+             GameCommand p = new GameCommand(d, 1, 1, 1);
              p.Init(60, 50, 5, 5);
              p.Pause();
              p.Restore();
@@ -357,7 +357,7 @@ namespace SpaceInvaders.GameEngine.Test
          {
 
              IDistanceStrategy d = new DistanceStrategy();
-             Process p = new Process(d);
+             GameCommand p = new GameCommand(d, 1, 1, 1);
 
              PrivateObject privateobj = new PrivateObject(p);
 
@@ -377,7 +377,7 @@ namespace SpaceInvaders.GameEngine.Test
                  int count = 0;
                  while (count != 10)
                  {
-                     p.Update(KeyPress.Shot);
+                     p.Update(ChooseKey.Shot);
                      count++;
                  }
                  p.TryChangeLevel();
@@ -393,9 +393,9 @@ namespace SpaceInvaders.GameEngine.Test
          public void UpdateObjectTest()
          {
              IDistanceStrategy d = new DistanceStrategy();
-             Process p = new Process(d);
+             GameCommand p = new GameCommand(d, 1, 1, 1);
              p.Init(60, 50, 5, 5);
-             KeyPress k = KeyPress.Restore;
+             ChooseKey k = ChooseKey.Restore;
              p.InputKey += delegate { return k; };
              p.Pause();
              if (p.GameStatus == Status.IsPaused)
@@ -412,7 +412,7 @@ namespace SpaceInvaders.GameEngine.Test
          public void UpdateObjectTest1()
          {         
              IDistanceStrategy d = new DistanceStrategy();
-             Process p = new Process(d);       
+             GameCommand p = new GameCommand(d, 1, 1, 1);    
              p.Init(60, 50, 5, 5);
              p.InputKey += TestingKey;      
             while (p.GameStatus != Status.IsPaused)
@@ -420,9 +420,9 @@ namespace SpaceInvaders.GameEngine.Test
              Assert.IsTrue(p.GameStatus == Status.IsPaused);       
          }
 
-         public static KeyPress TestingKey()
+         public static ChooseKey TestingKey()
          {
-             return KeyPress.Pause;         
+             return ChooseKey.Pause;         
          }
     }
 }
