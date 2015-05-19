@@ -164,7 +164,7 @@ namespace SpaceInvaders.GameEngine.Test
          {             
              int methodCall = 0;
              IDistanceStrategy d = new DistanceStrategy();
-             GameCommand p = new GameCommand(d, 1, 1, 1);
+             GameCommand p = new GameCommand(d, 10, 10, 10);
              PrivateObject privateobj = new PrivateObject(p);
 
              p.Init(460, 600, 10, 10);
@@ -172,8 +172,9 @@ namespace SpaceInvaders.GameEngine.Test
 
              while (!inv[0, 1].IsFirstShot())
              {
-                 p.Update(0);
-                 inv[0, 1].Update(208);                 
+                 p.Update(ChooseKey.Wait);
+                 inv[0, 1].Update(208);
+                 inv[0, 1].Update(516);   
              }
              
              p.Show += delegate { methodCall = 1; };
@@ -264,7 +265,7 @@ namespace SpaceInvaders.GameEngine.Test
 
              IDistanceStrategy d = new DistanceStrategy();
              GameCommand p = new GameCommand(d, 1, 1, 1);
-             while (invaders[0,1].CanShot ==0) 
+             while (invaders[0,1].CanShot == 0) 
              {
                  invaders[0, 1].Update(208);
                  invaders[0, 1].Update(516);
@@ -281,36 +282,32 @@ namespace SpaceInvaders.GameEngine.Test
              Assert.AreEqual(3,gun.NumberOfLives);
          }
 
+
          [TestMethod]
-         public void CollisionLazerGun_Test1()
+         public void CollisionLazerGun_Test2()
          {
              IDistanceStrategy d = new DistanceStrategy();
-             GameCommand p = new GameCommand(d, 1, 1, 5);
-             int a;
-             p.Init(70, 70, 7, 7);
+             GameCommand p = new GameCommand(d, 1, 10, 10);
+             //int a;
+             p.Init(460, 600, 10, 10);
+             Bullet b1 = new Bullet(p.InvadersArray[0,0].PosX, p.InvadersArray[0,0].PosY,true,1);
+             Bullet b2 = new Bullet(p.InvadersArray[1,1].PosX, p.InvadersArray[1,1].PosY,true,1);
+             Bullet b3 = new Bullet(p.InvadersArray[2,2].PosX, p.InvadersArray[2,2].PosY,true,1);
+             Bullet b4 = new Bullet(p.InvadersArray[3,3].PosX, p.InvadersArray[3,3].PosY,true,1);
 
-             while (p.Score<=300)
-             {
-                 a = 0;
+             p.GunBulletList.Add(b1);
+             p.GunBulletList.Add(b2);
+             p.GunBulletList.Add(b3);
+             p.GunBulletList.Add(b4);
 
-                 while (a!=4)
-                 {
-                     if (p.LazerGun.Live)
-                     {
-                         p.Update(ChooseKey.Shot);
-                         a++;
-                     }
-                     else 
-                     { 
-                         return;
-                     }
-                 }
-                 p.Update(ChooseKey.Shot);
-                 p.Update(ChooseKey.Right);
-             }        
+             p.CollisionLazerGun(p.InvadersArray, 0, 0, p.GunBulletList);
+             p.CollisionLazerGun(p.InvadersArray, 1, 1, p.GunBulletList);
+             p.CollisionLazerGun(p.InvadersArray, 2, 2, p.GunBulletList);
+             p.CollisionLazerGun(p.InvadersArray, 3, 3, p.GunBulletList);
 
-             Assert.IsTrue(p.Score>=220);
+             Assert.IsTrue(p.Score >= 250);
          }
+
 
          [TestMethod]
          public void PauseTest()
@@ -452,9 +449,6 @@ namespace SpaceInvaders.GameEngine.Test
                        
              Assert.AreEqual(0, p.GameLevel);
          }
-
-
-
-
+        
     }
 }

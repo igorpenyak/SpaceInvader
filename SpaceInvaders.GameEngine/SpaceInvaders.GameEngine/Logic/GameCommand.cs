@@ -31,8 +31,8 @@ namespace SpaceInvaders.GameEngine
         #region Fields
         
             private const int THE_PAUSE = 100;
-            private const int THE_ENEMYCOLUNS =70;
-            private const int THE_ENEMYROWS = 50;
+            private const int THE_ENEMYCOLUNS =7;
+            private const int THE_ENEMYROWS = 5;
             private const int THE_NUMBERENEMYROWS = 5;
             private readonly IDistanceStrategy _distanceStrategy;   
 
@@ -187,11 +187,11 @@ namespace SpaceInvaders.GameEngine
         public void CreateEnemyArray(int x, int y)
         {
 
-            int i = x / THE_ENEMYCOLUNS;
+            int i = x / (THE_ENEMYCOLUNS*_enemyIndex);
             int j;
-            if (y / THE_ENEMYROWS < THE_NUMBERENEMYROWS)
+            if ((y / (THE_ENEMYROWS*_enemyIndex)) <= THE_NUMBERENEMYROWS)
             {
-                j = y / THE_ENEMYROWS;
+                j = (y / (THE_ENEMYROWS * _enemyIndex));
             }
             else
             {
@@ -297,9 +297,9 @@ namespace SpaceInvaders.GameEngine
                     Invader invader = new Invader(posx, posy, x, posx + posy, _enemyIndex);
                     invader.Speed = speed;
                     arr[i, j] = invader;
-                    posy += 30;
+                    posy += 3*_enemyIndex;
                 }
-                posx += 70;
+                posx += 7*_enemyIndex;
             }
         }
 
@@ -420,7 +420,7 @@ namespace SpaceInvaders.GameEngine
         public void Render()  
     {
             OnClear();
-         //  OnDraw(_playground);
+            OnDraw(_playground);
             OnDraw(_gun);              
                                                 
             for (var i = 0; i < _gunBulletList.Count; i++)

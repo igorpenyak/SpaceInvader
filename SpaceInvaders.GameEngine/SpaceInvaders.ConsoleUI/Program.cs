@@ -25,10 +25,10 @@ namespace SpaceInvaders.ConsoleUI
             game.Clear += Clear;
             Program.Game = game;
 
-            System.Timers.Timer t = new System.Timers.Timer(500);
+            System.Timers.Timer t = new System.Timers.Timer(200);
             draw.StartScreen();
 
-            game.Init(50, 60, 5, 5);  
+            game.Init(60, 50, 5, 5);  
                       
             game.InputKey += Press_Key;          
             t.Elapsed += Program.Play;
