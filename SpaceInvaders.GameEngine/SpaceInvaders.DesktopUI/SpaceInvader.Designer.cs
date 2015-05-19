@@ -47,6 +47,8 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "SpaceInvader";
             this.Load += new System.EventHandler(this.Form_Load);
             this.ResumeLayout(false);

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SpaceInvaders.GameEngine.Logic.EventArguments
 {
-    class ScoreEventArgs: EventArgs
+   public class ScoreEventArgs: EventArgs
         {
             public Score ScoreNumber { get; set; }
 

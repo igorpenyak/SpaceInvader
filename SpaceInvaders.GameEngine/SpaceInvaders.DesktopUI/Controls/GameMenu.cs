@@ -11,9 +11,12 @@ using System.Windows.Forms;
 namespace SpaceInvaders.DesktopUI.Controls
 {
     public partial class GameMenu : UserControl
-    {           
-
+    {
+        #region Event
         public event EventHandler GameStartRequested;
+        #endregion
+
+        #region Methods
         public GameMenu()
         {
             InitializeComponent();
@@ -32,5 +35,6 @@ namespace SpaceInvaders.DesktopUI.Controls
             }
         }
 
+        #endregion
     }
 }

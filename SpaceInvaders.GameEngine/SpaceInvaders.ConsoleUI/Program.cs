@@ -23,52 +23,41 @@ namespace SpaceInvaders.ConsoleUI
             game.Draw += draw.Render;
             game.Show += draw.Show;
             game.Clear += Clear;
-            Game = game;
+            Program.Game = game;
 
             System.Timers.Timer t = new System.Timers.Timer(500);
-            t.Start();  
             draw.StartScreen();
-            game.Init(60, 50, 7, 5);            
-            game.InputKey += Press_Key;
+
+            game.Init(50, 60, 5, 5);  
+                      
+            game.InputKey += Press_Key;          
+            t.Elapsed += Program.Play;
+            t.Start();
+
             while (!game.IsExit)
             {
-                t.Elapsed += Program.Play;
-                Thread.Sleep(1000);
-            }
-            if (game.Win || game.IsExit)
-            {
-                ConsoleDraw.GameOverScreen("Congratulation! You are the Winner!", Game.Score);
-            }
-            if (!game.Win || game.IsExit)
-            {
-                ConsoleDraw.GameOverScreen("Thanks for playing.", Game.Score);
-            }
-            
- 
-               
+                if (game.Win && game.IsExit)
+                {
+                    ConsoleDraw.GameOverScreen("Congratulation! You are the Winner!", Game.Score);
+                }
+                if (!game.Win && game.IsExit)
+                {
+                    ConsoleDraw.GameOverScreen("Thanks for playing.", Game.Score);
+                }
+
+            }                       
             
                
         }
+
+   
 
         //take user's command
         #region Statics Method
         public static void Play(object source, ElapsedEventArgs e)
         {
-           // Program program = source as Program;
-            Game.GameUpdate();
-            //if (!Game.IsExit)
-            //{
-            //    if (Game.Win)
-            //    {
-            //        ConsoleDraw.GameOverScreen("Congratulation! You are the Winner!", Game.Score);
-            //    }
-            //    else
-            //    {
-            //        ConsoleDraw.GameOverScreen("Thanks for playing.", Game.Score);
-            //    }
-            //}
-                     
-        
+          // Program program = source as Program;
+            Game.GameUpdate();   
         }
 
         private static ChooseKey Press_Key() // transformate user`s command 

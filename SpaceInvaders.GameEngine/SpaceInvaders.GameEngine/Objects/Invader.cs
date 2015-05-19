@@ -75,7 +75,7 @@ namespace SpaceInvaders.GameEngine.Objects
              {
                  return true;
              }
-             else if ( (K % THE_SHOTDIVIDERTWO == 0) && (_recall % THE_SHOTCONDITIONTWO != 0) )
+             else if ( (K % THE_SHOTDIVIDERTWO == 0) && (_recall % THE_SHOTCONDITIONTWO == 0) )
              {
                  return true;
              }
@@ -83,7 +83,7 @@ namespace SpaceInvaders.GameEngine.Objects
              {
                  return true;
              }
-             else if ( (K % THE_SHOTDIVIDERFOUR == 0) && (_recall % THE_SHOTCONDITIONFOUR != 0) )
+             else if ( (K % THE_SHOTDIVIDERFOUR == 0) && (_recall % THE_SHOTCONDITIONFOUR == 0) )
              {
                  return true;
              }  

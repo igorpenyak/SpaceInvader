@@ -89,5 +89,23 @@ namespace SpaceInvaders.DesktopUI.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream loser {
+            get {
+                return ResourceManager.GetStream("loser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream winner {
+            get {
+                return ResourceManager.GetStream("winner", resourceCulture);
+            }
+        }
     }
 }

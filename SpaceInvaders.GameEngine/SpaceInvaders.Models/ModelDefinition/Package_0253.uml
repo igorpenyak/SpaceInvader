@@ -1,0 +1,627 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="ec60f7fc-c9c2-4c96-8386-e814864cc95e"
+  name="EventArguments"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="4cab3308-3d7e-4b21-b935-1a80374bb93f"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DSpaceInvaders.GameEngine.Logic.EventArguments"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="eda99c0b-c288-4232-a0dc-0cf2b68786eb"
+        name="GameObjectEventArgs"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="57706a5f-d21f-4f79-8329-2476986c4f5a"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Logic.EventArguments Type%3DGameObjectEventArgs"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="11323a26-b46d-43ca-9d40-daab0389ab81"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="91234fad-492a-4288-8960-59c2242e3260">
+                <propertyInstance
+                  Id="9658be80-1efc-4b30-baa8-f7b068532f1a"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="cda972e8-61f4-44c9-83dd-91432bda7cad">
+                <propertyInstance
+                  Id="cd4f8550-4d0b-44c2-952d-5577408f290e"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="805ba8ae-72b6-4e86-9688-51a8597dd42e">
+                <propertyInstance
+                  Id="040379a7-87da-4cd5-bda8-a948d9586458"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7d4a3d9e-f975-4ef5-bb61-2b9cd48a055d">
+                <propertyInstance
+                  Id="7ad691a4-6803-4b92-a2de-8bb35f95966b"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6bf619f1-a622-4c3d-b96f-143f159b9f81">
+                <propertyInstance
+                  Id="2fb209e5-4ad1-4478-8cfb-f38569f347cd"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="8c3388ce-7f73-47c9-bc0f-b0e1e44c83ac"
+            isSubstitutable="false">
+            <classMoniker
+              Id="5bce86d1-fffa-41db-895a-a83ba9eab428"
+              LastKnownName="EventArgs"
+              LastKnownLocation="Package3_0126.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="21da001f-cdba-442c-923e-d125ca6949eb"
+            isDerived="false"
+            sourceEndRoleName="GameObjectEventArgs"
+            targetEndRoleName="Gameobj"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="67604a57-69e8-4a79-99ab-9cbba2276cab"
+              LastKnownName="GameObject"
+              LastKnownLocation="Package2_0126.uml" />
+            <description>Property Gameobj references type GameObject.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="bcc32247-42c9-4ad1-8534-81a034a7e344"
+                  name="GameObjectEventArgs"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="7d0e8d28-49a5-48a3-ab2c-886737fb737e"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="42de8356-45d6-49d9-911e-d8674257c4c6"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ce2221fc-37cf-47fc-97aa-333c68211814"
+                  name="Gameobj"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="e8b0e8a8-c0de-4a82-ad58-6ed4a61bf324"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="1f32c396-64d3-40ca-8c7c-b99294b74453"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="4a4dedb1-205f-47d6-82a7-2f3de7ce2890"
+            name="Gameobj"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="608d2405-ee97-45e6-a668-2d373d81c2b3"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Logic.EventArguments Type%3DGameObjectEventArgs Member%3DGameobj"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="db4ef57c-fe61-4945-8739-63a830446103"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b4400f54-0f00-43f0-9f95-6fa0457d210c">
+                    <propertyInstance
+                      Id="9c0227b6-f92f-4f85-8a92-ebe9e822300b"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="520d3c8c-4462-40e2-85d0-6cb4405f3986">
+                    <propertyInstance
+                      Id="abf651aa-00c4-4edb-88c2-331c2abf330c"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6ec4154c-8ec3-4c34-9632-e81d202538cc">
+                    <propertyInstance
+                      Id="67a0beaf-17e9-4bdb-b847-829687a109b9"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="70012dc3-3166-4a56-a9e9-448cff5cec40">
+                    <propertyInstance
+                      Id="501f95a8-33b1-4c27-ac9e-a44ec41954fa"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bc50bc77-c49e-4517-bbb2-092932c50bd3">
+                    <propertyInstance
+                      Id="e40673d4-2d95-410b-9101-a16ad11c200d"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b4cc466e-62e6-430f-906a-f102c887b724">
+                    <propertyInstance
+                      Id="c74208c1-942b-4b0b-9d7a-8d48bd0a8b1b"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="93825a68-2458-4a40-b188-d9bfd50adbea">
+                    <propertyInstance
+                      Id="3b861751-9da9-4617-bd28-7a03a0336006"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="67604a57-69e8-4a79-99ab-9cbba2276cab"
+                LastKnownName="GameObject"
+                LastKnownLocation="Package2_0126.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="64cd60dc-d2d7-4b4a-bfc1-c0fccff101d6"
+            name="GameObjectEventArgs"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="da654b0c-cc3f-49e3-b1f8-8a1f14d90361"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Logic.EventArguments Type%3DGameObjectEventArgs Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DGameObject)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="67699660-c909-4aab-88e5-57b8994c0b7f"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c1965303-d904-4587-ab69-2e3c86cc6776">
+                    <propertyInstance
+                      Id="92c8988a-e2e7-4a6d-b8b8-83fa531477b1"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="be030470-42ef-4675-a17f-9a03dd6f2be2">
+                    <propertyInstance
+                      Id="39bd0d88-36fa-440d-b36b-19330e5ba908"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="606b80e7-e835-4f9c-898c-231a8adc8f1b">
+                    <propertyInstance
+                      Id="aa676c06-17e8-4ed6-b28e-7d119230561a"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a879f088-43f6-4f9f-b7e1-cd6ae9a22ae8">
+                    <propertyInstance
+                      Id="d51fc52c-a635-4b3e-9728-debd9fb6a6f3"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="34896c53-48b0-473b-95a1-136d8f47b0f2">
+                    <propertyInstance
+                      Id="9690259c-d9bf-427b-8632-24f37fb514f4"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="aae79e4c-558e-4533-81f3-e5806ee69bda">
+                    <propertyInstance
+                      Id="7d0d222a-8d97-456d-b91c-13e0168907bd"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="48fb0a49-ae44-4b62-8c81-247de92c97b9"
+                  name="gameobj"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="52437c91-17b8-4473-a865-b3ecd1ff0809"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Logic.EventArguments Type%3DGameObjectEventArgs Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DGameObject)]) ParameterIdentifier%3Dgameobj"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="67604a57-69e8-4a79-99ab-9cbba2276cab"
+                      LastKnownName="GameObject"
+                      LastKnownLocation="Package2_0126.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="696df0bc-5898-4e5c-8b62-6fb8126211a3"
+        name="ScoreEventArgs"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="e0a452ab-4e85-49fd-a0e6-216434e1256f"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Logic.EventArguments Type%3DScoreEventArgs"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="5fd8562a-e02e-4f4b-af35-bdc17f353223"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="333530da-1cb5-46c6-9657-fb3707c24a1c">
+                <propertyInstance
+                  Id="03c7ea4d-d21f-4e31-abc2-71510c7c4585"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1ed39367-cb9f-4430-8fa3-e53904a90965">
+                <propertyInstance
+                  Id="a899862e-6b96-44ad-8110-47b853f62ff1"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="56cb9e93-c99b-417e-8155-32928855b24c">
+                <propertyInstance
+                  Id="8990a6a7-55a0-476f-a1db-9a9dabdb253b"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c0ce224b-6f9f-464a-bf4e-04351e74a4d5">
+                <propertyInstance
+                  Id="d0315f52-7763-4709-a8fe-51d1c0ff1551"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="62043fc4-7f48-4921-a9c8-2ce4455eefdd">
+                <propertyInstance
+                  Id="ab7f30ba-44a6-4f84-907e-582591e38319"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="b56aeb1c-04c6-4a02-a0a8-2d6c18680c2e"
+            isSubstitutable="false">
+            <classMoniker
+              Id="5bce86d1-fffa-41db-895a-a83ba9eab428"
+              LastKnownName="EventArgs"
+              LastKnownLocation="Package3_0126.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="e6c03c72-246e-4570-83e5-c3f199035465"
+            isDerived="false"
+            sourceEndRoleName="ScoreEventArgs"
+            targetEndRoleName="ScoreNumber"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="5e32c2a4-99d3-43c5-b75d-f87f9ea29296"
+              LastKnownName="Score"
+              LastKnownLocation="Package2_0126.uml" />
+            <description>Property ScoreNumber references type Score.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="890d1da4-b856-4959-a0f5-f2e259ce1df2"
+                  name="ScoreEventArgs"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="d985ebdf-26c9-4e88-a46c-cb3f33319c0b"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="253dff3e-6f18-4831-9793-e59095f6b203"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c0a24b4b-5107-4adf-9233-db5e45646c58"
+                  name="ScoreNumber"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="f6426fb5-53eb-4c2f-886e-37ee427e7aba"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="aea82de6-2606-4e95-8317-63933c208309"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="8f590950-57ac-4b22-9965-c6cca0e6de87"
+            name="ScoreNumber"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="59f7eb76-9d23-47a1-9d7b-6c7868d0a481"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Logic.EventArguments Type%3DScoreEventArgs Member%3DScoreNumber"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="a0111aa5-f31f-483e-b01c-1bbf6731c41d"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c1ed77fe-d00b-4105-88cd-7f50f60d0b7f">
+                    <propertyInstance
+                      Id="7390934b-f7ef-4598-bbfa-ca2d88ccecfb"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cd1161d1-6827-4cbd-a971-303979ac284d">
+                    <propertyInstance
+                      Id="f5fc93d8-b009-40f6-8bb0-de7a6144ca20"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="69f8bf8d-3826-45b9-a6ca-69312fa63aa5">
+                    <propertyInstance
+                      Id="b63acb4f-50b7-442f-a52b-795b73d8b191"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="999d6d0e-b223-4380-b4a9-783a1c8aaad9">
+                    <propertyInstance
+                      Id="852a4dcc-a0ae-44d2-8fbe-b5fd0dfffa53"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2360d0ee-f05d-45bc-a6cd-495de5a5af75">
+                    <propertyInstance
+                      Id="2cb3aab4-17a7-4d7a-b46d-5cbde2232fc6"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d314b753-f72d-4515-ad96-60b158a216db">
+                    <propertyInstance
+                      Id="18126372-6827-4c69-a4ef-1994d71dde90"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ab8e4557-3df0-4c60-93d2-42eaed47d2e8">
+                    <propertyInstance
+                      Id="37f505a2-8d59-424f-bf75-e5e8dc71c774"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="5e32c2a4-99d3-43c5-b75d-f87f9ea29296"
+                LastKnownName="Score"
+                LastKnownLocation="Package2_0126.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="6d2996c1-ab2a-4771-9f82-6c3939f02c8c"
+            name="ScoreEventArgs"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="5a03452d-858b-44c8-946e-e407bee18d37"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Logic.EventArguments Type%3DScoreEventArgs Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DScore)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="ce4f674b-85b1-4b3b-9505-e7ccb5567de4"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="39d41fd1-422e-4af1-ac9f-a42da5b8e132">
+                    <propertyInstance
+                      Id="8e6f8c49-d485-429e-8f04-1121559da3fc"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9dc26623-acd8-4ea9-a82a-b71366f3deaa">
+                    <propertyInstance
+                      Id="3a5863e3-3323-4378-9524-02ef1427ce3f"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="59b89d19-7b31-4194-9e50-6b5fef01bdf6">
+                    <propertyInstance
+                      Id="7157fc51-768f-4ee9-aebf-794a01f81cf2"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7a6e1156-d892-4485-9647-b193487d7faf">
+                    <propertyInstance
+                      Id="4daec15c-4986-4de9-a662-7b9fca15687d"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fb01039d-f286-42b7-bb58-13e78bb4bcfe">
+                    <propertyInstance
+                      Id="99fe0d0f-ef3a-4d08-941b-7d042a65436c"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="97e99a9d-67f7-44fe-9d35-9b95c9607b6f">
+                    <propertyInstance
+                      Id="8b068156-8590-4fdc-ad9e-9e0f026b1cd1"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="fb3f36b2-0af5-4372-9434-0b07620607e0"
+                  name="score"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="f6ac2856-d35c-49f1-9dd7-a5a278d49242"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Logic.EventArguments Type%3DScoreEventArgs Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DScore)]) ParameterIdentifier%3Dscore"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="5e32c2a4-99d3-43c5-b75d-f87f9ea29296"
+                      LastKnownName="Score"
+                      LastKnownLocation="Package2_0126.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

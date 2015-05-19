@@ -221,6 +221,86 @@
                 LastKnownLocation="SpaceInvaders.Models.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="4a17adaf-f878-4e57-989c-ebf0f818bd4f"
+            name="Live"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="c85d8ad5-f43c-4701-9277-4fd292934a59"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects.Base Type%3DIGameObject Member%3DLive"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="db8623f4-3736-4e07-bef9-8e7e5739cc11"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="aaada0d5-dc65-4e0d-ae7a-1971aceb87fc">
+                    <propertyInstance
+                      Id="0a817a56-5312-42c8-8c6f-232ff33a133a"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4a587ba1-fc66-48aa-949a-a5de2637fb1b">
+                    <propertyInstance
+                      Id="f5c0e160-d658-4567-8d74-3ac2a851bb4e"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cbf86c43-ef85-438c-840a-4da6e0db7a96">
+                    <propertyInstance
+                      Id="e4d87a73-2816-44c5-afbc-220a3fd19422"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e223d93c-2f29-472e-b621-560c0288e2ab">
+                    <propertyInstance
+                      Id="1a2f853a-2ad8-4682-9c72-171b41045707"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="80ce5f6f-8132-4ca9-884f-7380b7ef65c7">
+                    <propertyInstance
+                      Id="c2e0d0c2-9cd6-4714-a917-1cd42f2c6211"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="279b6b93-ac54-4b11-ae84-55433adeddf7">
+                    <propertyInstance
+                      Id="efec76d2-8804-444c-9326-c773f6dd0c48"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="83964c7b-9c4e-49b4-b988-019ab7b1d59e">
+                    <propertyInstance
+                      Id="0cf4cc54-a687-4598-b219-9fe935f7bb28"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="SpaceInvaders.Models.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributes>
       </Interface>
     </packageHasNamedElement>

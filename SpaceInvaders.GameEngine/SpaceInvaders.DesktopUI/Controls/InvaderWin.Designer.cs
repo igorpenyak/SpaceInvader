@@ -1,4 +1,5 @@
-﻿namespace SpaceInvaders.DesktopUI.Controls
+﻿using System.Windows.Forms;
+namespace SpaceInvaders.DesktopUI.Controls
 {
     partial class InvaderWin
     {
@@ -41,14 +42,13 @@
             this.lblPlayerScore.AutoSize = true;
             this.lblPlayerScore.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblPlayerScore.Font = new System.Drawing.Font("Times New Roman", 15.75F);
-            this.lblPlayerScore.ForeColor = System.Drawing.Color.Red;
+            this.lblPlayerScore.ForeColor = System.Drawing.Color.DarkRed;
             this.lblPlayerScore.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblPlayerScore.Location = new System.Drawing.Point(352, 213);
+            this.lblPlayerScore.Location = new System.Drawing.Point(338, 213);
             this.lblPlayerScore.Name = "lblPlayerScore";
             this.lblPlayerScore.Size = new System.Drawing.Size(21, 23);
             this.lblPlayerScore.TabIndex = 7;
             this.lblPlayerScore.Text = "0";
-            this.lblPlayerScore.Visible = false;
             // 
             // btnRestart
             // 
@@ -67,7 +67,7 @@
             this.btnRestart.TabIndex = 6;
             this.btnRestart.Text = "RESTART";
             this.btnRestart.UseVisualStyleBackColor = false;
-            this.btnRestart.Visible = false;
+            this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
             // 
             // lblInvaderWin
             // 
@@ -84,7 +84,6 @@
             this.lblInvaderWin.Size = new System.Drawing.Size(275, 23);
             this.lblInvaderWin.TabIndex = 5;
             this.lblInvaderWin.Text = "Thanks for playing. Your score: ";
-            this.lblInvaderWin.Visible = false;
             // 
             // InvaderWin
             // 
@@ -96,6 +95,7 @@
             this.Controls.Add(this.lblInvaderWin);
             this.Name = "InvaderWin";
             this.Size = new System.Drawing.Size(460, 600);
+           // this.Load += new System.EventHandler(this.InvaderWin_Load);      
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -103,6 +103,7 @@
 
         #endregion
 
+        private Form _parentForm;
         private System.Windows.Forms.Label lblPlayerScore;
         private System.Windows.Forms.Button btnRestart;
         private System.Windows.Forms.Label lblInvaderWin;

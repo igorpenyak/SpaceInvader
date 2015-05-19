@@ -23,5 +23,12 @@ namespace SpaceInvaders.GameEngine.Test
             Assert.AreEqual(50, sc.score);
         }
 
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void AddScoreTest2()
+        {
+            Score sc = new Score();
+            sc.AddScore(-50);          
+        }
     }
 }

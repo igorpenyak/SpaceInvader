@@ -89,15 +89,7 @@ namespace SpaceInvaders.DesktopUI.Controls
 
         }
 
-        public void Show(object sender, Score sc)
-        {
-
-        }
-        //public void Clear(object sender, EventArgs e)
-        //{
-        //    _graphic.Clear(Color.Gray);
-        //}
-
+        
          #endregion
 
         public void RenderGamePlay(GameCommand game, PaintEventArgs e)

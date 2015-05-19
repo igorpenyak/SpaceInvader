@@ -10,11 +10,15 @@ using System.Windows.Forms;
 using SpaceInvaders.GameEngine;
 using SpaceInvaders.GameEngine.Logic;
 using SpaceInvaders.GameEngine.Objects;
+using System.Media;
 
 namespace SpaceInvaders.DesktopUI.Controls
 {
     public partial class Playground : UserControl
     {
+
+        #region Fields and Propety
+        public bool IsMusical { get; set; }
         public ChooseKey UserKey{get; set;}
 
         private GameCommand _game;
@@ -23,9 +27,9 @@ namespace SpaceInvaders.DesktopUI.Controls
         
         private Timer _timer;
 
-        public event EventHandler GameEndInvader;
+        #endregion
 
-        public event EventHandler GameEndPlayer;
+        #region Constructor
         public Playground(Form parent)
         {
   
@@ -47,67 +51,56 @@ namespace SpaceInvaders.DesktopUI.Controls
             _timer.Interval = 200;
 
         }
-
-
-        private void Playground_Load(object sender, EventArgs e)
+               
+          private void Playground_Load(object sender, EventArgs e)
         {
             InitKeyPress(sender, e);
+            
         }
 
-       
+        #endregion
+        
         //take user's command
         #region Helpers
-
-
-        private void OnGameEndInvader()
-        {
-            if (GameEndInvader != null)
-            {
-                this.GameEndInvader(this, EventArgs.Empty);
-            }
-        }
-
-
-
+        
         public void Run()
         {            
             _game.Init(this.Size.Width - 50, this.Size.Height - 50, 40, 50);
             _timer.Tick += new EventHandler(Gameplay);
             _timer.Start();         
         }
-
-
-
-    
+            
         private void Gameplay(object sender, EventArgs e)
         {   
            _game.GameUpdate();
+
            UserKey = ChooseKey.Wait;
            if (_game.Win && _game.IsExit)
            {
-            //   this.Hide();
+               _timer.Stop();
+               _timer.Dispose();
+               this.Hide();
+               this.PlayerWinMusic();
+               var ucPlayerWin = new PlayerWin(_game.Score, _parentForm);
+               _parentForm.Controls.Add(ucPlayerWin);      
                
            }
            else if (!_game.Win && _game.IsExit)
            {
+               _timer.Stop();
+               _timer.Dispose();
                this.Hide();
-             
-                   
-                              
-           }
+               this.EnemyWinMusic();
+               var ucInvaderWin = new InvaderWin(_game.Score, _parentForm);
+               _parentForm.Controls.Add(ucInvaderWin);                   
+           }                            
 
-        //    this.Refresh();
-           // this.Invalidate();
-                         
         }
-
-
-
+        
         private void InvalidateDispatched(object sender, GameObject gameObject)
         {
             // change state of the _draw object       
-             //  this._gameObject = gameObject;
-
+         
             Action d  = () =>
             {
                 this.Invalidate();                   
@@ -119,17 +112,11 @@ namespace SpaceInvaders.DesktopUI.Controls
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-
             // Render the whole gameplay
             this._draw.RenderGamePlay(_game,e);
             this.lblNumderScore.Text = _game.Score.ToString();
             this.lblNumderLives.Text = _game.LazerGun.NumberOfLives.ToString();
-
-            //if (this._gameObject != null)
-            //{
-            //    _draw.Render(this._gameObject, e);
-            //}
-
+            this.lblNumberOfLevel.Text = (_game.GameLevel+1).ToString();    
         }
 
 
@@ -163,10 +150,8 @@ namespace SpaceInvaders.DesktopUI.Controls
             }
             else
             {
-                return ChooseKey.Wait;
-              
+                return ChooseKey.Wait;              
             }       
-
         }
 
         private void Playground_KeyDown(object sender, KeyEventArgs e)
@@ -197,11 +182,23 @@ namespace SpaceInvaders.DesktopUI.Controls
         }
 
               
-        #endregion  
+        private void PlayerWinMusic()
+        {
+            SoundPlayer WinnerSong = new SoundPlayer(Properties.Resources.winner);         
+            WinnerSong.Play();
+            
+        }
 
-      
+        private void EnemyWinMusic()
+        {
+            SoundPlayer LooseSong = new SoundPlayer(Properties.Resources.loser);
+            LooseSong.Play();
+            
+        }
 
-        }       
+        #endregion
+
+       }       
       
     }
 

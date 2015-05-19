@@ -78,20 +78,20 @@
         </suppliersInternal>
         <targetEnds>
           <association
-            Id="7b06ba36-69f6-45bd-861b-048c54e10dbc"
+            Id="f9cfd847-c144-43ec-ac94-80d2fe675f54"
             isDerived="false"
             sourceEndRoleName="DistanceStrategy"
-            targetEndRoleName="Process"
+            targetEndRoleName="GameCommand"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
               Id="0647f944-21f6-44d4-b660-35b98d014a26"
-              LastKnownName="Process"
+              LastKnownName="GameCommand"
               LastKnownLocation="Package1_0126.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="ed6efe91-b8c4-48bb-9bdf-e111b9749891"
+                  Id="37deec6b-89b9-49f7-9663-4a38e2f7b9dc"
                   name="DistanceStrategy"
                   isLeaf="false"
                   isStatic="false"
@@ -104,8 +104,8 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="6e4b9cae-3771-4470-9b4a-69b29e9cfaaf"
-                  name="Process"
+                  Id="f6b37b95-39f6-441e-b2a4-12f0ea528d69"
+                  name="GameCommand"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -236,7 +236,7 @@
             </ownedParameters>
           </operation>
           <operation
-            Id="d2796472-1910-44fa-9724-c8d71da03567"
+            Id="09bf43f5-90f5-4cc1-970f-f30a6bad7c75"
             name="DistanceStrategy"
             isLeaf="false"
             isStatic="false"
@@ -245,54 +245,54 @@
             isQuery="false">
             <referencesInternal>
               <reference
-                Id="7dd017ce-6e27-4136-a97d-04d0a6eea317"
+                Id="3c863e78-dd85-4e06-a919-61aa901b3d6d"
                 handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Logic Type%3DDistanceStrategy Member%3D.ctor"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
               <stereotypeInstance
-                Id="e5e6e94d-d800-46b5-8590-e67baee760ca"
+                Id="0b549c9f-768b-4f94-ba0e-9e74b2469acc"
                 name="method"
                 profile="CSharpProfile">
                 <propertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="74c123fc-3835-46a3-9350-c1dbd72e0a21">
+                    Id="808147c0-1442-468d-9dfc-65028d5e0a1c">
                     <propertyInstance
-                      Id="9975fd26-d29c-4fd7-8740-640753ee65a2"
+                      Id="effd8718-5b42-471d-bf7d-3e9ff3f820f4"
                       name="ClrAttributes" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="56d7f7e8-e583-4c61-84ec-f8498c616178">
+                    Id="220460af-3163-4b3e-a403-358010bbc756">
                     <propertyInstance
-                      Id="1ace6b37-b87a-4b1d-a1f8-9dd3ade78bd3"
+                      Id="94551f54-ada7-4943-9c36-fe9034df3c62"
                       name="IsPartial"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="0359c1bc-064d-44e0-b4da-32ac2b5d81cb">
+                    Id="daeb0f05-71e4-43d3-bb57-e3722a5f0fa2">
                     <propertyInstance
-                      Id="8b025cf7-1ad8-4115-b102-e3fbac1085f8"
+                      Id="282faa74-bcca-4a51-8e21-72500f5aaf84"
                       name="IsUnsafe"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="01e504d8-8f99-4bff-97f8-fbf5ba279906">
+                    Id="c557aaaf-3b4a-4771-a646-ecae897db22d">
                     <propertyInstance
-                      Id="e711df9c-9e0e-4a79-8915-df5a4d6029d0"
+                      Id="7dbc9b13-8ab5-4750-9e28-bfffdcbece02"
                       name="Inheritance"
                       value="none" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="ca436022-d717-42d1-b635-3c61a44a3539">
+                    Id="5aff89c1-e9ab-4d35-a226-ae5943b7feb6">
                     <propertyInstance
-                      Id="6cf12cc7-d035-41c3-bd9f-87767afee3ab"
+                      Id="f3e65686-db3f-4341-998f-c7caa955c136"
                       name="PackageVisibility"
                       value="internal" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="2b3a8bed-3977-452e-ba3d-27822570c306">
+                    Id="fca90193-da9f-42a4-8d86-b16a9a11462e">
                     <propertyInstance
-                      Id="954a0af5-bc3d-4d0c-9e39-2a87845ee48e"
+                      Id="77f989aa-32a6-4844-af7d-3c4c130fe910"
                       name="params"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
@@ -471,6 +471,263 @@
           </operation>
         </ownedOperations>
       </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="77efa677-e4f0-4879-9772-689bc979bb88"
+        name="FormsDistanceStrategy"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="04ae3a11-8c0a-4b0c-8f35-accfa9bca46d"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.DesktopUI%2Fbin%2FDebug%2FSpaceInvaders.DesktopUI.exe&quot; Namespace%3DSpaceInvaders.GameEngine.Logic Type%3DFormsDistanceStrategy"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="27e5a11c-0c31-406b-a6fd-dd0c0f50f435"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9870add7-7f6a-461a-9888-81aa7babbbd1">
+                <propertyInstance
+                  Id="52799f04-3500-4b09-94eb-3c205a069cb2"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="cde18819-2287-4b8e-a5f9-ce3230f0c378">
+                <propertyInstance
+                  Id="de92ec26-370b-408b-9f4f-b11a1b2bc256"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0ffe877e-8584-4817-bcc3-1f312dc8a5ce">
+                <propertyInstance
+                  Id="0fb8c856-4e89-4467-9668-196a283d4827"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="bcc4ca58-5f74-4b6e-9314-eca482cc22c9">
+                <propertyInstance
+                  Id="c05d6fb6-69c3-415c-81c8-7f56799da4af"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8f12c77d-0871-4218-bc0c-0aed5a6101e6">
+                <propertyInstance
+                  Id="33f3e6bd-f5b5-444b-98ee-0ddd5da989d7"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <suppliersInternal>
+          <interfaceRealization
+            Id="b1b84438-83fe-4440-aca8-a6c6b4bb804f">
+            <interfaceMoniker
+              Id="5c2a51a0-e9eb-4e2c-8b4e-c95c6b699998"
+              LastKnownName="IDistanceStrategy"
+              LastKnownLocation="Package_2323.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="712351e6-e115-4528-bf77-02b84b805040"
+            name="GetDistance"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="e6007820-3de4-41e2-8dca-9a38b4f68cfc"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.DesktopUI%2Fbin%2FDebug%2FSpaceInvaders.DesktopUI.exe&quot; Namespace%3DSpaceInvaders.GameEngine.Logic Type%3DFormsDistanceStrategy Member%3D(Name%3DGetDistance OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DGameObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DGameObject)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="10febc70-dd15-42e8-9e8a-ac6d08458063"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7196d9db-ef3d-4f30-919f-419dc09eb010">
+                    <propertyInstance
+                      Id="0acfe962-1bf3-472e-a133-6da4df4ff65e"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ec8dd4e1-3fe1-474e-96eb-b9fbb8b29ab8">
+                    <propertyInstance
+                      Id="ec5ef91e-1a62-4108-9ce3-4920e81b2ddf"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="813fde39-4554-412b-ab37-04a95e006f6d">
+                    <propertyInstance
+                      Id="20345d54-f6cd-45cc-9927-7e5200b84c5b"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d423cfc9-b7b0-42dc-90e3-48212f9cb729">
+                    <propertyInstance
+                      Id="fd5b80c2-02c3-4184-bac8-daeaa679465c"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="87919e7d-fc6c-49af-8535-16c6af3cb374">
+                    <propertyInstance
+                      Id="36fcb4d2-afbc-428f-a4d1-3b4a839a8682"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ea04628f-7a47-4aef-83d8-95981042c0dd">
+                    <propertyInstance
+                      Id="a3ba8497-e386-4461-938b-be45b479b195"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="01872853-a282-4a19-8e96-c62964a300e4"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="5cd8016d-f21f-4cfa-9017-f98cb34c1b65"
+                      LastKnownName="Double"
+                      LastKnownLocation="Package3_0126.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5fbc8e38-d710-40f8-af88-57c4f86555d3"
+                  name="obj1"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="4b12771b-35ef-41f5-8513-4b14ac6a3e19"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.DesktopUI%2Fbin%2FDebug%2FSpaceInvaders.DesktopUI.exe&quot; Namespace%3DSpaceInvaders.GameEngine.Logic Type%3DFormsDistanceStrategy Member%3D(Name%3DGetDistance OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DGameObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DGameObject)]) ParameterIdentifier%3Dobj1"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="67604a57-69e8-4a79-99ab-9cbba2276cab"
+                      LastKnownName="GameObject"
+                      LastKnownLocation="Package2_0126.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0e9d8c03-f270-4df3-ac39-1091ed122ae4"
+                  name="obj2"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="decaac83-176d-499f-ad8e-80068bc1a85e"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.DesktopUI%2Fbin%2FDebug%2FSpaceInvaders.DesktopUI.exe&quot; Namespace%3DSpaceInvaders.GameEngine.Logic Type%3DFormsDistanceStrategy Member%3D(Name%3DGetDistance OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DGameObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.GameEngine%2Fbin%2FDebug%2FSpaceInvaders.GameEngine.dll&quot; Namespace%3DSpaceInvaders.GameEngine.Objects Type%3DGameObject)]) ParameterIdentifier%3Dobj2"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="67604a57-69e8-4a79-99ab-9cbba2276cab"
+                      LastKnownName="GameObject"
+                      LastKnownLocation="Package2_0126.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="0593a61f-4cc3-4508-ae9b-152eefdfb0b3"
+            name="FormsDistanceStrategy"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="1022fc02-99d3-4415-9292-86b302218ed0"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvlada%2FDocuments%2FVisual Studio 2013%2FProjects%2FSpaceInvaders.GameEngine%2FSpaceInvaders.DesktopUI%2Fbin%2FDebug%2FSpaceInvaders.DesktopUI.exe&quot; Namespace%3DSpaceInvaders.GameEngine.Logic Type%3DFormsDistanceStrategy Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="f534b1fa-ac7f-41e7-9d72-8feb2c87600c"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="835c59ce-ee8b-486f-856e-fe0da3b8d8ad">
+                    <propertyInstance
+                      Id="e5abf907-9838-4f49-a0a1-260283287144"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f4c304e6-96cd-4eaf-8334-ac678c0786ff">
+                    <propertyInstance
+                      Id="0ebcf6f3-e7cc-48bc-88ba-1acfdcd9f051"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e7ffc355-cc9a-4016-83c6-070ef2d8fc21">
+                    <propertyInstance
+                      Id="dde98a32-74d6-4ed8-bdda-59d6fd071e1a"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b1321f50-7d15-4901-bc7e-d748a9491b81">
+                    <propertyInstance
+                      Id="f3d10a0c-4c6b-402a-a1e9-aa82f650af74"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a545980e-2b5a-4b63-bb90-ef760a91675e">
+                    <propertyInstance
+                      Id="13de5b19-005b-4886-9ad5-a7749ca0e422"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="abad4d47-5813-455c-a58c-d6c4d18bc91b">
+                    <propertyInstance
+                      Id="726c6be2-4fc9-402e-9647-211c66f3f2bb"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="ec60f7fc-c9c2-4c96-8386-e814864cc95e"
+        LastKnownName="EventArguments"
+        LastKnownLocation="Package_0253.uml" />
     </packageHasNamedElement>
   </packagedElements>
 </package>

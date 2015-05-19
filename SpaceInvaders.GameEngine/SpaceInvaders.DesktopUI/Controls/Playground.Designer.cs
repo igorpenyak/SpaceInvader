@@ -32,7 +32,9 @@ namespace SpaceInvaders.DesktopUI.Controls
             this.lblScore = new System.Windows.Forms.Label();
             this.lblNumderScore = new System.Windows.Forms.Label();
             this.lblLives = new System.Windows.Forms.Label();
-            this.lblNumderLives = new System.Windows.Forms.Label();         
+            this.lblNumderLives = new System.Windows.Forms.Label();
+            this.lblNumberOfLevel = new System.Windows.Forms.Label();
+            this.lblLevel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblScore
@@ -43,7 +45,7 @@ namespace SpaceInvaders.DesktopUI.Controls
             this.lblScore.AutoSize = true;
             this.lblScore.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblScore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lblScore.Location = new System.Drawing.Point(269, 11);
+            this.lblScore.Location = new System.Drawing.Point(325, 16);
             this.lblScore.Name = "lblScore";
             this.lblScore.Size = new System.Drawing.Size(72, 21);
             this.lblScore.TabIndex = 0;
@@ -54,7 +56,7 @@ namespace SpaceInvaders.DesktopUI.Controls
             this.lblNumderScore.AutoSize = true;
             this.lblNumderScore.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblNumderScore.ForeColor = System.Drawing.Color.Red;
-            this.lblNumderScore.Location = new System.Drawing.Point(361, 10);
+            this.lblNumderScore.Location = new System.Drawing.Point(403, 18);
             this.lblNumderScore.Name = "lblNumderScore";
             this.lblNumderScore.Size = new System.Drawing.Size(17, 19);
             this.lblNumderScore.TabIndex = 1;
@@ -68,7 +70,7 @@ namespace SpaceInvaders.DesktopUI.Controls
             this.lblLives.AutoSize = true;
             this.lblLives.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblLives.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lblLives.Location = new System.Drawing.Point(83, 10);
+            this.lblLives.Location = new System.Drawing.Point(51, 16);
             this.lblLives.Name = "lblLives";
             this.lblLives.Size = new System.Drawing.Size(62, 21);
             this.lblLives.TabIndex = 2;
@@ -79,11 +81,36 @@ namespace SpaceInvaders.DesktopUI.Controls
             this.lblNumderLives.AutoSize = true;
             this.lblNumderLives.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblNumderLives.ForeColor = System.Drawing.Color.Red;
-            this.lblNumderLives.Location = new System.Drawing.Point(151, 10);
+            this.lblNumderLives.Location = new System.Drawing.Point(119, 16);
             this.lblNumderLives.Name = "lblNumderLives";
             this.lblNumderLives.Size = new System.Drawing.Size(17, 19);
             this.lblNumderLives.TabIndex = 3;
             this.lblNumderLives.Text = "3";
+            // 
+            // lblNumberOfLevel
+            // 
+            this.lblNumberOfLevel.AutoSize = true;
+            this.lblNumberOfLevel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblNumberOfLevel.ForeColor = System.Drawing.Color.Red;
+            this.lblNumberOfLevel.Location = new System.Drawing.Point(259, 18);
+            this.lblNumberOfLevel.Name = "lblNumberOfLevel";
+            this.lblNumberOfLevel.Size = new System.Drawing.Size(17, 19);
+            this.lblNumberOfLevel.TabIndex = 5;
+            this.lblNumberOfLevel.Text = "0";
+            // 
+            // lblLevel
+            // 
+            this.lblLevel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblLevel.AutoSize = true;
+            this.lblLevel.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblLevel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lblLevel.Location = new System.Drawing.Point(181, 16);
+            this.lblLevel.Name = "lblLevel";
+            this.lblLevel.Size = new System.Drawing.Size(67, 21);
+            this.lblLevel.TabIndex = 4;
+            this.lblLevel.Text = "LEVEL";
             // 
             // Playground
             // 
@@ -92,6 +119,8 @@ namespace SpaceInvaders.DesktopUI.Controls
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Controls.Add(this.lblNumberOfLevel);
+            this.Controls.Add(this.lblLevel);
             this.Controls.Add(this.lblNumderLives);
             this.Controls.Add(this.lblLives);
             this.Controls.Add(this.lblNumderScore);
@@ -102,7 +131,6 @@ namespace SpaceInvaders.DesktopUI.Controls
             this.Load += new System.EventHandler(this.Playground_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Playground_KeyDown);
             this.ResumeLayout(false);
-          //  this.GameEndInvader += new System.EventHandler();
             this.PerformLayout();
 
         }
@@ -114,6 +142,8 @@ namespace SpaceInvaders.DesktopUI.Controls
         private Label lblNumderScore;
         private Label lblLives;
         private Label lblNumderLives;
+        private Label lblNumberOfLevel;
+        private Label lblLevel;
 
 
     }

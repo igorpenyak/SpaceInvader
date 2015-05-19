@@ -37,7 +37,7 @@ namespace SpaceInvaders.GameEngine.Test
         {
             Bullet d = new Bullet(5,5,true, 1);
             d.Move();
-            Assert.AreEqual(4,d.PosY);          
+            Assert.AreEqual(3,d.PosY);          
         }
 
         [TestMethod]

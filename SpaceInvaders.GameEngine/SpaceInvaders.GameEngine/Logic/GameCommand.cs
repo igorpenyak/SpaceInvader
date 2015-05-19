@@ -31,7 +31,7 @@ namespace SpaceInvaders.GameEngine
         #region Fields
         
             private const int THE_PAUSE = 100;
-            private const int THE_ENEMYCOLUNS = 70;
+            private const int THE_ENEMYCOLUNS =70;
             private const int THE_ENEMYROWS = 50;
             private const int THE_NUMBERENEMYROWS = 5;
             private readonly IDistanceStrategy _distanceStrategy;   
@@ -73,6 +73,14 @@ namespace SpaceInvaders.GameEngine
                 get
                 {
                     return _gun;
+                }
+            }
+
+            public int GameLevel
+            {
+                get
+                {
+                    return _count;
                 }
             }
 
@@ -322,23 +330,23 @@ namespace SpaceInvaders.GameEngine
             switch (levelNumber)
             {
                 case (1):
-                    Level(35, 3);                   
+                    Level(35, 3 * _enemyIndex);                   
                     break;
 
                 case (2):
-                    Level(25, 7);
+                    Level(25, 7 * _enemyIndex);
                     break;
 
                 case (3):
-                    Level(20, 9);
+                    Level(20, 9 * _enemyIndex);
                     break;
 
                 case (4):
-                    Level(10, 12);
+                    Level(10, 12 * _enemyIndex);
                     break;
 
                 case (5):
-                    Level(5, 15);
+                    Level(5, 15 * _enemyIndex);
                     break;
 
                 default:
@@ -467,7 +475,7 @@ namespace SpaceInvaders.GameEngine
         public bool InvaderWin(GameObject obj1, GameObject obj2)
         {
             int k = obj2.PosY - obj1.PosY;
-            if (k <= 1)
+            if (k <= 1*_enemyIndex)
             {
                 return true;
             }

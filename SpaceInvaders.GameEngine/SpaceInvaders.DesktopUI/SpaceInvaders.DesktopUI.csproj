@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>remote-play_8518.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -70,6 +73,7 @@
     <Compile Include="Controls\GameMenu.Designer.cs">
       <DependentUpon>GameMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsDistanceStrategy.cs" />
     <Compile Include="SpaceInvader.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +84,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Controls\InvaderWin.resx">
       <DependentUpon>InvaderWin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PlayerWin.resx">
+      <DependentUpon>PlayerWin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Playground.resx">
       <DependentUpon>Playground.cs</DependentUpon>
@@ -127,6 +134,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bullet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="remote-play_8518.ico" />
+    <None Include="Resources\winner.wav" />
+    <None Include="Resources\fon.mp3" />
+    <None Include="Resources\loser.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
